@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World: Program Pertama - Go Learning Path</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="lesson-body">
+    <div class="container">
+        <header class="lesson-header">
+            <div class="breadcrumb">
+                <a href="../index.html">Beranda</a> / <span>Pengenalan Go</span> / <span>Hello World: Program Pertama</span>
+            </div>
+            <h1>Hello World: Program Pertama</h1>
+            <div class="lesson-meta">
+                <span class="duration"><i class="far fa-clock"></i> 15-20 menit</span>
+                <span class="module-badge">Pengenalan Go</span>
+            </div>
+        </header>
+        <main class="lesson-content">
+            <section class="objectives">
+                <h2>Tujuan Pembelajaran</h2>
+                <ul><li>Menulis program Go pertama, memahami struktur dasar program Go, dan mengompilasi serta menjalankan program.</li></ul>
+            </section>
+            <section class="content">
+                <h2>Materi</h2>
+                <p>Mari kita tulis program Go pertama dan pahami struktur dasarnya.</p>
+
+<h3>Membuat Proyek</h3>
+<pre><code>mkdir hello-go && cd hello-go
+go mod init hello-go</code></pre>
+
+<h3>File main.go</h3>
+<pre><code>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}</code></pre>
+
+<h3>Menjalankan Program</h3>
+<pre><code># Cara 1: go run (langsung execute)
+go run main.go
+# Output: Hello, World!
+
+# Cara 2: go build (compile ke binary)
+go build -o hello
+./hello
+# Output: Hello, World!</code></pre>
+
+<h3>Memahami Struktur Program</h3>
+<pre><code>// 1. Package declaration - WAJIB di baris pertama
+// Setiap file Go harus deklarasi package
+package main
+
+// 2. Import statement - import packages yang dibutuhkan
+import (
+    "fmt"    // Format I/O (print, scan, etc.)
+    "os"     // OS interaction
+)
+
+// 3. Function main() - entry point program
+// Hanya package main yang punya fungsi main()
+func main() {
+    fmt.Println("Hello, World!")
+}</code></pre>
+
+<h3>Multiple Files</h3>
+<pre><code>// main.go
+package main
+import "fmt"
+
+func main() {
+    greet()
+    fmt.Println(add(3, 5))
+}
+
+// helpers.go (dalam package yang sama)
+package main
+import "fmt"
+
+func greet() {
+    fmt.Println("Selamat datang!")
+}
+
+func add(a, b int) int {
+    return a + b
+}</code></pre>
+
+<h3>Key Points</h3>
+<ul>
+<li><code>package main</code> menandakan executable program (bukan library)</li>
+<li><code>func main()</code> adalah entry point</li>
+<li>Go menggunakan <strong>explicit imports</strong> — harus import setiap package yang digunakan</li>
+<li>Go tidak mengizinkan unused imports — akan error saat kompilasi</li>
+</ul>
+            </section>
+            <section class="summary">
+                <h2>Rangkuman</h2>
+                <p>Modul ini membahas hello world: program pertama dalam Go. Praktikkan dengan membuat kode sendiri.</p>
+            </section>
+            <nav class="lesson-nav">
+                <a href="../index.html" class="btn btn-secondary">← Kembali</a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>

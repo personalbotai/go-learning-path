@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struct: Tipe Data Komposit - Go Learning Path</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="lesson-body">
+    <div class="container">
+        <header class="lesson-header">
+            <div class="breadcrumb">
+                <a href="../index.html">Beranda</a> / <span>Struktur Data</span> / <span>Struct: Tipe Data Komposit</span>
+            </div>
+            <h1>Struct: Tipe Data Komposit</h1>
+            <div class="lesson-meta">
+                <span class="duration"><i class="far fa-clock"></i> 15-20 menit</span>
+                <span class="module-badge">Struktur Data</span>
+            </div>
+        </header>
+        <main class="lesson-content">
+            <section class="objectives">
+                <h2>Tujuan Pembelajaran</h2>
+                <ul><li>Membuat dan menggunakan struct untuk mengelompokkan data terkait.</li></ul>
+            </section>
+            <section class="content">
+                <h2>Materi</h2>
+                <p><strong>Struct</strong> adalah kumpulan field yang membentuk tipe data baru. Ini adalah cara Go mendefinisikan object tanpa class.</p>
+
+<h3>Mendefinisikan Struct</h3>
+<pre><code>// Definisi struct
+type User struct {
+    ID       int
+    Nama     string
+    Email    string
+    Umur     int
+    Aktif    bool
+}
+
+// Membuat instance
+user1 := User{
+    ID:    1,
+    Nama:  "Archon",
+    Email: "archon@example.com",
+    Umur:  25,
+    Aktif: true,
+}
+
+// Shorthand (field order matters)
+user2 := User{2, "Builder", "builder@example.com", 30, true}
+
+// Zero value struct
+var user3 User  // Semua field = zero value</code></pre>
+
+<h3>Mengakses dan Mengubah Field</h3>
+<pre><code>// Mengakses field
+fmt.Println(user1.Nama)  // Archon
+
+// Mengubah field
+user1.Email = "new@example.com"
+
+// Pointer ke struct
+ptr := &user1
+fmt.Println(ptr.Nama)    // Archon (automatic dereference)
+fmt.Println((*ptr).Nama) // Archon (explicit dereference)</code></pre>
+
+<h3>Embedded Struct (Composition)</h3>
+<pre><code>type Alamat struct {
+    Jalan   string
+    Kota    string
+    KodePos string
+}
+
+type Employee struct {
+    User                    // Embedded struct (bukan inheritance!)
+    Alamat                  // Embedded struct
+    Jabatan string
+    Gaji    float64
+}
+
+emp := Employee{
+    User:    User{1, "Archon", "archon@corp.com", 25, true},
+    Alamat:  Alamat{"Jl. Sudirman", "Jakarta", "10220"},
+    Jabatan: "Engineer",
+    Gaji:    15000000,
+}
+
+// Akses field embedded langsung
+fmt.Println(emp.Nama)    // Archon (dari User)
+fmt.Println(emp.Kota)    // Jakarta (dari Alamat)
+fmt.Println(emp.Jabatan) // Engineer</code></pre>
+
+<h3>Struct Tags</h3>
+<pre><code>type Product struct {
+    ID    int     `json:"id"`
+    Nama  string  `json:"name"`
+    Harga float64 `json:"price"`
+    Aktif bool    `json:"active"`
+}
+
+// Digunakan oleh encoding/json, database/sql, validator, etc.
+product := Product{1, "Laptop", 15000000, true}
+jsonData, _ := json.Marshal(product)
+// {"id":1,"name":"Laptop","price":15000000,"active":true}</code></pre>
+            </section>
+            <section class="summary">
+                <h2>Rangkuman</h2>
+                <p>Modul ini membahas struct: tipe data komposit dalam Go. Praktikkan dengan membuat kode sendiri.</p>
+            </section>
+            <nav class="lesson-nav">
+                <a href="../index.html" class="btn btn-secondary">← Kembali</a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>

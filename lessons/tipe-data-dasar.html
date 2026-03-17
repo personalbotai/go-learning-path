@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Dasar - Go Learning Path</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="lesson-body">
+    <div class="container">
+        <header class="lesson-header">
+            <div class="breadcrumb">
+                <a href="../index.html">Beranda</a> / <span>Dasar-Dasar Go</span> / <span>Tipe Data Dasar</span>
+            </div>
+            <h1>Tipe Data Dasar</h1>
+            <div class="lesson-meta">
+                <span class="duration"><i class="far fa-clock"></i> 15-20 menit</span>
+                <span class="module-badge">Dasar-Dasar Go</span>
+            </div>
+        </header>
+        <main class="lesson-content">
+            <section class="objectives">
+                <h2>Tujuan Pembelajaran</h2>
+                <ul><li>Memahami tipe data dasar Go: integer, float, string, boolean, dan type aliases.</li></ul>
+            </section>
+            <section class="content">
+                <h2>Materi</h2>
+                <p>Go menyediakan tipe data dasar yang kuat dan efisien.</p>
+
+<h3>Numeric Types</h3>
+<pre><code>// Signed integers
+var a int8    // -128 to 127
+var b int16   // -32768 to 32767
+var c int32   // ±2 billion
+var d int64   // ±9 quintillion
+var e int     // Platform-dependent (32 atau 64 bit)
+
+// Unsigned integers
+var f uint8   // 0 to 255 (byte)
+var g uint16  // 0 to 65535
+var h uint32  // 0 to 4 billion
+var i uint64  // 0 to 18 quintillion
+
+// Floating point
+var j float32  // ~6 digit precision
+var k float64  // ~15 digit precision (default)
+
+// Complex numbers
+var l complex64   // float32 + float32
+var m complex128  // float64 + float64
+
+// Alias types
+var n byte    // alias for uint8
+var o rune    // alias for int32 (Unicode code point)</code></pre>
+
+<h3>String Type</h3>
+<pre><code>// String adalah immutable sequence of bytes
+s1 := "Halo, Dunia!"
+s2 := "Archon 🏛️"
+
+// Multi-line string
+s3 := `Ini string
+multi-line
+tanpa perlu escape`
+
+// String operations
+panjang := len(s1)           // Panjang dalam bytes
+gabung := s1 + " " + s2     // Concatenation
+cek := strings.Contains(s1, "Dunia") // true
+
+// Akses karakter
+char := s1[0]         // 'H' (byte)
+rune := rune(s1[0])   // 72 (int32)</code></pre>
+
+<h3>Boolean</h3>
+<pre><code>var aktif bool = true
+var selesai bool = false
+
+// Logical operators
+result := aktif && !selesai  // true
+result2 := aktif || selesai  // true</code></pre>
+
+<h3>Constants dan Literals</h3>
+<pre><code>// Integer literals
+decimal := 42
+binary := 0b1010
+octal := 0o52
+hex := 0x2A
+
+// Float literals
+pi := 3.14159
+scientific := 1.5e10
+
+// Underscore untuk readability
+million := 1_000_000</code></pre>
+            </section>
+            <section class="summary">
+                <h2>Rangkuman</h2>
+                <p>Modul ini membahas tipe data dasar dalam Go. Praktikkan dengan membuat kode sendiri.</p>
+            </section>
+            <nav class="lesson-nav">
+                <a href="../index.html" class="btn btn-secondary">← Kembali</a>
+            </nav>
+        </main>
+    </div>
+</body>
+</html>

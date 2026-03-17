@@ -3,75 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fungsi Dasar - Go Learning Path</title>
+    <title>Deklarasi dan Pemanggilan Fungsi - Go Learning Path</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="lesson-body">
     <div class="container">
         <header class="lesson-header">
             <div class="breadcrumb">
-                <a href="../index.html">Beranda</a> / <span>Fungsi</span> / <span>Fungsi Dasar</span>
+                <a href="../index.html">Beranda</a> / <span>Fungsi</span> / <span>Deklarasi dan Pemanggilan Fungsi</span>
             </div>
-            <h1>Fungsi Dasar</h1>
+            <h1>Deklarasi dan Pemanggilan Fungsi</h1>
             <div class="lesson-meta">
-                <span class="duration"><i class="far fa-clock"></i> 20-30 menit</span>
-                <span class="module-badge">Modul: Fungsi</span>
+                <span class="duration"><i class="far fa-clock"></i> 15-20 menit</span>
+                <span class="module-badge">Fungsi</span>
             </div>
         </header>
-
         <main class="lesson-content">
             <section class="objectives">
                 <h2>Tujuan Pembelajaran</h2>
-                <ul>
-                    <li>Memahami konsep fungsi dasar</li>
-                    <li>Menerapkan konsep dalam kode Go</li>
-                    <li>Memahami best practices dalam Go</li>
-                </ul>
+                <ul><li>Memahami deklarasi fungsi, parameter, return values, dan named returns.</li></ul>
             </section>
-
             <section class="content">
-                <h2>Pengantar</h2>
-                <p><strong>Fungsi Dasar</strong> adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.</p>
+                <h2>Materi</h2>
+                <p>Fungsi adalah blok kode yang bisa dipanggil berulang kali. Go mendukung multiple return values dan named returns.</p>
 
-                <h2>Topik yang Dibahas</h2>
-                <ul>
-            <li>Deklarasi fungsi dengan func</li>
-            <li>Parameter dan return values</li>
-            <li>Multiple return values</li>
-            <li>Named return values</li>
-            <li>Variadic functions dengan ...</li>
-                </ul>
-
-                <h2>Penjelasan</h2>
-                <p>Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami fungsi dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.</p>
-
-                <h3>Contoh Kode</h3>
-                <pre><code>// Contoh implementasi fungsi dasar
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Belajar: Fungsi Dasar")
+<h3>Deklarasi Fungsi Dasar</h3>
+<pre><code>// Tanpa parameter, tanpa return
+func sapa() {
+    fmt.Println("Halo!")
 }
-</code></pre>
 
-                <h2>Praktik Terbaik</h2>
-                <ul>
-                    <li>Ikuti konvensi penulisan Go (gofmt)</li>
-                    <li>Gunakan nama yang deskriptif dan jelas</li>
-                    <li>Handle errors dengan baik</li>
-                    <li>Write idiomatic Go code</li>
-                </ul>
+// Dengan parameter
+func tambah(a int, b int) int {
+    return a + b
+}
+
+// Shorthand untuk parameter bertipe sama
+func kurangi(a, b int) int {
+    return a - b
+}
+
+// Multiple return values
+func bagi(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("pembagi tidak boleh nol")
+    }
+    return a / b, nil
+}
+
+// Named return values
+func hitung(a, b int) (jumlah, selisih int) {
+    jumlah = a + b
+    selisih = a - b
+    return  // naked return — mengembalikan jumlah dan selisih
+}</code></pre>
+
+<h3>Pemanggilan Fungsi</h3>
+<pre><code>sapa()                          // Halo!
+fmt.Println(tambah(3, 5))       // 8
+hasil, err := bagi(10, 3)      // Multiple return
+if err != nil {
+    fmt.Println("Error:", err)
+}</code></pre>
+
+<h3>Fungsi sebagai First-Class Citizen</h3>
+<pre><code>// Fungsi sebagai tipe data
+var operasi func(int, int) int
+operasi = tambah
+fmt.Println(operasi(3, 5))  // 8
+
+// Fungsi sebagai parameter
+func jalankan(f func(string)) {
+    f("Archon")
+}
+jalankan(func(s string) {
+    fmt.Println("Hello,", s)
+})
+
+// Fungsi mengembalikan fungsi
+func pembuatPengali(faktor int) func(int) int {
+    return func(x int) int {
+        return x * faktor
+    }
+}
+kali3 := pembuatPengali(3)
+fmt.Println(kali3(10))  // 30</code></pre>
+
+<h3>Variadic Functions</h3>
+<pre><code>// Menerima jumlah parameter tak terbatas
+func jumlahkan(angka ...int) int {
+    total := 0
+    for _, a := range angka {
+        total += a
+    }
+    return total
+}
+
+fmt.Println(jumlahkan(1, 2, 3))       // 6
+fmt.Println(jumlahkan(1, 2, 3, 4, 5)) // 15
+
+// Spread slice
+nums := []int{1, 2, 3}
+fmt.Println(jumlahkan(nums...))</code></pre>
             </section>
-
             <section class="summary">
                 <h2>Rangkuman</h2>
-                <p>Dalam modul ini, Anda telah mempelajari tentang fungsi dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.</p>
+                <p>Modul ini membahas deklarasi dan pemanggilan fungsi dalam Go. Praktikkan dengan membuat kode sendiri.</p>
             </section>
-
             <nav class="lesson-nav">
-                <a href="../index.html" class="btn btn-secondary">Kembali ke Daftar Modul</a>
+                <a href="../index.html" class="btn btn-secondary">← Kembali</a>
             </nav>
         </main>
     </div>
