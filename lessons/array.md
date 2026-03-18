@@ -1,37 +1,44 @@
+# Array
+
+**ID**: `array`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami array dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep array dalam go dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Array dalam Go** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang array dalam go dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Array adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk array dalam go yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh array
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi array dalam go
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan array dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas array dalam go dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan array dengan kode sendiri
+- Referensi: go.dev/doc

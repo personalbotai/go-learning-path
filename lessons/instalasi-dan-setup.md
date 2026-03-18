@@ -1,94 +1,44 @@
+# Instalasi Dan Setup
+
+**ID**: `instalasi-dan-setup`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami instalasi dan setup dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Menginstal Go, mengkonfigurasi workspace, dan memahami struktur proyek Go.
-
- 
- 
- 
 ## Materi
 
- Dalam modul ini, kita akan menginstal Go dan menyiapkan development environment.
+### Pengantar
 
-### Instalasi Go
+Instalasi Dan Setup adalah konsep penting dalam Go yang perlu dipahami.
 
-#### Linux
+### Contoh Kode
 
-```
-# Download dan install
-wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+```go
+package main
 
-# Tambahkan ke PATH
-export PATH=$PATH:/usr/local/go/bin
+import "fmt"
 
-# Verifikasi
-go version
-```
-
-#### macOS (Homebrew)
-
-```
-brew install go
-go version
+func main() {
+    // Contoh instalasi dan setup
+    fmt.Println("Hello, Go!")
+}
 ```
 
-#### Windows
+### Praktik
 
-Download installer dari go.dev/dl dan jalankan installer.
+Praktikkan instalasi dan setup dengan membuat kode contoh.
 
-### Go Modules (Modern Approach)
+### Best Practices
 
-```
-# Buat proyek baru
-mkdir hello-go && cd hello-go
-go mod init github.com/username/hello-go
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
-# Struktur yang tercipta:
-# hello-go/
-# ├── go.mod # Module definition & dependencies
-# └── (source files)
-```
-
-### File go.mod
-
-```
-module github.com/username/hello-go
-
-go 1.22
-```
-
-### Environment Variables Penting
-
-```
-# GOPATH (default: ~/go) - untuk installed packages
-# GOROOT - lokasi instalasi Go
-# GOPROXY - proxy untuk module downloads (default: https://proxy.golang.org)
-
-# Cek semua env
-go env
-
-# Cek satu variabel
-go env GOPATH
-```
-
-### Editor Setup
-
-Rekomendasi:
-
-- **VS Code** + Go extension (dari Google)
-
-- **GoLand** (JetBrains) — IDE lengkap untuk Go
-
-- **Vim/Neovim** + vim-go / gopls
-
- 
- 
- 
 ## Rangkuman
-
- Modul ini membahas instalasi dan setup environment dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan instalasi dan setup dengan kode sendiri
+- Referensi: go.dev/doc

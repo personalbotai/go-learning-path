@@ -1,84 +1,44 @@
+# Struct Dan Method
+
+**ID**: `struct-dan-method`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami struct dan method dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
+## Materi
 
- - Memahami konsep struct dan method
+### Pengantar
 
- - Menerapkan konsep dalam kode Go
+Struct Dan Method adalah konsep penting dalam Go yang perlu dipahami.
 
- - Memahami best practices dalam Go
-
- 
-
- 
-
- 
- 
-## Pengantar
-
- **Struct dan Method** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
-
- 
-## Topik yang Dibahas
-
- 
-
- - Definisi struct
-
- - Membuat instance struct
-
- - Field access dan pointer ke struct
-
- - Method dengan receiver
-
- - Pointer receiver vs value receiver
-
- 
-
- 
-## Penjelasan
-
- Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami struct dan method akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
-
- 
 ### Contoh Kode
 
- 
-```
-// Contoh implementasi struct dan method
+```go
 package main
 
 import "fmt"
 
 func main() {
- fmt.Println("Belajar: Struct dan Method")
+    // Contoh struct dan method
+    fmt.Println("Hello, Go!")
 }
 ```
 
- 
-## Praktik Terbaik
+### Praktik
 
- 
+Praktikkan struct dan method dengan membuat kode contoh.
 
- - Ikuti konvensi penulisan Go (gofmt)
+### Best Practices
 
- - Gunakan nama yang deskriptif dan jelas
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
- - Handle errors dengan baik
-
- - Write idiomatic Go code
-
- 
-
- 
-
- 
- 
 ## Rangkuman
-
- Dalam modul ini, Anda telah mempelajari tentang struct dan method dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
-
- 
-
- 
- Kembali ke Daftar Modul
+- Praktikkan struct dan method dengan kode sendiri
+- Referensi: go.dev/doc

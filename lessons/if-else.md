@@ -1,93 +1,44 @@
+# If Else
+
+**ID**: `if-else`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami if else dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Menggunakan statement if/else untuk kontrol alur program.
-
- 
- 
- 
 ## Materi
 
- Statement `if` di Go mirip dengan bahasa lain, tapi tanpa parentheses dan dengan opsi *init statement*.
+### Pengantar
 
-### Dasar if/else
+If Else adalah konsep penting dalam Go yang perlu dipahami.
 
-```
-// Basic if
-umur := 25
-if umur >= 18 {
- fmt.Println("Dewasa")
-}
+### Contoh Kode
 
-// if-else
-if umur >= 18 {
- fmt.Println("Dewasa")
-} else {
- fmt.Println("Anak-anak")
-}
+```go
+package main
 
-// if-else if-else
-nilai := 85
-if nilai >= 90 {
- fmt.Println("A")
-} else if nilai >= 80 {
- fmt.Println("B")
-} else if nilai >= 70 {
- fmt.Println("C")
-} else {
- fmt.Println("D")
+import "fmt"
+
+func main() {
+    // Contoh if else
+    fmt.Println("Hello, Go!")
 }
 ```
 
-### Init Statement
+### Praktik
 
-```
-// Variabel 'nilai' hanya bisa diakses dalam scope if
-if nilai := getScore(); nilai >= 80 {
- fmt.Println("Lulus dengan nilai:", nilai)
-} else {
- fmt.Println("Tidak lulus. Nilai:", nilai)
-}
-// nilai tidak bisa diakses di sini
+Praktikkan if else dengan membuat kode contoh.
 
-// Berguna untuk error handling
-if file, err := os.Open("data.txt"); err != nil {
- fmt.Println("Error:", err)
-} else {
- defer file.Close()
- // Process file...
-}
-```
+### Best Practices
 
-### Nested if
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
-```
-if loggedIn {
- if user.Role == "admin" {
- fmt.Println("Dashboard Admin")
- } else {
- fmt.Println("Dashboard User")
- }
-} else {
- fmt.Println("Silakan login")
-}
-```
-
-### Tips
-
-- Go TIDAK pakai parentheses: `if (x > 5)` ❌ → `if x > 5` ✅
-
-- Gunakan init statement untuk membatasi scope variabel
-
-- Hindari nested if terlalu dalam — gunakan early return
-
- 
- 
- 
 ## Rangkuman
-
- Modul ini membahas percabangan: if, else if, else dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan if else dengan kode sendiri
+- Referensi: go.dev/doc

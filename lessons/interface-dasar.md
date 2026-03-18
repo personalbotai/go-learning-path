@@ -1,84 +1,44 @@
+# Interface Dasar
+
+**ID**: `interface-dasar`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami interface dasar dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
+## Materi
 
- - Memahami konsep interface dasar
+### Pengantar
 
- - Menerapkan konsep dalam kode Go
+Interface Dasar adalah konsep penting dalam Go yang perlu dipahami.
 
- - Memahami best practices dalam Go
-
- 
-
- 
-
- 
- 
-## Pengantar
-
- **Interface Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
-
- 
-## Topik yang Dibahas
-
- 
-
- - Definisi interface
-
- - Implicit implementation
-
- - Empty interface interface{}
-
- - Type assertion
-
- - Interface sebagai contract
-
- 
-
- 
-## Penjelasan
-
- Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami interface dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
-
- 
 ### Contoh Kode
 
- 
-```
-// Contoh implementasi interface dasar
+```go
 package main
 
 import "fmt"
 
 func main() {
- fmt.Println("Belajar: Interface Dasar")
+    // Contoh interface dasar
+    fmt.Println("Hello, Go!")
 }
 ```
 
- 
-## Praktik Terbaik
+### Praktik
 
- 
+Praktikkan interface dasar dengan membuat kode contoh.
 
- - Ikuti konvensi penulisan Go (gofmt)
+### Best Practices
 
- - Gunakan nama yang deskriptif dan jelas
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
- - Handle errors dengan baik
-
- - Write idiomatic Go code
-
- 
-
- 
-
- 
- 
 ## Rangkuman
-
- Dalam modul ini, Anda telah mempelajari tentang interface dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
-
- 
-
- 
- Kembali ke Daftar Modul
+- Praktikkan interface dasar dengan kode sendiri
+- Referensi: go.dev/doc

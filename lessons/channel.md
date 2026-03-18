@@ -1,37 +1,44 @@
+# Channel
+
+**ID**: `channel`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami channel dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep channel: komunikasi antar goroutine dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Channel: Komunikasi antar Goroutine** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang channel: komunikasi antar goroutine dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Channel adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk channel: komunikasi antar goroutine yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh channel
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi channel: komunikasi antar goroutine
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan channel dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas channel: komunikasi antar goroutine dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan channel dengan kode sendiri
+- Referensi: go.dev/doc

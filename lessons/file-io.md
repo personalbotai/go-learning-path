@@ -1,37 +1,44 @@
+# File Io
+
+**ID**: `file-io`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami file io dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep file i/o operations dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **File I/O Operations** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang file i/o operations dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+File Io adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk file i/o operations yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh file io
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi file i/o operations
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan file io dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas file i/o operations dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan file io dengan kode sendiri
+- Referensi: go.dev/doc

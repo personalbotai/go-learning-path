@@ -1,37 +1,44 @@
+# Operator
+
+**ID**: `operator`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami operator dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep operator aritmatika, logika, dan perbandingan dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Operator Aritmatika, Logika, dan Perbandingan** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang operator aritmatika, logika, dan perbandingan dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Operator adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk operator aritmatika, logika, dan perbandingan yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh operator
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi operator aritmatika, logika, dan perbandingan
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan operator dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas operator aritmatika, logika, dan perbandingan dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan operator dengan kode sendiri
+- Referensi: go.dev/doc

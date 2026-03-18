@@ -1,37 +1,44 @@
+# Slice
+
+**ID**: `slice`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami slice dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep slice: array dinamis dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Slice: Array Dinamis** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang slice: array dinamis dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Slice adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk slice: array dinamis yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh slice
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi slice: array dinamis
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan slice dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas slice: array dinamis dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan slice dengan kode sendiri
+- Referensi: go.dev/doc

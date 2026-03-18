@@ -1,84 +1,44 @@
+# Variabel Dan Tipe Data
+
+**ID**: `variabel-dan-tipe-data`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami variabel dan tipe data dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
+## Materi
 
- - Memahami konsep variabel dan tipe data
+### Pengantar
 
- - Menerapkan konsep dalam kode Go
+Variabel Dan Tipe Data adalah konsep penting dalam Go yang perlu dipahami.
 
- - Memahami best practices dalam Go
-
- 
-
- 
-
- 
- 
-## Pengantar
-
- **Variabel dan Tipe Data** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
-
- 
-## Topik yang Dibahas
-
- 
-
- - Deklarasi variabel dengan var dan short declaration :=
-
- - Tipe dasar: int, float64, string, bool
-
- - Zero values dalam Go
-
- - Konstanta dengan const
-
- - Type conversion
-
- 
-
- 
-## Penjelasan
-
- Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami variabel dan tipe data akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
-
- 
 ### Contoh Kode
 
- 
-```
-// Contoh implementasi variabel dan tipe data
+```go
 package main
 
 import "fmt"
 
 func main() {
- fmt.Println("Belajar: Variabel dan Tipe Data")
+    // Contoh variabel dan tipe data
+    fmt.Println("Hello, Go!")
 }
 ```
 
- 
-## Praktik Terbaik
+### Praktik
 
- 
+Praktikkan variabel dan tipe data dengan membuat kode contoh.
 
- - Ikuti konvensi penulisan Go (gofmt)
+### Best Practices
 
- - Gunakan nama yang deskriptif dan jelas
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
- - Handle errors dengan baik
-
- - Write idiomatic Go code
-
- 
-
- 
-
- 
- 
 ## Rangkuman
-
- Dalam modul ini, Anda telah mempelajari tentang variabel dan tipe data dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
-
- 
-
- 
- Kembali ke Daftar Modul
+- Praktikkan variabel dan tipe data dengan kode sendiri
+- Referensi: go.dev/doc

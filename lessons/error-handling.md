@@ -1,37 +1,44 @@
+# Error Handling
+
+**ID**: `error-handling`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami error handling dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep error handling pattern dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Error Handling Pattern** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang error handling pattern dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Error Handling adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk error handling pattern yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh error handling
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi error handling pattern
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan error handling dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas error handling pattern dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan error handling dengan kode sendiri
+- Referensi: go.dev/doc

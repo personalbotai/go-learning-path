@@ -1,37 +1,44 @@
+# Pointer
+
+**ID**: `pointer`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami pointer dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep pointer dan referensi dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Pointer dan Referensi** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang pointer dan referensi dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Pointer adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk pointer dan referensi yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh pointer
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi pointer dan referensi
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan pointer dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas pointer dan referensi dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan pointer dengan kode sendiri
+- Referensi: go.dev/doc

@@ -1,37 +1,44 @@
+# Embedding
+
+**ID**: `embedding`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami embedding dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep struct embedding dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Struct Embedding** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang struct embedding dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Embedding adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk struct embedding yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh embedding
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi struct embedding
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan embedding dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas struct embedding dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan embedding dengan kode sendiri
+- Referensi: go.dev/doc

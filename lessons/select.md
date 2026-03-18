@@ -1,37 +1,44 @@
+# Select
+
+**ID**: `select`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami select dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep select statement dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Select Statement** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang select statement dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Select adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk select statement yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh select
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi select statement
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan select dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas select statement dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan select dengan kode sendiri
+- Referensi: go.dev/doc

@@ -1,84 +1,44 @@
+# Generics Dasar
+
+**ID**: `generics-dasar`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami generics dasar dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
+## Materi
 
- - Memahami konsep generics dasar (go 1.18+)
+### Pengantar
 
- - Menerapkan konsep dalam kode Go
+Generics Dasar adalah konsep penting dalam Go yang perlu dipahami.
 
- - Memahami best practices dalam Go
-
- 
-
- 
-
- 
- 
-## Pengantar
-
- **Generics Dasar (Go 1.18+)** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
-
- 
-## Topik yang Dibahas
-
- 
-
- - Type parameters dengan [T any]
-
- - Type constraints
-
- - Predeclared constraints
-
- - Generic functions
-
- - Generic types
-
- 
-
- 
-## Penjelasan
-
- Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami generics dasar (go 1.18+) akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
-
- 
 ### Contoh Kode
 
- 
-```
-// Contoh implementasi generics dasar (go 1.18+)
+```go
 package main
 
 import "fmt"
 
 func main() {
- fmt.Println("Belajar: Generics Dasar (Go 1.18+)")
+    // Contoh generics dasar
+    fmt.Println("Hello, Go!")
 }
 ```
 
- 
-## Praktik Terbaik
+### Praktik
 
- 
+Praktikkan generics dasar dengan membuat kode contoh.
 
- - Ikuti konvensi penulisan Go (gofmt)
+### Best Practices
 
- - Gunakan nama yang deskriptif dan jelas
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
- - Handle errors dengan baik
-
- - Write idiomatic Go code
-
- 
-
- 
-
- 
- 
 ## Rangkuman
-
- Dalam modul ini, Anda telah mempelajari tentang generics dasar (go 1.18+) dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
-
- 
-
- 
- Kembali ke Daftar Modul
+- Praktikkan generics dasar dengan kode sendiri
+- Referensi: go.dev/doc

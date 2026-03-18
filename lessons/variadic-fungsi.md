@@ -1,37 +1,44 @@
+# Variadic Fungsi
+
+**ID**: `variadic-fungsi`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami variadic fungsi dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep variadic functions dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Variadic Functions** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang variadic functions dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Variadic Fungsi adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk variadic functions yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh variadic fungsi
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi variadic functions
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan variadic fungsi dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas variadic functions dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan variadic fungsi dengan kode sendiri
+- Referensi: go.dev/doc

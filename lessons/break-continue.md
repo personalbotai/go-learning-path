@@ -1,37 +1,44 @@
+# Break Continue
+
+**ID**: `break-continue`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami break continue dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep break dan continue dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Break dan Continue** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang break dan continue dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Break Continue adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk break dan continue yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh break continue
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi break dan continue
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan break continue dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas break dan continue dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan break continue dengan kode sendiri
+- Referensi: go.dev/doc

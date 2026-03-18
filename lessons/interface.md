@@ -1,37 +1,44 @@
+# Interface
+
+**ID**: `interface`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami interface dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep interface dan polymorphism dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Interface dan Polymorphism** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang interface dan polymorphism dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Interface adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk interface dan polymorphism yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh interface
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi interface dan polymorphism
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan interface dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas interface dan polymorphism dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan interface dengan kode sendiri
+- Referensi: go.dev/doc

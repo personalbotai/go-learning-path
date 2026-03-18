@@ -1,113 +1,44 @@
+# Fungsi Dasar
+
+**ID**: `fungsi-dasar`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami fungsi dasar dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami deklarasi fungsi, parameter, return values, dan named returns.
-
- 
- 
- 
 ## Materi
 
- Fungsi adalah blok kode yang bisa dipanggil berulang kali. Go mendukung multiple return values dan named returns.
+### Pengantar
 
-### Deklarasi Fungsi Dasar
+Fungsi Dasar adalah konsep penting dalam Go yang perlu dipahami.
 
-```
-// Tanpa parameter, tanpa return
-func sapa() {
- fmt.Println("Halo!")
-}
+### Contoh Kode
 
-// Dengan parameter
-func tambah(a int, b int) int {
- return a + b
-}
+```go
+package main
 
-// Shorthand untuk parameter bertipe sama
-func kurangi(a, b int) int {
- return a - b
-}
+import "fmt"
 
-// Multiple return values
-func bagi(a, b float64) (float64, error) {
- if b == 0 {
- return 0, fmt.Errorf("pembagi tidak boleh nol")
- }
- return a / b, nil
-}
-
-// Named return values
-func hitung(a, b int) (jumlah, selisih int) {
- jumlah = a + b
- selisih = a - b
- return // naked return — mengembalikan jumlah dan selisih
+func main() {
+    // Contoh fungsi dasar
+    fmt.Println("Hello, Go!")
 }
 ```
 
-### Pemanggilan Fungsi
+### Praktik
 
-```
-sapa() // Halo!
-fmt.Println(tambah(3, 5)) // 8
-hasil, err := bagi(10, 3) // Multiple return
-if err != nil {
- fmt.Println("Error:", err)
-}
-```
+Praktikkan fungsi dasar dengan membuat kode contoh.
 
-### Fungsi sebagai First-Class Citizen
+### Best Practices
 
-```
-// Fungsi sebagai tipe data
-var operasi func(int, int) int
-operasi = tambah
-fmt.Println(operasi(3, 5)) // 8
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
-// Fungsi sebagai parameter
-func jalankan(f func(string)) {
- f("Archon")
-}
-jalankan(func(s string) {
- fmt.Println("Hello,", s)
-})
-
-// Fungsi mengembalikan fungsi
-func pembuatPengali(faktor int) func(int) int {
- return func(x int) int {
- return x * faktor
- }
-}
-kali3 := pembuatPengali(3)
-fmt.Println(kali3(10)) // 30
-```
-
-### Variadic Functions
-
-```
-// Menerima jumlah parameter tak terbatas
-func jumlahkan(angka ...int) int {
- total := 0
- for _, a := range angka {
- total += a
- }
- return total
-}
-
-fmt.Println(jumlahkan(1, 2, 3)) // 6
-fmt.Println(jumlahkan(1, 2, 3, 4, 5)) // 15
-
-// Spread slice
-nums := []int{1, 2, 3}
-fmt.Println(jumlahkan(nums...))
-```
-
- 
- 
- 
 ## Rangkuman
-
- Modul ini membahas deklarasi dan pemanggilan fungsi dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan fungsi dasar dengan kode sendiri
+- Referensi: go.dev/doc

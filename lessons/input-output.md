@@ -1,37 +1,44 @@
+# Input Output
+
+**ID**: `input-output`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami input output dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep input dan output dasar dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Input dan Output Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang input dan output dasar dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Input Output adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk input dan output dasar yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh input output
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi input dan output dasar
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan input output dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas input dan output dasar dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan input output dengan kode sendiri
+- Referensi: go.dev/doc

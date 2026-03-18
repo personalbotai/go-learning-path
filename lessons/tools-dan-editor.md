@@ -1,37 +1,44 @@
+# Tools Dan Editor
+
+**ID**: `tools-dan-editor`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami tools dan editor dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep go tools dan editor setup dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Go Tools dan Editor Setup** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang go tools dan editor setup dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Tools Dan Editor adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk go tools dan editor setup yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh tools dan editor
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi go tools dan editor setup
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan tools dan editor dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas go tools dan editor setup dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan tools dan editor dengan kode sendiri
+- Referensi: go.dev/doc

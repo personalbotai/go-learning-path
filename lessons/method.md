@@ -1,37 +1,44 @@
+# Method
+
+**ID**: `method`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami method dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep methods pada struct dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Methods pada Struct** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang methods pada struct dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Method adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk methods pada struct yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh method
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi methods pada struct
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan method dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas methods pada struct dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan method dengan kode sendiri
+- Referensi: go.dev/doc

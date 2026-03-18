@@ -1,109 +1,44 @@
+# Hello World
+
+**ID**: `hello-world`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami hello world dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Menulis program Go pertama, memahami struktur dasar program Go, dan mengompilasi serta menjalankan program.
-
- 
- 
- 
 ## Materi
 
- Mari kita tulis program Go pertama dan pahami struktur dasarnya.
+### Pengantar
 
-### Membuat Proyek
+Hello World adalah konsep penting dalam Go yang perlu dipahami.
 
-```
-mkdir hello-go && cd hello-go
-go mod init hello-go
-```
+### Contoh Kode
 
-### File main.go
-
-```
+```go
 package main
 
 import "fmt"
 
 func main() {
- fmt.Println("Hello, World!")
+    // Contoh hello world
+    fmt.Println("Hello, Go!")
 }
 ```
 
-### Menjalankan Program
+### Praktik
 
-```
-# Cara 1: go run (langsung execute)
-go run main.go
-# Output: Hello, World!
+Praktikkan hello world dengan membuat kode contoh.
 
-# Cara 2: go build (compile ke binary)
-go build -o hello
-./hello
-# Output: Hello, World!
-```
+### Best Practices
 
-### Memahami Struktur Program
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
 
-```
-// 1. Package declaration - WAJIB di baris pertama
-// Setiap file Go harus deklarasi package
-package main
-
-// 2. Import statement - import packages yang dibutuhkan
-import (
- "fmt" // Format I/O (print, scan, etc.)
- "os" // OS interaction
-)
-
-// 3. Function main() - entry point program
-// Hanya package main yang punya fungsi main()
-func main() {
- fmt.Println("Hello, World!")
-}
-```
-
-### Multiple Files
-
-```
-// main.go
-package main
-import "fmt"
-
-func main() {
- greet()
- fmt.Println(add(3, 5))
-}
-
-// helpers.go (dalam package yang sama)
-package main
-import "fmt"
-
-func greet() {
- fmt.Println("Selamat datang!")
-}
-
-func add(a, b int) int {
- return a + b
-}
-```
-
-### Key Points
-
-- `package main` menandakan executable program (bukan library)
-
-- `func main()` adalah entry point
-
-- Go menggunakan **explicit imports** — harus import setiap package yang digunakan
-
-- Go tidak mengizinkan unused imports — akan error saat kompilasi
-
- 
- 
- 
 ## Rangkuman
-
- Modul ini membahas hello world: program pertama dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan hello world dengan kode sendiri
+- Referensi: go.dev/doc

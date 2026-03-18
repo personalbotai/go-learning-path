@@ -1,37 +1,44 @@
+# Switch
+
+**ID**: `switch`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami switch dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep switch statement dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Switch Statement** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang switch statement dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Switch adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk switch statement yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh switch
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi switch statement
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan switch dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas switch statement dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan switch dengan kode sendiri
+- Referensi: go.dev/doc

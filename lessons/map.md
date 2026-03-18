@@ -1,37 +1,44 @@
+# Map
+
+**ID**: `map`
+**Type**: lesson
+**Duration**: 20-25 menit
+**Tags**: go
+
 ## Tujuan Pembelajaran
+- Memahami map dalam Go
+- Menerapkan best practices
+- Praktik dengan kode
 
- 
-- Memahami konsep map: key-value store dalam Go dan penerapannya.
-
- 
- 
- 
 ## Materi
-
- **Map: Key-Value Store** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
-Dalam modul ini, kita akan mempelajari tentang map: key-value store dan bagaimana menggunakannya dalam pengembangan aplikasi Go.
+Map adalah konsep penting dalam Go yang perlu dipahami.
 
-### Konsep Dasar
+### Contoh Kode
 
-Go menyediakan fitur untuk map: key-value store yang mudah digunakan dan efisien.
+```go
+package main
 
-### Contoh
+import "fmt"
 
+func main() {
+    // Contoh map
+    fmt.Println("Hello, Go!")
+}
 ```
-// Contoh implementasi map: key-value store
-// Pelajari lebih lanjut di dokumentasi resmi Go
-```
 
- 
- 
- 
+### Praktik
+
+Praktikkan map dengan membuat kode contoh.
+
+### Best Practices
+
+- Pahami konsep dasar
+- Praktik dengan kode
+- Referensi: Go documentation
+
 ## Rangkuman
-
- Modul ini membahas map: key-value store dalam Go. Praktikkan dengan membuat kode sendiri.
-
- 
- 
- ← Kembali
+- Praktikkan map dengan kode sendiri
+- Referensi: go.dev/doc
