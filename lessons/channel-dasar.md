@@ -1,35 +1,27 @@
 # Channel Dasar
 
 **ID**: `channel-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami channel dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Channel Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Channel Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Channel Dasar
-    fmt.Println("Belajar Channel Dasar")
+    // Channel Dasar
+    fmt.Println("Belajar Go: Channel Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan channel dasar.
+Buat program Go yang menggunakan channel dasar.
 
 ## Rangkuman
-- Praktikkan channel dasar dengan kode
+- Praktikkan channel dasar
 - Referensi: go.dev/doc

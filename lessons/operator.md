@@ -1,35 +1,27 @@
 # Operator
 
 **ID**: `operator`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami operator dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Operator adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Operator dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Operator
-    fmt.Println("Belajar Operator")
+    // Operator
+    fmt.Println("Belajar Go: Operator")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan operator.
+Buat program Go yang menggunakan operator.
 
 ## Rangkuman
-- Praktikkan operator dengan kode
+- Praktikkan operator
 - Referensi: go.dev/doc

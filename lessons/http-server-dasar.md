@@ -1,35 +1,27 @@
 # Http Server Dasar
 
 **ID**: `http-server-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami http server dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Http Server Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Http Server Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Http Server Dasar
-    fmt.Println("Belajar Http Server Dasar")
+    // Http Server Dasar
+    fmt.Println("Belajar Go: Http Server Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan http server dasar.
+Buat program Go yang menggunakan http server dasar.
 
 ## Rangkuman
-- Praktikkan http server dasar dengan kode
+- Praktikkan http server dasar
 - Referensi: go.dev/doc

@@ -1,35 +1,27 @@
 # Package Dan Import
 
 **ID**: `package-dan-import`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami package dan import dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Package Dan Import adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Package Dan Import dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Package Dan Import
-    fmt.Println("Belajar Package Dan Import")
+    // Package Dan Import
+    fmt.Println("Belajar Go: Package Dan Import")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan package dan import.
+Buat program Go yang menggunakan package dan import.
 
 ## Rangkuman
-- Praktikkan package dan import dengan kode
+- Praktikkan package dan import
 - Referensi: go.dev/doc

@@ -1,35 +1,27 @@
 # Closure Dan Anonymous
 
 **ID**: `closure-dan-anonymous`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami closure dan anonymous dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Closure Dan Anonymous adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Closure Dan Anonymous dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Closure Dan Anonymous
-    fmt.Println("Belajar Closure Dan Anonymous")
+    // Closure Dan Anonymous
+    fmt.Println("Belajar Go: Closure Dan Anonymous")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan closure dan anonymous.
+Buat program Go yang menggunakan closure dan anonymous.
 
 ## Rangkuman
-- Praktikkan closure dan anonymous dengan kode
+- Praktikkan closure dan anonymous
 - Referensi: go.dev/doc

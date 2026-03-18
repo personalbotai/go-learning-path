@@ -1,35 +1,27 @@
 # Channel
 
 **ID**: `channel`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami channel dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Channel adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Channel dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Channel
-    fmt.Println("Belajar Channel")
+    // Channel
+    fmt.Println("Belajar Go: Channel")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan channel.
+Buat program Go yang menggunakan channel.
 
 ## Rangkuman
-- Praktikkan channel dengan kode
+- Praktikkan channel
 - Referensi: go.dev/doc

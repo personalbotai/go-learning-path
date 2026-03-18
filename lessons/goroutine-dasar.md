@@ -1,35 +1,27 @@
 # Goroutine Dasar
 
 **ID**: `goroutine-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami goroutine dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Goroutine Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Goroutine Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Goroutine Dasar
-    fmt.Println("Belajar Goroutine Dasar")
+    // Goroutine Dasar
+    fmt.Println("Belajar Go: Goroutine Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan goroutine dasar.
+Buat program Go yang menggunakan goroutine dasar.
 
 ## Rangkuman
-- Praktikkan goroutine dasar dengan kode
+- Praktikkan goroutine dasar
 - Referensi: go.dev/doc

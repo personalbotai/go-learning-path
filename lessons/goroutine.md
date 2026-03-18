@@ -1,35 +1,27 @@
 # Goroutine
 
 **ID**: `goroutine`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami goroutine dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Goroutine adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Goroutine dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Goroutine
-    fmt.Println("Belajar Goroutine")
+    // Goroutine
+    fmt.Println("Belajar Go: Goroutine")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan goroutine.
+Buat program Go yang menggunakan goroutine.
 
 ## Rangkuman
-- Praktikkan goroutine dengan kode
+- Praktikkan goroutine
 - Referensi: go.dev/doc

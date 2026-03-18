@@ -1,35 +1,27 @@
 # Struct
 
 **ID**: `struct`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami struct dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Struct adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Struct dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Struct
-    fmt.Println("Belajar Struct")
+    // Struct
+    fmt.Println("Belajar Go: Struct")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan struct.
+Buat program Go yang menggunakan struct.
 
 ## Rangkuman
-- Praktikkan struct dengan kode
+- Praktikkan struct
 - Referensi: go.dev/doc

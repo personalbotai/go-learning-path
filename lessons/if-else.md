@@ -1,35 +1,27 @@
 # If Else
 
 **ID**: `if-else`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami if else dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-If Else adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+If Else dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: If Else
-    fmt.Println("Belajar If Else")
+    // If Else
+    fmt.Println("Belajar Go: If Else")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan if else.
+Buat program Go yang menggunakan if else.
 
 ## Rangkuman
-- Praktikkan if else dengan kode
+- Praktikkan if else
 - Referensi: go.dev/doc

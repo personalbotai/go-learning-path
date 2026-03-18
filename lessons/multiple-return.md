@@ -1,35 +1,27 @@
 # Multiple Return
 
 **ID**: `multiple-return`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami multiple return dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Multiple Return adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Multiple Return dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Multiple Return
-    fmt.Println("Belajar Multiple Return")
+    // Multiple Return
+    fmt.Println("Belajar Go: Multiple Return")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan multiple return.
+Buat program Go yang menggunakan multiple return.
 
 ## Rangkuman
-- Praktikkan multiple return dengan kode
+- Praktikkan multiple return
 - Referensi: go.dev/doc

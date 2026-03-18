@@ -1,35 +1,27 @@
 # Defer Panic Recover
 
 **ID**: `defer-panic-recover`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami defer panic recover dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Defer Panic Recover adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Defer Panic Recover dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Defer Panic Recover
-    fmt.Println("Belajar Defer Panic Recover")
+    // Defer Panic Recover
+    fmt.Println("Belajar Go: Defer Panic Recover")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan defer panic recover.
+Buat program Go yang menggunakan defer panic recover.
 
 ## Rangkuman
-- Praktikkan defer panic recover dengan kode
+- Praktikkan defer panic recover
 - Referensi: go.dev/doc

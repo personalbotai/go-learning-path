@@ -1,35 +1,27 @@
 # Pointer
 
 **ID**: `pointer`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami pointer dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Pointer adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Pointer dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Pointer
-    fmt.Println("Belajar Pointer")
+    // Pointer
+    fmt.Println("Belajar Go: Pointer")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan pointer.
+Buat program Go yang menggunakan pointer.
 
 ## Rangkuman
-- Praktikkan pointer dengan kode
+- Praktikkan pointer
 - Referensi: go.dev/doc

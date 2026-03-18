@@ -1,35 +1,27 @@
 # Reflection Dasar
 
 **ID**: `reflection-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami reflection dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Reflection Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Reflection Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Reflection Dasar
-    fmt.Println("Belajar Reflection Dasar")
+    // Reflection Dasar
+    fmt.Println("Belajar Go: Reflection Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan reflection dasar.
+Buat program Go yang menggunakan reflection dasar.
 
 ## Rangkuman
-- Praktikkan reflection dasar dengan kode
+- Praktikkan reflection dasar
 - Referensi: go.dev/doc

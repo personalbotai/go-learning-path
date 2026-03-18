@@ -1,35 +1,27 @@
 # Struct Dan Method
 
 **ID**: `struct-dan-method`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami struct dan method dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Struct Dan Method adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Struct Dan Method dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Struct Dan Method
-    fmt.Println("Belajar Struct Dan Method")
+    // Struct Dan Method
+    fmt.Println("Belajar Go: Struct Dan Method")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan struct dan method.
+Buat program Go yang menggunakan struct dan method.
 
 ## Rangkuman
-- Praktikkan struct dan method dengan kode
+- Praktikkan struct dan method
 - Referensi: go.dev/doc

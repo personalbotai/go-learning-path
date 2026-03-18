@@ -1,35 +1,27 @@
 # Method
 
 **ID**: `method`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami method dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Method adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Method dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Method
-    fmt.Println("Belajar Method")
+    // Method
+    fmt.Println("Belajar Go: Method")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan method.
+Buat program Go yang menggunakan method.
 
 ## Rangkuman
-- Praktikkan method dengan kode
+- Praktikkan method
 - Referensi: go.dev/doc

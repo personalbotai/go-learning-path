@@ -1,35 +1,27 @@
 # Pointer Dasar
 
 **ID**: `pointer-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami pointer dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Pointer Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Pointer Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Pointer Dasar
-    fmt.Println("Belajar Pointer Dasar")
+    // Pointer Dasar
+    fmt.Println("Belajar Go: Pointer Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan pointer dasar.
+Buat program Go yang menggunakan pointer dasar.
 
 ## Rangkuman
-- Praktikkan pointer dasar dengan kode
+- Praktikkan pointer dasar
 - Referensi: go.dev/doc

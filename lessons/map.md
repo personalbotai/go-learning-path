@@ -1,35 +1,27 @@
 # Map
 
 **ID**: `map`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami map dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Map adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Map dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Map
-    fmt.Println("Belajar Map")
+    // Map
+    fmt.Println("Belajar Go: Map")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan map.
+Buat program Go yang menggunakan map.
 
 ## Rangkuman
-- Praktikkan map dengan kode
+- Praktikkan map
 - Referensi: go.dev/doc

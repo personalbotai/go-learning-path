@@ -1,35 +1,27 @@
 # Module Dan Dependency
 
 **ID**: `module-dan-dependency`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami module dan dependency dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Module Dan Dependency adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Module Dan Dependency dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Module Dan Dependency
-    fmt.Println("Belajar Module Dan Dependency")
+    // Module Dan Dependency
+    fmt.Println("Belajar Go: Module Dan Dependency")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan module dan dependency.
+Buat program Go yang menggunakan module dan dependency.
 
 ## Rangkuman
-- Praktikkan module dan dependency dengan kode
+- Praktikkan module dan dependency
 - Referensi: go.dev/doc

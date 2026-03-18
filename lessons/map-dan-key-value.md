@@ -1,35 +1,27 @@
 # Map Dan Key Value
 
 **ID**: `map-dan-key-value`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami map dan key value dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Map Dan Key Value adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Map Dan Key Value dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Map Dan Key Value
-    fmt.Println("Belajar Map Dan Key Value")
+    // Map Dan Key Value
+    fmt.Println("Belajar Go: Map Dan Key Value")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan map dan key value.
+Buat program Go yang menggunakan map dan key value.
 
 ## Rangkuman
-- Praktikkan map dan key value dengan kode
+- Praktikkan map dan key value
 - Referensi: go.dev/doc

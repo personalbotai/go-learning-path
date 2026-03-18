@@ -1,35 +1,27 @@
 # Variabel Dan Konstanta
 
 **ID**: `variabel-dan-konstanta`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami variabel dan konstanta dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Variabel Dan Konstanta adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Variabel Dan Konstanta dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Variabel Dan Konstanta
-    fmt.Println("Belajar Variabel Dan Konstanta")
+    // Variabel Dan Konstanta
+    fmt.Println("Belajar Go: Variabel Dan Konstanta")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan variabel dan konstanta.
+Buat program Go yang menggunakan variabel dan konstanta.
 
 ## Rangkuman
-- Praktikkan variabel dan konstanta dengan kode
+- Praktikkan variabel dan konstanta
 - Referensi: go.dev/doc

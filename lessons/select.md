@@ -1,35 +1,27 @@
 # Select
 
 **ID**: `select`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami select dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Select adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Select dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Select
-    fmt.Println("Belajar Select")
+    // Select
+    fmt.Println("Belajar Go: Select")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan select.
+Buat program Go yang menggunakan select.
 
 ## Rangkuman
-- Praktikkan select dengan kode
+- Praktikkan select
 - Referensi: go.dev/doc

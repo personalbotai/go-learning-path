@@ -1,35 +1,27 @@
 # Interface Dasar
 
 **ID**: `interface-dasar`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami interface dasar dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Interface Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Interface Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Interface Dasar
-    fmt.Println("Belajar Interface Dasar")
+    // Interface Dasar
+    fmt.Println("Belajar Go: Interface Dasar")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan interface dasar.
+Buat program Go yang menggunakan interface dasar.
 
 ## Rangkuman
-- Praktikkan interface dasar dengan kode
+- Praktikkan interface dasar
 - Referensi: go.dev/doc

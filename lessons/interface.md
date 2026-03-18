@@ -1,35 +1,27 @@
 # Interface
 
 **ID**: `interface`
-**Type**: lesson
 **Duration**: 20-25 menit
-**Tags**: go
-
-## Tujuan Pembelajaran
-- Memahami interface dalam Go
-- Menerapkan best practices
-- Praktik dengan contoh kode
 
 ## Materi
 
-### Pengantar
-Interface adalah konsep penting dalam Go yang perlu dipahami setiap developer.
+### Penjelasan
+Interface dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-
 import "fmt"
 
 func main() {
-    // Contoh: Interface
-    fmt.Println("Belajar Interface")
+    // Interface
+    fmt.Println("Belajar Go: Interface")
 }
 ```
 
 ### Praktik
-Buat program sederhana yang menggunakan interface.
+Buat program Go yang menggunakan interface.
 
 ## Rangkuman
-- Praktikkan interface dengan kode
+- Praktikkan interface
 - Referensi: go.dev/doc
