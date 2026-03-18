@@ -6,16 +6,20 @@
 ## Materi
 
 ### Penjelasan
-File Io dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+File Io adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "os")
 
 func main() {
-    // File Io
-    fmt.Println("Belajar Go: File Io")
+    err := os.WriteFile("test.txt", []byte("Hello Go!"), 0644)
+    if err != nil { fmt.Println(err); return }
+    
+    data, err := os.ReadFile("test.txt")
+    if err != nil { fmt.Println(err); return }
+    fmt.Println(string(data))
 }
 ```
 
@@ -23,5 +27,5 @@ func main() {
 Buat program Go yang menggunakan file io.
 
 ## Rangkuman
-- Praktikkan file io
+- Praktikkan file io dengan kode
 - Referensi: go.dev/doc

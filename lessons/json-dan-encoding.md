@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Json Dan Encoding dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Json Dan Encoding adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Json Dan Encoding
-    fmt.Println("Belajar Go: Json Dan Encoding")
+    fmt.Println("Belajar: Json Dan Encoding")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan json dan encoding.
 
 ## Rangkuman
-- Praktikkan json dan encoding
+- Praktikkan json dan encoding dengan kode
 - Referensi: go.dev/doc

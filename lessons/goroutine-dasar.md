@@ -6,16 +6,26 @@
 ## Materi
 
 ### Penjelasan
-Goroutine Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Goroutine Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "sync")
+
+func worker(id int, wg *sync.WaitGroup) {
+    defer wg.Done()
+    fmt.Printf("Worker %d selesai\n", id)
+}
 
 func main() {
-    // Goroutine Dasar
-    fmt.Println("Belajar Go: Goroutine Dasar")
+    var wg sync.WaitGroup
+    for i := 1; i <= 3; i++ {
+        wg.Add(1)
+        go worker(i, &wg)
+    }
+    wg.Wait()
+    fmt.Println("Semua selesai!")
 }
 ```
 
@@ -23,5 +33,5 @@ func main() {
 Buat program Go yang menggunakan goroutine dasar.
 
 ## Rangkuman
-- Praktikkan goroutine dasar
+- Praktikkan goroutine dasar dengan kode
 - Referensi: go.dev/doc

@@ -6,16 +6,27 @@
 ## Materi
 
 ### Penjelasan
-Error Handling dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Error Handling adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "errors")
+
+func bagi(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, errors.New("div by zero")
+    }
+    return a / b, nil
+}
 
 func main() {
-    // Error Handling
-    fmt.Println("Belajar Go: Error Handling")
+    hasil, err := bagi(10, 0)
+    if err != nil {
+        fmt.Println("Error:", err)
+    } else {
+        fmt.Println(hasil)
+    }
 }
 ```
 
@@ -23,5 +34,5 @@ func main() {
 Buat program Go yang menggunakan error handling.
 
 ## Rangkuman
-- Praktikkan error handling
+- Praktikkan error handling dengan kode
 - Referensi: go.dev/doc

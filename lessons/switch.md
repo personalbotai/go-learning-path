@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Switch dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Switch adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Switch
-    fmt.Println("Belajar Go: Switch")
+    fmt.Println("Belajar: Switch")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan switch.
 
 ## Rangkuman
-- Praktikkan switch
+- Praktikkan switch dengan kode
 - Referensi: go.dev/doc

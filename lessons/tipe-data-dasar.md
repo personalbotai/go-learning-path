@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Tipe Data Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Tipe Data Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Tipe Data Dasar
-    fmt.Println("Belajar Go: Tipe Data Dasar")
+    fmt.Println("Belajar: Tipe Data Dasar")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan tipe data dasar.
 
 ## Rangkuman
-- Praktikkan tipe data dasar
+- Praktikkan tipe data dasar dengan kode
 - Referensi: go.dev/doc

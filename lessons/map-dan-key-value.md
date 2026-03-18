@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Map Dan Key Value dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Map Dan Key Value adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,13 @@ package main
 import "fmt"
 
 func main() {
-    // Map Dan Key Value
-    fmt.Println("Belajar Go: Map Dan Key Value")
+    m := map[string]int{
+        "alice": 25,
+        "bob": 30,
+    }
+    m["charlie"] = 35
+    fmt.Println(m["alice"])
+    fmt.Println(len(m))
 }
 ```
 
@@ -23,5 +28,5 @@ func main() {
 Buat program Go yang menggunakan map dan key value.
 
 ## Rangkuman
-- Praktikkan map dan key value
+- Praktikkan map dan key value dengan kode
 - Referensi: go.dev/doc

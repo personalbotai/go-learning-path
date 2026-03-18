@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-If Else dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+If Else adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // If Else
-    fmt.Println("Belajar Go: If Else")
+    fmt.Println("Belajar: If Else")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan if else.
 
 ## Rangkuman
-- Praktikkan if else
+- Praktikkan if else dengan kode
 - Referensi: go.dev/doc

@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Apa Itu Go dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Apa Itu Go adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Apa Itu Go
-    fmt.Println("Belajar Go: Apa Itu Go")
+    fmt.Println("Belajar: Apa Itu Go")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan apa itu go.
 
 ## Rangkuman
-- Praktikkan apa itu go
+- Praktikkan apa itu go dengan kode
 - Referensi: go.dev/doc

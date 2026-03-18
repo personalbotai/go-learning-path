@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Channel Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Channel Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,10 @@ package main
 import "fmt"
 
 func main() {
-    // Channel Dasar
-    fmt.Println("Belajar Go: Channel Dasar")
+    ch := make(chan string)
+    go func() { ch <- "data dari goroutine" }()
+    msg := <-ch
+    fmt.Println(msg)
 }
 ```
 
@@ -23,5 +25,5 @@ func main() {
 Buat program Go yang menggunakan channel dasar.
 
 ## Rangkuman
-- Praktikkan channel dasar
+- Praktikkan channel dasar dengan kode
 - Referensi: go.dev/doc

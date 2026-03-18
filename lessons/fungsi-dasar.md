@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Fungsi Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Fungsi Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Fungsi Dasar
-    fmt.Println("Belajar Go: Fungsi Dasar")
+    fmt.Println("Belajar: Fungsi Dasar")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan fungsi dasar.
 
 ## Rangkuman
-- Praktikkan fungsi dasar
+- Praktikkan fungsi dasar dengan kode
 - Referensi: go.dev/doc

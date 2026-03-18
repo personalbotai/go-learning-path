@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Context Dan Timeout dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Context Dan Timeout adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Context Dan Timeout
-    fmt.Println("Belajar Go: Context Dan Timeout")
+    fmt.Println("Belajar: Context Dan Timeout")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan context dan timeout.
 
 ## Rangkuman
-- Praktikkan context dan timeout
+- Praktikkan context dan timeout dengan kode
 - Referensi: go.dev/doc

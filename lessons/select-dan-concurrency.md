@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Select Dan Concurrency dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Select Dan Concurrency adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Select Dan Concurrency
-    fmt.Println("Belajar Go: Select Dan Concurrency")
+    fmt.Println("Belajar: Select Dan Concurrency")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan select dan concurrency.
 
 ## Rangkuman
-- Praktikkan select dan concurrency
+- Praktikkan select dan concurrency dengan kode
 - Referensi: go.dev/doc

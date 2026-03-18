@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Variabel Dan Konstanta dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Variabel Dan Konstanta adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Variabel Dan Konstanta
-    fmt.Println("Belajar Go: Variabel Dan Konstanta")
+    fmt.Println("Belajar: Variabel Dan Konstanta")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan variabel dan konstanta.
 
 ## Rangkuman
-- Praktikkan variabel dan konstanta
+- Praktikkan variabel dan konstanta dengan kode
 - Referensi: go.dev/doc

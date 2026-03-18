@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Select dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Select adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Select
-    fmt.Println("Belajar Go: Select")
+    fmt.Println("Belajar: Select")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan select.
 
 ## Rangkuman
-- Praktikkan select
+- Praktikkan select dengan kode
 - Referensi: go.dev/doc

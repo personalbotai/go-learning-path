@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Control Flow If Else dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Control Flow If Else adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Control Flow If Else
-    fmt.Println("Belajar Go: Control Flow If Else")
+    fmt.Println("Belajar: Control Flow If Else")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan control flow if else.
 
 ## Rangkuman
-- Praktikkan control flow if else
+- Praktikkan control flow if else dengan kode
 - Referensi: go.dev/doc

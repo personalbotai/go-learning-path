@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Module Dan Dependency dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Module Dan Dependency adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Module Dan Dependency
-    fmt.Println("Belajar Go: Module Dan Dependency")
+    fmt.Println("Belajar: Module Dan Dependency")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan module dan dependency.
 
 ## Rangkuman
-- Praktikkan module dan dependency
+- Praktikkan module dan dependency dengan kode
 - Referensi: go.dev/doc

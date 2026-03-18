@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Generics Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Generics Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Generics Dasar
-    fmt.Println("Belajar Go: Generics Dasar")
+    fmt.Println("Belajar: Generics Dasar")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan generics dasar.
 
 ## Rangkuman
-- Praktikkan generics dasar
+- Praktikkan generics dasar dengan kode
 - Referensi: go.dev/doc

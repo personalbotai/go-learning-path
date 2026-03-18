@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Embedding dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Embedding adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Embedding
-    fmt.Println("Belajar Go: Embedding")
+    fmt.Println("Belajar: Embedding")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan embedding.
 
 ## Rangkuman
-- Praktikkan embedding
+- Praktikkan embedding dengan kode
 - Referensi: go.dev/doc

@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Pointer Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Pointer Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Pointer Dasar
-    fmt.Println("Belajar Go: Pointer Dasar")
+    fmt.Println("Belajar: Pointer Dasar")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan pointer dasar.
 
 ## Rangkuman
-- Praktikkan pointer dasar
+- Praktikkan pointer dasar dengan kode
 - Referensi: go.dev/doc

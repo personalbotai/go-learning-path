@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Map dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Map adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,13 @@ package main
 import "fmt"
 
 func main() {
-    // Map
-    fmt.Println("Belajar Go: Map")
+    m := map[string]int{
+        "alice": 25,
+        "bob": 30,
+    }
+    m["charlie"] = 35
+    fmt.Println(m["alice"])
+    fmt.Println(len(m))
 }
 ```
 
@@ -23,5 +28,5 @@ func main() {
 Buat program Go yang menggunakan map.
 
 ## Rangkuman
-- Praktikkan map
+- Praktikkan map dengan kode
 - Referensi: go.dev/doc

@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Tools Dan Editor dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Tools Dan Editor adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Tools Dan Editor
-    fmt.Println("Belajar Go: Tools Dan Editor")
+    fmt.Println("Belajar: Tools Dan Editor")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan tools dan editor.
 
 ## Rangkuman
-- Praktikkan tools dan editor
+- Praktikkan tools dan editor dengan kode
 - Referensi: go.dev/doc

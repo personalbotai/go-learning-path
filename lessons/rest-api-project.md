@@ -6,16 +6,21 @@
 ## Materi
 
 ### Penjelasan
-Rest Api Project dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Rest Api Project adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "net/http")
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+}
 
 func main() {
-    // Rest Api Project
-    fmt.Println("Belajar Go: Rest Api Project")
+    http.HandleFunc("/", handler)
+    fmt.Println("Server starting...")
+    http.ListenAndServe(":8080", nil)
 }
 ```
 
@@ -23,5 +28,5 @@ func main() {
 Buat program Go yang menggunakan rest api project.
 
 ## Rangkuman
-- Praktikkan rest api project
+- Praktikkan rest api project dengan kode
 - Referensi: go.dev/doc

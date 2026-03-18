@@ -6,16 +6,23 @@
 ## Materi
 
 ### Penjelasan
-Interface Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Interface Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
 import "fmt"
 
+type Shape interface {
+    Area() float64
+}
+
+type Circle struct { R float64 }
+func (c Circle) Area() float64 { return 3.14 * c.R * c.R }
+
 func main() {
-    // Interface Dasar
-    fmt.Println("Belajar Go: Interface Dasar")
+    var s Shape = Circle{R: 5}
+    fmt.Println(s.Area())
 }
 ```
 
@@ -23,5 +30,5 @@ func main() {
 Buat program Go yang menggunakan interface dasar.
 
 ## Rangkuman
-- Praktikkan interface dasar
+- Praktikkan interface dasar dengan kode
 - Referensi: go.dev/doc

@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Mutex Sync dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Mutex Sync adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Mutex Sync
-    fmt.Println("Belajar Go: Mutex Sync")
+    fmt.Println("Belajar: Mutex Sync")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan mutex sync.
 
 ## Rangkuman
-- Praktikkan mutex sync
+- Praktikkan mutex sync dengan kode
 - Referensi: go.dev/doc

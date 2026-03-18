@@ -6,16 +6,25 @@
 ## Materi
 
 ### Penjelasan
-Method dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Method adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
 import "fmt"
 
+type User struct {
+    Nama string
+    Umur int
+}
+
+func (u User) Sapa() string {
+    return fmt.Sprintf("Halo, %s!", u.Nama)
+}
+
 func main() {
-    // Method
-    fmt.Println("Belajar Go: Method")
+    u := User{Nama: "Archon", Umur: 25}
+    fmt.Println(u.Sapa())
 }
 ```
 
@@ -23,5 +32,5 @@ func main() {
 Buat program Go yang menggunakan method.
 
 ## Rangkuman
-- Praktikkan method
+- Praktikkan method dengan kode
 - Referensi: go.dev/doc

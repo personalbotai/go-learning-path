@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Testing Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Testing Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Testing Dasar
-    fmt.Println("Belajar Go: Testing Dasar")
+    fmt.Println("Belajar: Testing Dasar")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan testing dasar.
 
 ## Rangkuman
-- Praktikkan testing dasar
+- Praktikkan testing dasar dengan kode
 - Referensi: go.dev/doc

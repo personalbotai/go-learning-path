@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Pointer dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Pointer adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Pointer
-    fmt.Println("Belajar Go: Pointer")
+    fmt.Println("Belajar: Pointer")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan pointer.
 
 ## Rangkuman
-- Praktikkan pointer
+- Praktikkan pointer dengan kode
 - Referensi: go.dev/doc

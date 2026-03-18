@@ -6,16 +6,20 @@
 ## Materi
 
 ### Penjelasan
-Reflection Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Reflection Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "os")
 
 func main() {
-    // Reflection Dasar
-    fmt.Println("Belajar Go: Reflection Dasar")
+    err := os.WriteFile("test.txt", []byte("Hello Go!"), 0644)
+    if err != nil { fmt.Println(err); return }
+    
+    data, err := os.ReadFile("test.txt")
+    if err != nil { fmt.Println(err); return }
+    fmt.Println(string(data))
 }
 ```
 
@@ -23,5 +27,5 @@ func main() {
 Buat program Go yang menggunakan reflection dasar.
 
 ## Rangkuman
-- Praktikkan reflection dasar
+- Praktikkan reflection dasar dengan kode
 - Referensi: go.dev/doc

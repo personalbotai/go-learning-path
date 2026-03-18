@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Instalasi Dan Setup dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Instalasi Dan Setup adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Instalasi Dan Setup
-    fmt.Println("Belajar Go: Instalasi Dan Setup")
+    fmt.Println("Belajar: Instalasi Dan Setup")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan instalasi dan setup.
 
 ## Rangkuman
-- Praktikkan instalasi dan setup
+- Praktikkan instalasi dan setup dengan kode
 - Referensi: go.dev/doc

@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Array dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Array adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Array
-    fmt.Println("Belajar Go: Array")
+    fmt.Println("Belajar: Array")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan array.
 
 ## Rangkuman
-- Praktikkan array
+- Praktikkan array dengan kode
 - Referensi: go.dev/doc

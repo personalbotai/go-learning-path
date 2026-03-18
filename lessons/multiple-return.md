@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Multiple Return dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Multiple Return adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Multiple Return
-    fmt.Println("Belajar Go: Multiple Return")
+    fmt.Println("Belajar: Multiple Return")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan multiple return.
 
 ## Rangkuman
-- Praktikkan multiple return
+- Praktikkan multiple return dengan kode
 - Referensi: go.dev/doc

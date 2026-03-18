@@ -6,16 +6,21 @@
 ## Materi
 
 ### Penjelasan
-Http Server Dasar dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Http Server Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
 package main
-import "fmt"
+import ("fmt"; "net/http")
+
+func handler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+}
 
 func main() {
-    // Http Server Dasar
-    fmt.Println("Belajar Go: Http Server Dasar")
+    http.HandleFunc("/", handler)
+    fmt.Println("Server starting...")
+    http.ListenAndServe(":8080", nil)
 }
 ```
 
@@ -23,5 +28,5 @@ func main() {
 Buat program Go yang menggunakan http server dasar.
 
 ## Rangkuman
-- Praktikkan http server dasar
+- Praktikkan http server dasar dengan kode
 - Referensi: go.dev/doc

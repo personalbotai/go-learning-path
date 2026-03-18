@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Operator dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Operator adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Operator
-    fmt.Println("Belajar Go: Operator")
+    fmt.Println("Belajar: Operator")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan operator.
 
 ## Rangkuman
-- Praktikkan operator
+- Praktikkan operator dengan kode
 - Referensi: go.dev/doc

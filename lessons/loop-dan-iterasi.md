@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Loop Dan Iterasi dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Loop Dan Iterasi adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Loop Dan Iterasi
-    fmt.Println("Belajar Go: Loop Dan Iterasi")
+    fmt.Println("Belajar: Loop Dan Iterasi")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan loop dan iterasi.
 
 ## Rangkuman
-- Praktikkan loop dan iterasi
+- Praktikkan loop dan iterasi dengan kode
 - Referensi: go.dev/doc

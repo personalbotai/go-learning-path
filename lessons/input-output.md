@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Input Output dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Input Output adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Input Output
-    fmt.Println("Belajar Go: Input Output")
+    fmt.Println("Belajar: Input Output")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan input output.
 
 ## Rangkuman
-- Praktikkan input output
+- Praktikkan input output dengan kode
 - Referensi: go.dev/doc

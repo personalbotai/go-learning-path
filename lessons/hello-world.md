@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Hello World dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Hello World adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Hello World
-    fmt.Println("Belajar Go: Hello World")
+    fmt.Println("Belajar: Hello World")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan hello world.
 
 ## Rangkuman
-- Praktikkan hello world
+- Praktikkan hello world dengan kode
 - Referensi: go.dev/doc

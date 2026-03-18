@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Slice dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Slice adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,11 @@ package main
 import "fmt"
 
 func main() {
-    // Slice
-    fmt.Println("Belajar Go: Slice")
+    s := []int{1, 2, 3, 4, 5}
+    s = append(s, 6)
+    fmt.Println(s)
+    fmt.Println(s[1:3])
+    fmt.Println(len(s))
 }
 ```
 
@@ -23,5 +26,5 @@ func main() {
 Buat program Go yang menggunakan slice.
 
 ## Rangkuman
-- Praktikkan slice
+- Praktikkan slice dengan kode
 - Referensi: go.dev/doc

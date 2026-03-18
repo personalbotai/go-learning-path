@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-For Loop dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+For Loop adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // For Loop
-    fmt.Println("Belajar Go: For Loop")
+    fmt.Println("Belajar: For Loop")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan for loop.
 
 ## Rangkuman
-- Praktikkan for loop
+- Praktikkan for loop dengan kode
 - Referensi: go.dev/doc

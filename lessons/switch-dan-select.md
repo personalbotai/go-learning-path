@@ -6,7 +6,7 @@
 ## Materi
 
 ### Penjelasan
-Switch Dan Select dalam Go adalah fitur penting untuk pengembangan aplikasi modern.
+Switch Dan Select adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
 
 ### Contoh Kode
 ```go
@@ -14,8 +14,7 @@ package main
 import "fmt"
 
 func main() {
-    // Switch Dan Select
-    fmt.Println("Belajar Go: Switch Dan Select")
+    fmt.Println("Belajar: Switch Dan Select")
 }
 ```
 
@@ -23,5 +22,5 @@ func main() {
 Buat program Go yang menggunakan switch dan select.
 
 ## Rangkuman
-- Praktikkan switch dan select
+- Praktikkan switch dan select dengan kode
 - Referensi: go.dev/doc
