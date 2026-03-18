@@ -1,509 +1,1368 @@
-// Go Learning Path - Application Logic
+// Go Learning Path
+const MODULES = [
+    {
+        "id": 1,
+        "title": "Pengenalan Go",
+        "icon": "fas fa-play-circle"
+    },
+    {
+        "id": 2,
+        "title": "Dasar",
+        "icon": "fas fa-cube"
+    },
+    {
+        "id": 3,
+        "title": "Fungsi",
+        "icon": "fas fa-code"
+    },
+    {
+        "id": 4,
+        "title": "Struktur Data",
+        "icon": "fas fa-database"
+    },
+    {
+        "id": 5,
+        "title": "OOP & Concurrency",
+        "icon": "fas fa-object-group"
+    }
+];
 const lessons = [
     {
-        id: 1,
-        title: "1. Hello World & Package",
-        description: `Selamat datang di Go! Di lesson pertama ini, kamu akan belajar:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>Package</strong>: Setiap Go program dimulai dengan deklarasi package (biasanya <code>main</code>)</li>
-            <li><strong>Import</strong>: Menggunakan keyword <code>import</code> untuk memuat package lain</li>
-            <li><strong>Func main</strong>: Fungsi <code>main</code> adalah entry point program</li>
-            <li><strong>Println</strong>: Fungsi untuk mencetak output ke terminal</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Perintah yang akan dipelajari:</strong><br>
-            <code class="text-yellow-300">package main</code><br>
-            <code class="text-yellow-300">import "fmt"</code><br>
-            <code class="text-yellow-300">func main() { fmt.Println("Hello, Go!") }</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    // Tulis kode di sini\n    fmt.Println("Hello, World!")\n}`,
-        expectedOutput: "Hello, World!",
-        hint: "Gunakan fmt.Println untuk mencetak teks. Ingat: Go case-sensitive!",
-        quiz: {
-            question: "Apa nama package bawaan yang digunakan untuk output?",
-            options: ["os", "fmt", "io", "sys"],
-            answer: 1
+        "id": 1,
+        "title": "1. Apa Itu Go",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/apa-itu-go.html",
+        "description": "<p><strong>Apa Itu Go</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Apa Itu Go?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 2,
-        title: "2. Variabel & Tipe Data",
-        description: `Go memiliki tipe data statis. Setiap variabel harus dideklarasikan dengan tipe (atau menggunakan type inference). Tipe dasar yang akan dipelajari:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>int</strong>: Bilangan bulat (misal: 42, -10)</li>
-            <li><strong>float64</strong>: Bilangan desimal</li>
-            <li><strong>string</strong>: Teks (di dalam tanda kutip ganda)</li>
-            <li><strong>bool</strong>: Nilai boolean (true/false)</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh deklarasi:</strong><br>
-            <code class="text-yellow-300">var nama string = "Go"</code><br>
-            <code class="text-yellow-300">umur := 25  // type inference</code><br>
-            <code class="text-yellow-300">var aktif bool = true</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    // Deklarasi variabel\n    var nama string\n    var umur int\n    var tinggi float64\n    var aktif bool\n    \n    // Inisialisasi nilai\n    nama = "Developer Go"\n    umur = 30\n    tinggi = 175.5\n    aktif = true\n    \n    fmt.Println("Nama:", nama)\n    fmt.Println("Umur:", umur)\n    fmt.Println("Tinggi:", tinggi)\n    fmt.Println("Aktif:", aktif)\n}`,
-        expectedOutput: `Nama: Developer Go\nUmur: 30\nTinggi: 175.5\nAktif: true`,
-        hint: "Pastikan semua variabel dideklarasikan dan diinisialisasi sebelum digunakan.",
-        quiz: {
-            question: "Tipe data mana yang benar untuk menyimpan nilai 3.14?",
-            options: ["int", "float64", "string", "bool"],
-            answer: 1
+        "id": 2,
+        "title": "2. Array",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/array.html",
+        "description": "<p><strong>Array</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Array?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 3,
-        title: "3. Operasi Aritmatika",
-        description: `Go mendukung operasi matematika standar:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>+</strong> Penjumlahan & concatenasi string</li>
-            <li><strong>-</strong> Pengurangan</li>
-            <li><strong>*</strong> Perkalian</li>
-            <li><strong>/</strong> Pembagian (hasil float)</li>
-            <li><strong>%</strong> Modulo (sisa bagi)</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">a := 10\nb := 3\nsum := a + b  // 13\nmod := a % b  // 1</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    a := 15\n    b := 4\n    \n    // Hitung: a + b, a - b, a * b, a / b, a % b\n    // Tampilkan semua hasil dalam satu baris\n    // Contoh output: "15+4=19, 15-4=11, ..."\n    \n    fmt.Println(a, "+", b, "=", a+b)\n    fmt.Println(a, "-", b, "=", a-b)\n    fmt.Println(a, "*", b, "=", a*b)\n    fmt.Println(a, "/", b, "=", a/b)\n    fmt.Println(a, "%", b, "=", a%b)\n}`,
-        expectedOutput: `15 + 4 = 19\n15 - 4 = 11\n15 * 4 = 60\n15 / 4 = 3\n15 % 4 = 3`,
-        hint: "Gunakan operator +, -, *, /, %. fmt.Println bisa menerima banyak argumen.",
-        quiz: {
-            question: "Hasil dari 17 % 5 adalah?",
-            options: ["2", "3", "4", "5"],
-            answer: 0
+        "id": 3,
+        "title": "3. Array Dan Slice",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/array-dan-slice.html",
+        "description": "<p><strong>Array Dan Slice</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Array Dan Slice?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 4,
-        title: "4.Kondisional (if/else)",
-        description: `Kontrol alur program dengan kondisi:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>if</strong>: Mengeksekusi jika kondisi true</li>
-            <li><strong>else</strong>: Jika kondisi false</li>
-            <li><strong>else if</strong>: Chain kondisi tambahan</li>
-            <li><strong>Operator</strong>: ==, !=, <, >, <=, >=</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">if umur >= 18 {\n    fmt.Println("Dewasa")\n} else {\n    fmt.Println("Anak-anak")\n}</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    nilai := 85\n    \n    // Tentukan grade:\n    // >= 90: A\n    // >= 80: B\n    // >= 70: C\n    // < 70: D\n    // Cetak "Grade: X"\n    \n    if nilai >= 90 {\n        fmt.Println("Grade: A")\n    } else if nilai >= 80 {\n        fmt.Println("Grade: B")\n    } else if nilai >= 70 {\n        fmt.Println("Grade: C")\n    } else {\n        fmt.Println("Grade: D")\n    }\n}`,
-        expectedOutput: "Grade: B",
-        hint: "Pertimbangkan urutan kondisi dari yang paling tinggi.",
-        quiz: {
-            question: "Operator untuk 'tidak sama dengan' adalah?",
-            options: ["=", "==", "!=", "<>"],
-            answer: 2
+        "id": 4,
+        "title": "4. Break Continue",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/break-continue.html",
+        "description": "<p><strong>Break Continue</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Break Continue?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 5,
-        title: "5. Perulangan (for)",
-        description: `Go hanya memiliki satu keyword perulangan: <strong>for</strong>. Tapi for bisa digunakan untuk:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>for klasik</strong>: for i := 0; i < n; i++ {}</li>
-            <li><strong>for while</strong>: for kondisi {}</li>
-            <li><strong>for forever</strong>: for {}</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">for i := 1; i <= 5; i++ {\n    fmt.Println(i)\n}</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    // Cetak bilangan genap dari 1 sampai 10\n    // Gunakan for dan if\n    \n    for i := 1; i <= 10; i++ {\n        if i%2 == 0 {\n            fmt.Println(i, "adalah genap")\n        }\n    }\n}`,
-        expectedOutput: `2 adalah genap\n4 adalah genap\n6 adalah genap\n8 adalah genap\n10 adalah genap`,
-        hint: "Gunakan modulo % untuk mengecek genap (sisa bagi 0).",
-        quiz: {
-            question: "How to create an infinite loop in Go?",
-            options: ["while true", "for ever", "for {}", "loop"],
-            answer: 2
+        "id": 5,
+        "title": "5. Channel",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/channel.html",
+        "description": "<p><strong>Channel</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Channel?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 6,
-        title: "6. Slice & Array",
-        description: `Koleksi data di Go:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>Array</strong>: Ukuran tetap, tipe sama</li>
-            <li><strong>Slice</strong>: Dinamis, lebih sering digunakan</li>
-            <li><strong>make</strong>: Membuat slice dengan kapasitas</li>
-            <li><strong>append</strong>: Menambah elemen ke slice</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh slice:</strong><br>
-            <code class="text-yellow-300">numbers := []int{1,2,3}\nnumbers = append(numbers, 4)</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    // Buat slice buah, tambahkan 3 buah\n    // Lalu cetak satu per satu dengan for-range\n    \n    buah := []string{"Apel", "Jeruk", "Mangga"}\n    \n    for i, b := range buah {\n        fmt.Printf("%d. %s\\n", i+1, b)\n    }\n}`,
-        expectedOutput: `1. Apel\n2. Jeruk\n3. Mangga`,
-        hint: "Gunakan for-range untuk iterasi slice: for index, value := range slice {}",
-        quiz: {
-            question: "Fungsi untuk menambah elemen ke slice?",
-            options: ["push", "add", "append", "insert"],
-            answer: 2
+        "id": 6,
+        "title": "6. Channel Dasar",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/channel-dasar.html",
+        "description": "<p><strong>Channel Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Channel Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 7,
-        title: "7. Map (Dictionary)",
-        description: `Map adalah koleksi key-value:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>make(map[type]type)</strong>: Inisialisasi map</li>
-            <li><strong>map[key] = value</strong>: Menambah/update</li>
-            <li><strong>value, ok := map[key]</strong>: Ambil dengan cek keberadaan</li>
-            <li><strong>delete(map, key)</strong>: Hapus entri</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">ages := make(map[string]int)\nages["Alice"] = 25\nif v, ok := ages["Bob"]; ok {\n    fmt.Println(v)\n}</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\nfunc main() {\n    // Buat map untuk menyimpan nilai mata pelajaran\n    // Key: nama pelajaran (string)\n    // Value: nilai (int)\n    \n    nilai := make(map[string]int)\n    nilai["Matematika"] = 90\n    nilai["Fisika"] = 85\n    nilai["Kimia"] = 88\n    \n    // Cetak semua nilai\n    for pel, nil := range nilai {\n        fmt.Println(pel, ":", nil)\n    }\n}`,
-        expectedOutput: `Matematika : 90\nFisika : 85\nKimia : 88`,
-        hint: "Gunakan make(map[string]int) untuk membuat map baru. Gunakan for-range untuk iterasi.",
-        quiz: {
-            question: "Cara mengecek apakah key ada di map?",
-            options: ["map.has(key)", "key in map", "value, ok := map[key]", "map.exists(key)"],
-            answer: 2
+        "id": 7,
+        "title": "7. Cli Application",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/cli-application.html",
+        "description": "<p><strong>Cli Application</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Cli Application?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 8,
-        title: "8. Function",
-        description: `Fungsi di Go didefinisikan dengan keyword <strong>func</strong>:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>Parameter</strong>: func nama(params) {}</li>
-            <li><strong>Return value</strong>: Banyak nilai (multiple return)</li>
-            <li><strong>Named return</strong>: Variabel return dideklarasikan</li>
-            <li><strong>Variadic</strong>: func(...int) menerima argumen tak terbatas</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh multiple return:</strong><br>
-            <code class="text-yellow-300">func divide(a, b float64) (float64, error) {\n    if b == 0 { return 0, errors.New(\"div by zero\") }\n    return a/b, nil\n}</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\n// Buat fungsi tambah yang menerima 2 angka\n// dan mengembalikan jumlahnya\nfunc tambah(a int, b int) int {\n    return a + b\n}\n\n// Buat fungsi greet yang menerima nama\n// dan mengembalikan "Hello, [nama]!"\nfunc greet(name string) string {\n    return "Hello, " + name + "!"\n}\n\nfunc main() {\n    sum := tambah(10, 20)\n    msg := greet("Gopher")\n    fmt.Println(sum)  // 30\n    fmt.Println(msg) // Hello, Gopher!\n}`,
-        expectedOutput: `30\nHello, Gopher!`,
-        hint: "Fungsi mengembalikan nilai menggunakan keyword return. Tipe return ditulis setelah parameter.",
-        quiz: {
-            question: "Keyword untuk mendefinisikan fungsi?",
-            options: ["function", "def", "func", "fn"],
-            answer: 2
+        "id": 8,
+        "title": "8. Closure Dan Anonymous",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/closure-dan-anonymous.html",
+        "description": "<p><strong>Closure Dan Anonymous</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Closure Dan Anonymous?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 9,
-        title: "9. Struct & Methods",
-        description: `Struct adalah tipe data kustom yang mengelompokkan field:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>type Struct struct {}</strong>: Definisi</li>
-            <li><strong>receiver</strong>: func (s Struct) Method() {}</li>
-            <li><strong>Value receiver</strong>: Menyalin data</li>
-            <li><strong>Pointer receiver</strong>: (s *Struct) - modifikasi asli</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">type Person struct { Name string; Age int }\nfunc (p Person) SayHi() {\n    fmt.Println(\"Hi, I'm\", p.Name)\n}</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\n// Definisi struct Mahasiswa dengan field Nama dan NIM\ntype Mahasiswa struct {\n    Nama string\n    NIM  string\n}\n\n// Method dengan value receiver\nfunc (m Mahasiswa) Biodata() string {\n    return m.Nama + " (" + m.NIM + ")"\n}\n\nfunc main() {\n    mhs := Mahasiswa{Nama: "Budi", NIM: "2023001"}\n    fmt.Println(mhs.Biodata())\n}`,
-        expectedOutput: "Budi (2023001)",
-        hint: "Buat struct dengan field Nama string, NIM string. Tambahkan method Biodata() string yang mengembalikan gabungan.",
-        quiz: {
-            question: "Receiver pointer ditulis dengan?",
-            options: ["(s Struct)", "(s *Struct)", "(*s Struct)", "(*s) Struct"],
-            answer: 1
+        "id": 9,
+        "title": "9. Context Dan Timeout",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/context-dan-timeout.html",
+        "description": "<p><strong>Context Dan Timeout</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Context Dan Timeout?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     },
     {
-        id: 10,
-        title: "10. Interface & Polymorphism",
-        description: `Interface mendefinisikan <strong>contract</strong> (set method) tanpa implementasi:
-        <ul class="list-disc pl-5 space-y-2 mt-3">
-            <li><strong>type Interface interface {}</strong>: Kumpulan method signature</li>
-            <li><strong>Implicit implementation</strong>: Tipe otomatis memenuhi interface jika punya semua method</li>
-            <li><strong>Empty interface</strong>: interface{} bisa menampung apa saja</li>
-            <li><strong>Type assertion</strong>: Mengambil nilai asli dari interface</li>
-        </ul>
-        <div class="mt-4 p-4 bg-blue-900/30 border border-blue-700 rounded">
-            <strong>Contoh:</strong><br>
-            <code class="text-yellow-300">type Speaker interface { Speak() string }\n\nfunc say(s Speaker) { fmt.Println(s.Speak()) }\n\n// struct otomatis implement Speaker jika punya Speak()</code>
-        </div>`,
-        defaultCode: `package main\n\nimport "fmt"\n\n// Interface Speaker dengan method Speak() string\ntype Speaker interface {\n    Speak() string\n}\n\n// Struct Dog\ntype Dog struct { Name string }\n\n// Method Speak untuk Dog\nfunc (d Dog) Speak() string {\n    return d.Name + " says: Woof!"\n}\n\n// Struct Cat\ntype Cat struct { Name string }\n\n// Method Speak untuk Cat\nfunc (c Cat) Speak() string {\n    return c.Name + " says: Meow!"\n}\n\n// Fungsi saySomething menerima interface Speaker\nfunc saySomething(s Speaker) {\n    fmt.Println(s.Speak())\n}\n\nfunc main() {\n    dog := Dog{Name: "Rex"}\n    cat := Cat{Name: "Whiskers"}\n    \n    saySomething(dog)\n    saySomething(cat)\n}`,
-        expectedOutput: `Rex says: Woof!\nWhiskers says: Meow!`,
-        hint: "Buat interface Speaker dengan method Speak() string. Buat struct Dog dan Cat, lalu implement method Speak untuk masing-masing.",
-        quiz: {
-            question: "Implementasi interface di Go adalah?",
-            options: ["explicit dengan keyword implements", "implicit otomatis", "harus register", "tidak didukung"],
-            answer: 1
+        "id": 10,
+        "title": "10. Control Flow If Else",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/control-flow-if-else.html",
+        "description": "<p><strong>Control Flow If Else</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Control Flow If Else?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 11,
+        "title": "11. Custom Error",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/custom-error.html",
+        "description": "<p><strong>Custom Error</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Custom Error?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 12,
+        "title": "12. Defer Panic Recover",
+        "module": "Pengenalan Go",
+        "moduleId": 1,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/defer-panic-recover.html",
+        "description": "<p><strong>Defer Panic Recover</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Defer Panic Recover?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 13,
+        "title": "13. Embedding",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/embedding.html",
+        "description": "<p><strong>Embedding</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Embedding?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 14,
+        "title": "14. Error Handling",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/error-handling.html",
+        "description": "<p><strong>Error Handling</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Error Handling?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 15,
+        "title": "15. File Io",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/file-io.html",
+        "description": "<p><strong>File Io</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di File Io?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 16,
+        "title": "16. File Io Dasar",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/file-io-dasar.html",
+        "description": "<p><strong>File Io Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di File Io Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 17,
+        "title": "17. For Loop",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/for-loop.html",
+        "description": "<p><strong>For Loop</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di For Loop?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 18,
+        "title": "18. Fungsi Dasar",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/fungsi-dasar.html",
+        "description": "<p><strong>Fungsi Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Fungsi Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 19,
+        "title": "19. Generics Dasar",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/generics-dasar.html",
+        "description": "<p><strong>Generics Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Generics Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 20,
+        "title": "20. Goroutine",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/goroutine.html",
+        "description": "<p><strong>Goroutine</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Goroutine?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 21,
+        "title": "21. Goroutine Dasar",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/goroutine-dasar.html",
+        "description": "<p><strong>Goroutine Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Goroutine Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 22,
+        "title": "22. Hello World",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/hello-world.html",
+        "description": "<p><strong>Hello World</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Hello World?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 23,
+        "title": "23. Http Server Dasar",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/http-server-dasar.html",
+        "description": "<p><strong>Http Server Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Http Server Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 24,
+        "title": "24. If Else",
+        "module": "Dasar",
+        "moduleId": 2,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/if-else.html",
+        "description": "<p><strong>If Else</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di If Else?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 25,
+        "title": "25. Input Output",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/input-output.html",
+        "description": "<p><strong>Input Output</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Input Output?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 26,
+        "title": "26. Instalasi Dan Setup",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/instalasi-dan-setup.html",
+        "description": "<p><strong>Instalasi Dan Setup</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Instalasi Dan Setup?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 27,
+        "title": "27. Interface",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/interface.html",
+        "description": "<p><strong>Interface</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Interface?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 28,
+        "title": "28. Interface Dasar",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/interface-dasar.html",
+        "description": "<p><strong>Interface Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Interface Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 29,
+        "title": "29. Json Dan Encoding",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/json-dan-encoding.html",
+        "description": "<p><strong>Json Dan Encoding</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Json Dan Encoding?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 30,
+        "title": "30. Loop Dan Iterasi",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/loop-dan-iterasi.html",
+        "description": "<p><strong>Loop Dan Iterasi</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Loop Dan Iterasi?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 31,
+        "title": "31. Map",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/map.html",
+        "description": "<p><strong>Map</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Map?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 32,
+        "title": "32. Map Dan Key Value",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/map-dan-key-value.html",
+        "description": "<p><strong>Map Dan Key Value</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Map Dan Key Value?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 33,
+        "title": "33. Method",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/method.html",
+        "description": "<p><strong>Method</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Method?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 34,
+        "title": "34. Module Dan Dependency",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/module-dan-dependency.html",
+        "description": "<p><strong>Module Dan Dependency</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Module Dan Dependency?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 35,
+        "title": "35. Multiple Return",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/multiple-return.html",
+        "description": "<p><strong>Multiple Return</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Multiple Return?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 36,
+        "title": "36. Mutex Sync",
+        "module": "Fungsi",
+        "moduleId": 3,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/mutex-sync.html",
+        "description": "<p><strong>Mutex Sync</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Mutex Sync?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 37,
+        "title": "37. Operator",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/operator.html",
+        "description": "<p><strong>Operator</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Operator?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 38,
+        "title": "38. Operator Dan Ekspresi",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/operator-dan-ekspresi.html",
+        "description": "<p><strong>Operator Dan Ekspresi</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Operator Dan Ekspresi?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 39,
+        "title": "39. Package Dan Import",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/package-dan-import.html",
+        "description": "<p><strong>Package Dan Import</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Package Dan Import?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 40,
+        "title": "40. Pointer",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/pointer.html",
+        "description": "<p><strong>Pointer</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Pointer?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 41,
+        "title": "41. Pointer Dasar",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/pointer-dasar.html",
+        "description": "<p><strong>Pointer Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Pointer Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 42,
+        "title": "42. Reflection Dasar",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/reflection-dasar.html",
+        "description": "<p><strong>Reflection Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Reflection Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 43,
+        "title": "43. Rest Api Project",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/rest-api-project.html",
+        "description": "<p><strong>Rest Api Project</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Rest Api Project?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 44,
+        "title": "44. Select",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/select.html",
+        "description": "<p><strong>Select</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Select?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 45,
+        "title": "45. Select Dan Concurrency",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/select-dan-concurrency.html",
+        "description": "<p><strong>Select Dan Concurrency</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Select Dan Concurrency?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 46,
+        "title": "46. Slice",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/slice.html",
+        "description": "<p><strong>Slice</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Slice?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 47,
+        "title": "47. Struct",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/struct.html",
+        "description": "<p><strong>Struct</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Struct?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 48,
+        "title": "48. Struct Dan Method",
+        "module": "Struktur Data",
+        "moduleId": 4,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/struct-dan-method.html",
+        "description": "<p><strong>Struct Dan Method</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Struct Dan Method?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 49,
+        "title": "49. Switch",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/switch.html",
+        "description": "<p><strong>Switch</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Switch?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 50,
+        "title": "50. Switch Dan Select",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/switch-dan-select.html",
+        "description": "<p><strong>Switch Dan Select</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Switch Dan Select?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 51,
+        "title": "51. Testing Dasar",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/testing-dasar.html",
+        "description": "<p><strong>Testing Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Testing Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 52,
+        "title": "52. Tipe Data Dasar",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/tipe-data-dasar.html",
+        "description": "<p><strong>Tipe Data Dasar</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Tipe Data Dasar?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 53,
+        "title": "53. Tools Dan Editor",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/tools-dan-editor.html",
+        "description": "<p><strong>Tools Dan Editor</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Tools Dan Editor?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 54,
+        "title": "54. Variabel Dan Konstanta",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variabel-dan-konstanta.html",
+        "description": "<p><strong>Variabel Dan Konstanta</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Variabel Dan Konstanta?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 55,
+        "title": "55. Variabel Dan Tipe Data",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variabel-dan-tipe-data.html",
+        "description": "<p><strong>Variabel Dan Tipe Data</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Variabel Dan Tipe Data?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
+        }
+    },
+    {
+        "id": 56,
+        "title": "56. Variadic Fungsi",
+        "module": "OOP & Concurrency",
+        "moduleId": 5,
+        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variadic-fungsi.html",
+        "description": "<p><strong>Variadic Fungsi</strong></p>",
+        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        "expectedOutput": "Hello, Go!",
+        "hint": "Pelajari materi.",
+        "quiz": {
+            "question": "Apa yang dipelajari di Variadic Fungsi?",
+            "options": [
+                "A",
+                "B",
+                "C",
+                "D"
+            ],
+            "answer": 0
         }
     }
 ];
-
-// App State
-let currentLessonIndex = 0;
-let userProgress = new Set(JSON.parse(localStorage.getItem('goLearningProgress') || '[]'));
-
-// Initialize
-function init() {
-    renderLessonsNav();
-    loadLesson(0);
-    updateProgress();
-}
-
-// Render sidebar lessons
-function renderLessonsNav() {
+let currentLesson=0;
+let progress=JSON.parse(localStorage.getItem("go_progress")||"{}");
+function renderNav() {
     const nav = document.getElementById('lessons-nav');
-    nav.innerHTML = lessons.map((lesson, idx) => `
-        <button onclick="loadLesson(${idx})" 
-                class="w-full text-left px-4 py-3 rounded transition flex items-center justify-between group
-                       ${userProgress.has(idx) ? 'bg-green-900/30 text-green-300' : 'bg-gray-700 hover:bg-gray-600'}
-                       ${idx === currentLessonIndex ? 'lesson-active shadow-lg' : ''}">
-            <span class="flex items-center">
-                <i class="fas fa-${userProgress.has(idx) ? 'check-circle' : 'circle'} mr-3 text-sm"></i>
-                <span class="font-medium">${lesson.title}</span>
-            </span>
-            ${userProgress.has(idx) ? '<i class="fas fa-star text-yellow-400"></i>' : ''}
-        </button>
-    `).join('');
-}
-
-// Load lesson
-function loadLesson(index) {
-    if (index < 0 || index >= lessons.length) return;
-    
-    currentLessonIndex = index;
-    const lesson = lessons[index];
-    
-    // Update main content
-    const lessonDiv = document.getElementById('current-lesson');
-    lessonDiv.innerHTML = `
-        <div class="mb-6">
-            <h2 class="text-2xl font-bold text-blue-400 mb-2">${lesson.title}</h2>
-            <div class="text-gray-300">${lesson.description}</div>
-        </div>
-    `;
-    
-    // Set code editor
-    const savedCode = localStorage.getItem(`go_lesson_${index}_code`);
-    document.getElementById('code-editor').value = savedCode || lesson.defaultCode;
-    
-    // Clear output
-    document.getElementById('terminal-output').innerHTML = '<span class="text-gray-500">// Output akan muncul di sini...</span>';
-    document.getElementById('validation-msg').className = 'mt-4 p-3 rounded hidden';
-    
-    // Quiz
-    if (lesson.quiz) {
-        document.getElementById('quiz-section').classList.remove('hidden');
-        document.getElementById('quiz-content').innerHTML = `
-            <div class="p-4 bg-gray-700 rounded">
-                <p class="font-medium mb-3">${lesson.quiz.question}</p>
-                ${lesson.quiz.options.map((opt, i) => `
-                    <label class="flex items-center space-x-3 p-2 hover:bg-gray-600 rounded cursor-pointer">
-                        <input type="radio" name="quiz-answer" value="${i}" class="w-4 h-4 text-blue-600">
-                        <span>${opt}</span>
-                    </label>
-                `).join('')}
+    nav.innerHTML = MODULES.map(mod => {
+        const modLessons = lessons.filter(l => l.moduleId === mod.id);
+        const completed = modLessons.filter(l => progress[l.id]).length;
+        const isExpanded = mod.id === (Math.floor(currentLesson / 10) + 1);
+        return `
+            <div class="mb-3">
+                <div class="flex items-center justify-between px-2 py-1.5 text-sm font-semibold text-gray-300 cursor-pointer hover:text-white rounded hover:bg-gray-700/50" onclick="toggleModule(${mod.id})">
+                    <span><i class="${mod.icon} mr-2 text-blue-400"></i>${mod.title}</span>
+                    <span class="text-xs text-gray-500">${completed}/${modLessons.length}</span>
+                </div>
+                <div id="module-${mod.id}" class="space-y-0.5 mt-1 ${isExpanded ? '' : 'hidden'}">
+                    ${modLessons.map(l => {
+                        const idx = lessons.indexOf(l);
+                        return `<button onclick="loadLesson(${idx})" 
+                            class="w-full text-left px-3 py-1.5 rounded text-xs hover:bg-gray-700 transition 
+                            ${idx === currentLesson ? 'lesson-active' : ''} 
+                            ${progress[l.id] ? 'text-green-400' : 'text-gray-400'}">
+                            <span class="mr-1">${progress[l.id] ? '✅' : '○'}</span>${l.title}
+                        </button>`;
+                    }).join('')}
+                </div>
             </div>
         `;
-    } else {
-        document.getElementById('quiz-section').classList.add('hidden');
+    }).join('');
+}
+
+function toggleModule(modId) {
+    const el = document.getElementById('module-' + modId);
+    if (el) el.classList.toggle('hidden');
+}
+
+async function loadLesson(index) {
+    currentLesson = index;
+    const lesson = lessons[index];
+    
+    // Show loading
+    document.getElementById('lesson-content').innerHTML = `<h2 class="text-xl font-bold mb-4">${lesson.title}</h2><div class="text-gray-400"><i class="fas fa-spinner fa-spin mr-2"></i>Loading...</div>`;
+    
+    // Fetch and render markdown from lessons folder
+    let contentHtml = lesson.description || '';
+    if (lesson.mdFile && typeof marked !== 'undefined') {
+        try {
+            const response = await fetch(lesson.mdFile);
+            if (response.ok) {
+                const mdText = await response.text();
+                contentHtml = marked.parse(mdText);
+            }
+        } catch (e) {
+            console.error('Error loading:', lesson.mdFile, e);
+        }
     }
+    
+    document.getElementById('lesson-content').innerHTML = `
+        <div class="text-xs text-gray-500 mb-2">${lesson.module || ''}</div>
+        <h2 class="text-xl font-bold mb-4 text-white">${lesson.title}</h2>
+        <div class="prose prose-invert prose-sm max-w-none leading-relaxed
+            prose-headings:text-blue-300 prose-h2:text-lg prose-h2:mt-6 prose-h2:mb-3
+            prose-h3:text-base prose-h3:mt-4 prose-h3:mb-2
+            prose-p:text-gray-300 prose-p:mb-3
+            prose-code:text-green-400 prose-code:bg-gray-800 prose-code:px-1 prose-code:rounded
+            prose-pre:bg-gray-900 prose-pre:border prose-pre:border-gray-700
+            prose-ul:text-gray-300 prose-li:mb-1
+            prose-strong:text-white prose-a:text-blue-400">
+            ${contentHtml}
+        </div>`;
+    document.getElementById('code-editor').value = (lesson.defaultCode || '').replace(/\\n/g, '\n');
+    document.getElementById('output').innerHTML = '<span class="text-gray-500">// Output akan muncul di sini</span>';
+    document.getElementById('validation-msg').className = 'mt-4 p-3 rounded hidden';
+    if (lesson.quiz) {
+        document.getElementById('quiz-section').classList.remove('hidden');
+        document.getElementById('quiz-content').innerHTML = `<p class="font-medium">${lesson.quiz.question}</p><div class="space-y-2">${lesson.quiz.options.map((opt, i) => `<label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="quiz" value="${i}" class="text-blue-500"><span>${opt}</span></label>`).join('')}</div>`;
+    } else { document.getElementById('quiz-section').classList.add('hidden'); }
+    document.getElementById('prev-btn').disabled = index === 0;
+    document.getElementById('next-btn').disabled = index === lessons.length - 1;
+    // Update complete button
+    const completeBtn = document.getElementById('complete-btn');
+    const completedBtn = document.getElementById('completed-btn');
+    if (progress[lesson.id]) {
+        completeBtn.style.display = 'none';
+        completedBtn.style.display = 'block';
+    } else {
+        completeBtn.style.display = 'block';
+        completedBtn.style.display = 'none';
+    }
+    
+    // Update breadcrumb
+    const mod = MODULES.find(m => m.id === lesson.moduleId);
+    document.getElementById('breadcrumb').textContent = mod ? mod.title : '';
     
     // Update nav buttons
     document.getElementById('prev-btn').disabled = index === 0;
     document.getElementById('next-btn').disabled = index === lessons.length - 1;
     
-    renderLessonsNav();
+    renderNav();
+    window.scrollTo(0, 0);
 }
 
-// Run code simulation
-function runCode() {
-    const code = document.getElementById('code-editor').value;
-    const outputDiv = document.getElementById('terminal-output');
-    const validationDiv = document.getElementById('validation-msg');
-    
-    outputDiv.innerHTML = '<span class="text-yellow-400">Compiling...</span>';
-    
-    // Simulate compilation delay
-    setTimeout(() => {
-        const result = simulateGoExecution(code);
-        outputDiv.innerHTML = result.output;
-        
-        // Check correctness
-        const lesson = lessons[currentLessonIndex];
-        const isCorrect = result.output.trim() === lesson.expectedOutput.trim();
-        
-        if (isCorrect) {
-            userProgress.add(currentLessonIndex);
-            localStorage.setItem('goLearningProgress', JSON.stringify([...userProgress]));
-            validationDiv.className = 'mt-4 p-3 rounded bg-green-900/50 border border-green-600 text-green-200';
-            validationDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Kode benar! Selamat!';
-            renderLessonsNav();
-            updateProgress();
-        } else {
-            validationDiv.className = 'mt-4 p-3 rounded bg-yellow-900/50 border border-yellow-600 text-yellow-200';
-            validationDiv.innerHTML = `<i class="fas fa-exclamation-triangle mr-2"></i>Belum tepat. ${lesson.hint ? 'Petunjuk: ' + lesson.hint : ''}`;
-        }
-        
-        // Save code
-        localStorage.setItem(`go_lesson_${currentLessonIndex}_code`, code);
-    }, 500);
+// Overridden by Pyodide in index.html
+// // runCode is overridden by Pyodide in index.html
+async function runCode() {
+    const output = document.getElementById("output");
+    const validation = document.getElementById("validation-msg");
+    const expected = lessons[currentLesson].expectedOutput;
+    output.innerHTML = '<span class="text-green-400">' + escapeHtml(expected) + '</span>';
+    validation.className = 'mt-4 p-3 rounded bg-blue-900/50 border border-blue-500 text-blue-300';
+    validation.innerHTML = 'ℹ️ Go cannot run in browser. Showing expected output.';
 }
 
-// Simple Go code simulation (not real compiler, just pattern matching)
-function simulateGoExecution(code) {
-    const lines = code.trim().split('\n');
-    let output = [];
-    let hasPrintln = false;
-    
-    // Very basic simulation based on patterns
-    for (let line of lines) {
-        line = line.trim();
-        if (line.startsWith('fmt.Println')) {
-            hasPrintln = true;
-            // Extract content inside quotes or variables
-            const match = line.match(/fmt\.Println\((.*?)\)/);
-            if (match) {
-                const arg = match[1];
-                // Simple evaluation
-                if (arg.includes('+')) {
-                    // Handle simple concatenation or addition
-                    const parts = arg.split('+').map(p => p.trim().replace(/"/g, ''));
-                    // Try numeric addition
-                    const nums = parts.map(p => parseFloat(p)).filter(n => !isNaN(n));
-                    if (nums.length === 2 && !isNaN(nums[0]) && !isNaN(nums[1])) {
-                        output.push((nums[0] + nums[1]).toString());
-                    } else {
-                        output.push(parts.join(''));
-                    }
-                } else if (arg.startsWith('"') && arg.endsWith('"')) {
-                    output.push(arg.slice(1, -1));
-                } else if (arg.includes(':')) {
-                    // Handle fmt.Println("Grade: B") etc
-                    const strMatch = arg.match(/"(.*?)"/);
-                    if (strMatch) output.push(strMatch[1]);
-                } else {
-                    // Variable or expression
-                    output.push(arg);
-                }
-            }
-        } else if (line.includes('fmt.Printf')) {
-            const match = line.match(/fmt\.Printf\("(.*?)"/);
-            if (match) {
-                // Extract literal part before format specifiers
-                const format = match[1];
-                const text = format.replace(/%[dvs]/g, '').trim();
-                output.push(text);
-            }
-        }
-    }
-    
-    // If no explicit output detected but code has expected pattern
-    if (output.length === 0) {
-        // Check for specific lesson patterns
-        if (code.includes('Hello, World!')) output.push('Hello, World!');
-        else if (code.includes('Hello, Gopher!')) output.push('Hello, Gopher!');
-        else if (code.includes('Grade: B')) output.push('Grade: B');
-        else if (code.includes('Budi (2023001)')) output.push('Budi (2023001)');
-        else if (code.includes('Rex says: Woof!')) {
-            output.push('Rex says: Woof!');
-            output.push('Whiskers says: Meow!');
-        }
-        else if (code.includes('1. Apel')) {
-            output.push('1. Apel');
-            output.push('2. Jeruk');
-            output.push('3. Mangga');
-        }
-        else if (code.includes('Matematika')) {
-            output.push('Matematika : 90');
-            output.push('Fisika : 85');
-            output.push('Kimia : 88');
-        }
-        else if (code.includes('2 adalah genap')) {
-            output.push('2 adalah genap');
-            output.push('4 adalah genap');
-            output.push('6 adalah genap');
-            output.push('8 adalah genap');
-            output.push('10 adalah genap');
-        }
-        else if (code.includes('15 + 4')) {
-            output.push('15 + 4 = 19');
-            output.push('15 - 4 = 11');
-            output.push('15 * 4 = 60');
-            output.push('15 / 4 = 3');
-            output.push('15 % 4 = 3');
-        }
-        else if (code.includes('Nama:') && code.includes('Umur:')) {
-            output.push('Nama: Developer Go');
-            output.push('Umur: 30');
-            output.push('Tinggi: 175.5');
-            output.push('Aktif: true');
-        }
-    }
-    
-    return {
-        output: output.length > 0 ? output.join('\n') : '// Tidak ada output yang terdeteksi'
-    };
-}
-
-// Quiz check
+function resetCode() { document.getElementById('code-editor').value = lessons[currentLesson].defaultCode; }
 function checkQuiz() {
-    const selected = document.querySelector('input[name="quiz-answer"]:checked');
-    if (!selected) {
-        alert('Pilih jawaban terlebih dahulu!');
-        return;
-    }
+    const selected = document.querySelector('input[name="quiz"]:checked');
+    if (!selected) return alert('Pilih jawaban dulu!');
+    const msg = document.createElement('div');
+    msg.className = parseInt(selected.value) === lessons[currentLesson].quiz.answer ? 'mt-3 p-3 rounded bg-green-900/50 border border-green-500 text-green-300' : 'mt-3 p-3 rounded bg-red-900/50 border border-red-500 text-red-300';
+    msg.innerHTML = parseInt(selected.value) === lessons[currentLesson].quiz.answer ? '<i class="fas fa-check-circle mr-2"></i>Benar!' : '<i class="fas fa-times-circle mr-2"></i>Salah!';
+    document.getElementById('quiz-content').appendChild(msg);
+    setTimeout(() => msg.remove(), 3000);
+}
+function nextLesson() { if (currentLesson < lessons.length - 1) loadLesson(currentLesson + 1); }
+function prevLesson() { if (currentLesson > 0) loadLesson(currentLesson - 1); }
+
+function markComplete() {
+    const lesson = lessons[currentLesson];
+    progress[lesson.id] = true;
+    localStorage.setItem('go_progress', JSON.stringify(progress));
     
-    const answer = parseInt(selected.value);
-    const lesson = lessons[currentLessonIndex];
+    const completeBtn = document.getElementById('complete-btn');
+    const completedBtn = document.getElementById('completed-btn');
+    completeBtn.style.display = 'none';
+    completedBtn.style.display = 'block';
     
-    if (answer === lesson.quiz.answer) {
-        userProgress.add(currentLessonIndex);
-        localStorage.setItem('goLearningProgress', JSON.stringify([...userProgress]));
-        alert('Jawaban benar! 🎉');
-        renderLessonsNav();
-        updateProgress();
-    } else {
-        alert('Jawaban salah. Coba lagi!');
+    renderNav();
+    
+    // Auto-advance to next lesson
+    if (currentLesson < lessons.length - 1) {
+        setTimeout(() => loadLesson(currentLesson + 1), 500);
     }
 }
 
-// Navigation
-function nextLesson() {
-    if (currentLessonIndex < lessons.length - 1) {
-        loadLesson(currentLessonIndex + 1);
-    }
-}
+function updateProgress() { const done = Object.keys(progress).length; const pct = Math.round((done / lessons.length) * 100); document.getElementById('course-progress').textContent = pct + '%'; document.getElementById('progress-fill').style.width = pct + '%'; }
+function resetProgress() { if (!confirm('Reset semua progress?')) return; progress = {}; localStorage.removeItem('go_progress'); renderNav(); updateProgress(); }
+function escapeHtml(str) { return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
-function prevLesson() {
-    if (currentLessonIndex > 0) {
-        loadLesson(currentLessonIndex - 1);
-    }
-}
-
-// Reset code
-function resetCode() {
-    document.getElementById('code-editor').value = lessons[currentLessonIndex].defaultCode;
-    document.getElementById('terminal-output').innerHTML = '<span class="text-gray-500">// Output akan muncul di sini...</span>';
-    document.getElementById('validation-msg').className = 'mt-4 p-3 rounded hidden';
-}
-
-// Reset all progress
-function resetProgress() {
-    if (confirm('Reset semua progress? Ini tidak dapat dibatalkan.')) {
-        userProgress.clear();
-        localStorage.removeItem('goLearningProgress');
-        for (let i = 0; i < lessons.length; i++) {
-            localStorage.removeItem(`go_lesson_${i}_code`);
-        }
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    // Load progress from localStorage
+    progress = JSON.parse(localStorage.getItem('go_progress') || '{}');
+    
+    // Render sidebar
+    renderNav();
+    
+    // Load first lesson
+    if (lessons.length > 0) {
         loadLesson(0);
-        updateProgress();
     }
-}
+});
 
-// Update progress bar
-function updateProgress() {
-    const percent = Math.round((userProgress.size / lessons.length) * 100);
-    document.getElementById('progress-text').textContent = percent + '%';
-    document.getElementById('progress-bar').style.width = percent + '%';
-}
-
-// Initialize on load
-window.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded",()=>{renderNav();if(lessons.length)loadLesson(0);updateProgress();});
