@@ -1311,14 +1311,38 @@ async function runCode() {
     const code = document.getElementById('code-editor').value;
     const output = document.getElementById('output');
     const validation = document.getElementById('validation-msg');
-    const lesson = lessons[currentLesson];
-    // Show user code + expected output (Go WASM not available in browser)
-    output.innerHTML = '<span class="text-gray-400">// Your code:\n</span>' + 
-        '<span class="text-gray-300">' + escapeHtml(code) + '</span>' +
-        '<span class="text-gray-400">\n// Expected output:\n</span>' +
-        '<span class="text-green-400">' + escapeHtml(lesson.expectedOutput) + '</span>';
-    validation.className = 'mt-4 p-3 rounded bg-blue-900/50 border border-blue-500 text-blue-300';
-    validation.innerHTML = 'ℹ️ Go WASM runtime not available in browser yet. Showing expected output.';
+    
+    output.innerHTML = '<span class="text-yellow-400">⏳ Running Go code...</span>';
+    
+    try {
+        const response = await fetch('https://play.golang.org/compile', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: 'version=2&body=' + encodeURIComponent(code)
+        });
+        const result = await response.json();
+        
+        if (result.Errors) {
+            output.innerHTML = '<span class="text-red-400">❌ ' + escapeHtml(result.Errors) + '</span>';
+        } else {
+            const goOutput = result.Events.map(e => e.Message).join('');
+            output.innerHTML = '<span class="text-green-400">' + escapeHtml(goOutput) + '</span>';
+            
+            const expected = lessons[currentLesson]?.expectedOutput;
+            if (expected && goOutput.trim() === expected.trim()) {
+                validation.className = 'mt-4 p-3 rounded bg-green-900/50 border border-green-500 text-green-300';
+                validation.innerHTML = '✅ Benar!';
+                progress[lessons[currentLesson].id] = true;
+                localStorage.setItem('go_progress', JSON.stringify(progress));
+                updateProgress(); renderNav();
+            } else if (expected) {
+                validation.className = 'mt-4 p-3 rounded bg-yellow-900/50 border border-yellow-500 text-yellow-300';
+                validation.innerHTML = '💡 ' + (lessons[currentLesson]?.hint || '');
+            }
+        }
+    } catch(e) {
+        output.innerHTML = '<span class="text-red-400">❌ ' + escapeHtml(e.message) + '</span>';
+    }
 }
 
 function resetCode() { document.getElementById('code-editor').value = lessons[currentLesson].defaultCode; }
