@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami error handling dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Error Handling adalah konsep penting dalam Go yang perlu dipahami.
+Error Handling adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh error handling
-    fmt.Println("Hello, Go!")
+    // Contoh: Error Handling
+    fmt.Println("Belajar Error Handling")
 }
 ```
 
 ### Praktik
-
-Praktikkan error handling dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan error handling.
 
 ## Rangkuman
-- Praktikkan error handling dengan kode sendiri
+- Praktikkan error handling dengan kode
 - Referensi: go.dev/doc

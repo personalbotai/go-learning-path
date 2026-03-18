@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami testing dasar dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Testing Dasar adalah konsep penting dalam Go yang perlu dipahami.
+Testing Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh testing dasar
-    fmt.Println("Hello, Go!")
+    // Contoh: Testing Dasar
+    fmt.Println("Belajar Testing Dasar")
 }
 ```
 
 ### Praktik
-
-Praktikkan testing dasar dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan testing dasar.
 
 ## Rangkuman
-- Praktikkan testing dasar dengan kode sendiri
+- Praktikkan testing dasar dengan kode
 - Referensi: go.dev/doc

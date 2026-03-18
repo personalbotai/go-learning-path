@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami fungsi dasar dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Fungsi Dasar adalah konsep penting dalam Go yang perlu dipahami.
+Fungsi Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh fungsi dasar
-    fmt.Println("Hello, Go!")
+    // Contoh: Fungsi Dasar
+    fmt.Println("Belajar Fungsi Dasar")
 }
 ```
 
 ### Praktik
-
-Praktikkan fungsi dasar dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan fungsi dasar.
 
 ## Rangkuman
-- Praktikkan fungsi dasar dengan kode sendiri
+- Praktikkan fungsi dasar dengan kode
 - Referensi: go.dev/doc

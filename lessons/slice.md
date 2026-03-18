@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami slice dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Slice adalah konsep penting dalam Go yang perlu dipahami.
+Slice adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh slice
-    fmt.Println("Hello, Go!")
+    // Contoh: Slice
+    fmt.Println("Belajar Slice")
 }
 ```
 
 ### Praktik
-
-Praktikkan slice dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan slice.
 
 ## Rangkuman
-- Praktikkan slice dengan kode sendiri
+- Praktikkan slice dengan kode
 - Referensi: go.dev/doc

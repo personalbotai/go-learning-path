@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami file io dasar dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-File Io Dasar adalah konsep penting dalam Go yang perlu dipahami.
+File Io Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh file io dasar
-    fmt.Println("Hello, Go!")
+    // Contoh: File Io Dasar
+    fmt.Println("Belajar File Io Dasar")
 }
 ```
 
 ### Praktik
-
-Praktikkan file io dasar dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan file io dasar.
 
 ## Rangkuman
-- Praktikkan file io dasar dengan kode sendiri
+- Praktikkan file io dasar dengan kode
 - Referensi: go.dev/doc

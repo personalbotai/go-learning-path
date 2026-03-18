@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami generics dasar dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Generics Dasar adalah konsep penting dalam Go yang perlu dipahami.
+Generics Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh generics dasar
-    fmt.Println("Hello, Go!")
+    // Contoh: Generics Dasar
+    fmt.Println("Belajar Generics Dasar")
 }
 ```
 
 ### Praktik
-
-Praktikkan generics dasar dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan generics dasar.
 
 ## Rangkuman
-- Praktikkan generics dasar dengan kode sendiri
+- Praktikkan generics dasar dengan kode
 - Referensi: go.dev/doc

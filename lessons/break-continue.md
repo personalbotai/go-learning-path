@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami break continue dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Break Continue adalah konsep penting dalam Go yang perlu dipahami.
+Break Continue adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh break continue
-    fmt.Println("Hello, Go!")
+    // Contoh: Break Continue
+    fmt.Println("Belajar Break Continue")
 }
 ```
 
 ### Praktik
-
-Praktikkan break continue dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan break continue.
 
 ## Rangkuman
-- Praktikkan break continue dengan kode sendiri
+- Praktikkan break continue dengan kode
 - Referensi: go.dev/doc

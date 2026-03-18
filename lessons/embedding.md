@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami embedding dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Embedding adalah konsep penting dalam Go yang perlu dipahami.
+Embedding adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh embedding
-    fmt.Println("Hello, Go!")
+    // Contoh: Embedding
+    fmt.Println("Belajar Embedding")
 }
 ```
 
 ### Praktik
-
-Praktikkan embedding dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan embedding.
 
 ## Rangkuman
-- Praktikkan embedding dengan kode sendiri
+- Praktikkan embedding dengan kode
 - Referensi: go.dev/doc

@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami rest api project dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Rest Api Project adalah konsep penting dalam Go yang perlu dipahami.
+Rest Api Project adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh rest api project
-    fmt.Println("Hello, Go!")
+    // Contoh: Rest Api Project
+    fmt.Println("Belajar Rest Api Project")
 }
 ```
 
 ### Praktik
-
-Praktikkan rest api project dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan rest api project.
 
 ## Rangkuman
-- Praktikkan rest api project dengan kode sendiri
+- Praktikkan rest api project dengan kode
 - Referensi: go.dev/doc

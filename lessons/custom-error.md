@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami custom error dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Custom Error adalah konsep penting dalam Go yang perlu dipahami.
+Custom Error adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh custom error
-    fmt.Println("Hello, Go!")
+    // Contoh: Custom Error
+    fmt.Println("Belajar Custom Error")
 }
 ```
 
 ### Praktik
-
-Praktikkan custom error dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan custom error.
 
 ## Rangkuman
-- Praktikkan custom error dengan kode sendiri
+- Praktikkan custom error dengan kode
 - Referensi: go.dev/doc

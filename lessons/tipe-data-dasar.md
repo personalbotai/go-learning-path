@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami tipe data dasar dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Tipe Data Dasar adalah konsep penting dalam Go yang perlu dipahami.
+Tipe Data Dasar adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh tipe data dasar
-    fmt.Println("Hello, Go!")
+    // Contoh: Tipe Data Dasar
+    fmt.Println("Belajar Tipe Data Dasar")
 }
 ```
 
 ### Praktik
-
-Praktikkan tipe data dasar dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan tipe data dasar.
 
 ## Rangkuman
-- Praktikkan tipe data dasar dengan kode sendiri
+- Praktikkan tipe data dasar dengan kode
 - Referensi: go.dev/doc

@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami cli application dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Cli Application adalah konsep penting dalam Go yang perlu dipahami.
+Cli Application adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh cli application
-    fmt.Println("Hello, Go!")
+    // Contoh: Cli Application
+    fmt.Println("Belajar Cli Application")
 }
 ```
 
 ### Praktik
-
-Praktikkan cli application dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan cli application.
 
 ## Rangkuman
-- Praktikkan cli application dengan kode sendiri
+- Praktikkan cli application dengan kode
 - Referensi: go.dev/doc

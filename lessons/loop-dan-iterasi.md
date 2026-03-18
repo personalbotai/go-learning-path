@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami loop dan iterasi dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Loop Dan Iterasi adalah konsep penting dalam Go yang perlu dipahami.
+Loop Dan Iterasi adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh loop dan iterasi
-    fmt.Println("Hello, Go!")
+    // Contoh: Loop Dan Iterasi
+    fmt.Println("Belajar Loop Dan Iterasi")
 }
 ```
 
 ### Praktik
-
-Praktikkan loop dan iterasi dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan loop dan iterasi.
 
 ## Rangkuman
-- Praktikkan loop dan iterasi dengan kode sendiri
+- Praktikkan loop dan iterasi dengan kode
 - Referensi: go.dev/doc

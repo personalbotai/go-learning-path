@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami control flow if else dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Control Flow If Else adalah konsep penting dalam Go yang perlu dipahami.
+Control Flow If Else adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh control flow if else
-    fmt.Println("Hello, Go!")
+    // Contoh: Control Flow If Else
+    fmt.Println("Belajar Control Flow If Else")
 }
 ```
 
 ### Praktik
-
-Praktikkan control flow if else dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan control flow if else.
 
 ## Rangkuman
-- Praktikkan control flow if else dengan kode sendiri
+- Praktikkan control flow if else dengan kode
 - Referensi: go.dev/doc

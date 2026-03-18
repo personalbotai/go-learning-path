@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami instalasi dan setup dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Instalasi Dan Setup adalah konsep penting dalam Go yang perlu dipahami.
+Instalasi Dan Setup adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh instalasi dan setup
-    fmt.Println("Hello, Go!")
+    // Contoh: Instalasi Dan Setup
+    fmt.Println("Belajar Instalasi Dan Setup")
 }
 ```
 
 ### Praktik
-
-Praktikkan instalasi dan setup dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan instalasi dan setup.
 
 ## Rangkuman
-- Praktikkan instalasi dan setup dengan kode sendiri
+- Praktikkan instalasi dan setup dengan kode
 - Referensi: go.dev/doc

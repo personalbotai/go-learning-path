@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami array dan slice dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Array Dan Slice adalah konsep penting dalam Go yang perlu dipahami.
+Array Dan Slice adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh array dan slice
-    fmt.Println("Hello, Go!")
+    // Contoh: Array Dan Slice
+    fmt.Println("Belajar Array Dan Slice")
 }
 ```
 
 ### Praktik
-
-Praktikkan array dan slice dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan array dan slice.
 
 ## Rangkuman
-- Praktikkan array dan slice dengan kode sendiri
+- Praktikkan array dan slice dengan kode
 - Referensi: go.dev/doc

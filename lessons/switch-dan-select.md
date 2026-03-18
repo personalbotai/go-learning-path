@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami switch dan select dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Switch Dan Select adalah konsep penting dalam Go yang perlu dipahami.
+Switch Dan Select adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh switch dan select
-    fmt.Println("Hello, Go!")
+    // Contoh: Switch Dan Select
+    fmt.Println("Belajar Switch Dan Select")
 }
 ```
 
 ### Praktik
-
-Praktikkan switch dan select dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan switch dan select.
 
 ## Rangkuman
-- Praktikkan switch dan select dengan kode sendiri
+- Praktikkan switch dan select dengan kode
 - Referensi: go.dev/doc

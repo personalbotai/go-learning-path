@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami hello world dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Hello World adalah konsep penting dalam Go yang perlu dipahami.
+Hello World adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh hello world
-    fmt.Println("Hello, Go!")
+    // Contoh: Hello World
+    fmt.Println("Belajar Hello World")
 }
 ```
 
 ### Praktik
-
-Praktikkan hello world dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan hello world.
 
 ## Rangkuman
-- Praktikkan hello world dengan kode sendiri
+- Praktikkan hello world dengan kode
 - Referensi: go.dev/doc

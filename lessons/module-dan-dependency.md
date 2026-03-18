@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami module dan dependency dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Module Dan Dependency adalah konsep penting dalam Go yang perlu dipahami.
+Module Dan Dependency adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh module dan dependency
-    fmt.Println("Hello, Go!")
+    // Contoh: Module Dan Dependency
+    fmt.Println("Belajar Module Dan Dependency")
 }
 ```
 
 ### Praktik
-
-Praktikkan module dan dependency dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan module dan dependency.
 
 ## Rangkuman
-- Praktikkan module dan dependency dengan kode sendiri
+- Praktikkan module dan dependency dengan kode
 - Referensi: go.dev/doc

@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami select dan concurrency dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Select Dan Concurrency adalah konsep penting dalam Go yang perlu dipahami.
+Select Dan Concurrency adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh select dan concurrency
-    fmt.Println("Hello, Go!")
+    // Contoh: Select Dan Concurrency
+    fmt.Println("Belajar Select Dan Concurrency")
 }
 ```
 
 ### Praktik
-
-Praktikkan select dan concurrency dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan select dan concurrency.
 
 ## Rangkuman
-- Praktikkan select dan concurrency dengan kode sendiri
+- Praktikkan select dan concurrency dengan kode
 - Referensi: go.dev/doc

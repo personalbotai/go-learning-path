@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami tools dan editor dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Tools Dan Editor adalah konsep penting dalam Go yang perlu dipahami.
+Tools Dan Editor adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh tools dan editor
-    fmt.Println("Hello, Go!")
+    // Contoh: Tools Dan Editor
+    fmt.Println("Belajar Tools Dan Editor")
 }
 ```
 
 ### Praktik
-
-Praktikkan tools dan editor dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan tools dan editor.
 
 ## Rangkuman
-- Praktikkan tools dan editor dengan kode sendiri
+- Praktikkan tools dan editor dengan kode
 - Referensi: go.dev/doc

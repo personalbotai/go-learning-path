@@ -8,37 +8,28 @@
 ## Tujuan Pembelajaran
 - Memahami switch dalam Go
 - Menerapkan best practices
-- Praktik dengan kode
+- Praktik dengan contoh kode
 
 ## Materi
 
 ### Pengantar
-
-Switch adalah konsep penting dalam Go yang perlu dipahami.
+Switch adalah konsep penting dalam Go yang perlu dipahami setiap developer.
 
 ### Contoh Kode
-
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    // Contoh switch
-    fmt.Println("Hello, Go!")
+    // Contoh: Switch
+    fmt.Println("Belajar Switch")
 }
 ```
 
 ### Praktik
-
-Praktikkan switch dengan membuat kode contoh.
-
-### Best Practices
-
-- Pahami konsep dasar
-- Praktik dengan kode
-- Referensi: Go documentation
+Buat program sederhana yang menggunakan switch.
 
 ## Rangkuman
-- Praktikkan switch dengan kode sendiri
+- Praktikkan switch dengan kode
 - Referensi: go.dev/doc
