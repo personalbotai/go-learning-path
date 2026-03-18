@@ -1308,12 +1308,17 @@ async function loadLesson(index) {
 // Overridden by Pyodide in index.html
 // // runCode is overridden by Pyodide in index.html
 async function runCode() {
+    const code = document.getElementById('code-editor').value;
     const output = document.getElementById('output');
     const validation = document.getElementById('validation-msg');
     const lesson = lessons[currentLesson];
-    output.innerHTML = '<span class="text-green-400">' + escapeHtml(lesson.expectedOutput) + '</span>';
+    // Show user code + expected output (Go WASM not available in browser)
+    output.innerHTML = '<span class="text-gray-400">// Your code:\n</span>' + 
+        '<span class="text-gray-300">' + escapeHtml(code) + '</span>' +
+        '<span class="text-gray-400">\n// Expected output:\n</span>' +
+        '<span class="text-green-400">' + escapeHtml(lesson.expectedOutput) + '</span>';
     validation.className = 'mt-4 p-3 rounded bg-blue-900/50 border border-blue-500 text-blue-300';
-    validation.innerHTML = 'ℹ️ Go tidak bisa dijalankan di browser. Menampilkan output yang diharapkan.';
+    validation.innerHTML = 'ℹ️ Go WASM runtime not available in browser yet. Showing expected output.';
 }
 
 function resetCode() { document.getElementById('code-editor').value = lessons[currentLesson].defaultCode; }
