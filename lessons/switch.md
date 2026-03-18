@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep switch statement dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Switch Statement** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Switch Statement** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk switch statement yang mudah digunakan dan efisien.
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas switch statement dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas switch statement dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

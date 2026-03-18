@@ -1,56 +1,49 @@
 ## Tujuan Pembelajaran
 
-                
-                    
-- Memahami konsep channel dasar
+ 
 
-                    
-- Menerapkan konsep dalam kode Go
+ - Memahami konsep channel dasar
 
-                    
-- Memahami best practices dalam Go
+ - Menerapkan konsep dalam kode Go
 
-                
-            
+ - Memahami best practices dalam Go
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Pengantar
 
-                
-**Channel Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
+ **Channel Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
 
-                
+ 
 ## Topik yang Dibahas
 
-                
-            
-- Membuat channel dengan make(chan)
+ 
 
-            
-- Send dan receive operations
+ - Membuat channel dengan make(chan)
 
-            
-- Buffered vs unbuffered channel
+ - Send dan receive operations
 
-            
-- Close channel dengan close()
+ - Buffered vs unbuffered channel
 
-            
-- Range over channel
+ - Close channel dengan close()
 
-                
+ - Range over channel
 
-                
+ 
+
+ 
 ## Penjelasan
 
-                
-Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami channel dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
+ Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami channel dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
 
-                
+ 
 ### Contoh Kode
 
-                
+ 
 ```
 // Contoh implementasi channel dasar
 package main
@@ -58,38 +51,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: Channel Dasar")
+ fmt.Println("Belajar: Channel Dasar")
 }
-
 ```
 
-                
+ 
 ## Praktik Terbaik
 
-                
-                    
-- Ikuti konvensi penulisan Go (gofmt)
+ 
 
-                    
-- Gunakan nama yang deskriptif dan jelas
+ - Ikuti konvensi penulisan Go (gofmt)
 
-                    
-- Handle errors dengan baik
+ - Gunakan nama yang deskriptif dan jelas
 
-                    
-- Write idiomatic Go code
+ - Handle errors dengan baik
 
-                
-            
+ - Write idiomatic Go code
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Rangkuman
 
-                
-Dalam modul ini, Anda telah mempelajari tentang channel dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
+ Dalam modul ini, Anda telah mempelajari tentang channel dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
 
-            
+ 
 
-            
-                Kembali ke Daftar Modul
+ 
+ Kembali ke Daftar Modul

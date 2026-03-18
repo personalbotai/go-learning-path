@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep struct embedding dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Struct Embedding** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Struct Embedding** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk struct embedding yang mudah digunakan dan efisien.
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas struct embedding dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas struct embedding dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

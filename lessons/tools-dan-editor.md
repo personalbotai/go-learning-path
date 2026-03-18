@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep go tools dan editor setup dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Go Tools dan Editor Setup** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Go Tools dan Editor Setup** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk go tools dan editor setup yang mudah digunakan dan ef
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas go tools dan editor setup dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas go tools dan editor setup dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

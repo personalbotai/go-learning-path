@@ -1,56 +1,49 @@
 ## Tujuan Pembelajaran
 
-                
-                    
-- Memahami konsep membuat cli application
+ 
 
-                    
-- Menerapkan konsep dalam kode Go
+ - Memahami konsep membuat cli application
 
-                    
-- Memahami best practices dalam Go
+ - Menerapkan konsep dalam kode Go
 
-                
-            
+ - Memahami best practices dalam Go
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Pengantar
 
-                
-**Membuat CLI Application** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
+ **Membuat CLI Application** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
 
-                
+ 
 ## Topik yang Dibahas
 
-                
-            
-- os.Args untuk command line arguments
+ 
 
-            
-- flag package untuk parsing flags
+ - os.Args untuk command line arguments
 
-            
-- Subcommands pattern
+ - flag package untuk parsing flags
 
-            
-- Terminal output dengan colors
+ - Subcommands pattern
 
-            
-- Building dan distributing binary
+ - Terminal output dengan colors
 
-                
+ - Building dan distributing binary
 
-                
+ 
+
+ 
 ## Penjelasan
 
-                
-Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami membuat cli application akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
+ Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami membuat cli application akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
 
-                
+ 
 ### Contoh Kode
 
-                
+ 
 ```
 // Contoh implementasi membuat cli application
 package main
@@ -58,38 +51,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: Membuat CLI Application")
+ fmt.Println("Belajar: Membuat CLI Application")
 }
-
 ```
 
-                
+ 
 ## Praktik Terbaik
 
-                
-                    
-- Ikuti konvensi penulisan Go (gofmt)
+ 
 
-                    
-- Gunakan nama yang deskriptif dan jelas
+ - Ikuti konvensi penulisan Go (gofmt)
 
-                    
-- Handle errors dengan baik
+ - Gunakan nama yang deskriptif dan jelas
 
-                    
-- Write idiomatic Go code
+ - Handle errors dengan baik
 
-                
-            
+ - Write idiomatic Go code
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Rangkuman
 
-                
-Dalam modul ini, Anda telah mempelajari tentang membuat cli application dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
+ Dalam modul ini, Anda telah mempelajari tentang membuat cli application dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
 
-            
+ 
 
-            
-                Kembali ke Daftar Modul
+ 
+ Kembali ke Daftar Modul

@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep methods pada struct dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Methods pada Struct** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Methods pada Struct** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk methods pada struct yang mudah digunakan dan efisien.
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas methods pada struct dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas methods pada struct dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

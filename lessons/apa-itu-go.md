@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami sejarah, filosofi, dan keunggulan bahasa pemrograman Go.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Go** (juga dikenal sebagai *Golang*) adalah bahasa pemrograman open-source yang dikembangkan oleh Google pada tahun 2007 dan dirilis secara publik pada tahun 2009. Go dirancang oleh **Robert Griesemer**, **Rob Pike**, dan **Ken Thompson** — tiga tokoh legendaris di dunia pemrograman.
+ **Go** (juga dikenal sebagai *Golang*) adalah bahasa pemrograman open-source yang dikembangkan oleh Google pada tahun 2007 dan dirilis secara publik pada tahun 2009. Go dirancang oleh **Robert Griesemer**, **Rob Pike**, dan **Ken Thompson** — tiga tokoh legendaris di dunia pemrograman.
 
 ### Mengapa Go Dibuat?
 
@@ -46,20 +45,20 @@ Go mengusung prinsip **"Less is more"**. Bahasa ini sengaja dibuat minimalis —
 ```
 // Python (interpreted, dynamic)
 def hello():
-    print("Hello, World!")
+ print("Hello, World!")
 
 // Java (JVM, verbose)
 public class Hello {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
+ public static void main(String[] args) {
+ System.out.println("Hello, World!");
+ }
 }
 
 // Go (compiled, simple)
 package main
 import "fmt"
 func main() {
-    fmt.Println("Hello, World!")
+ fmt.Println("Hello, World!")
 }
 ```
 
@@ -75,14 +74,13 @@ func main() {
 
 - **Go modules** — Dependency management modern
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas apa itu go? dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas apa itu go? dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

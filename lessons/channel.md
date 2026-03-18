@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep channel: komunikasi antar goroutine dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Channel: Komunikasi antar Goroutine** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Channel: Komunikasi antar Goroutine** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk channel: komunikasi antar goroutine yang mudah diguna
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas channel: komunikasi antar goroutine dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas channel: komunikasi antar goroutine dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

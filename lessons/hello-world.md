@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Menulis program Go pertama, memahami struktur dasar program Go, dan mengompilasi serta menjalankan program.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-Mari kita tulis program Go pertama dan pahami struktur dasarnya.
+ Mari kita tulis program Go pertama dan pahami struktur dasarnya.
 
 ### Membuat Proyek
 
@@ -26,7 +25,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello, World!")
+ fmt.Println("Hello, World!")
 }
 ```
 
@@ -52,14 +51,14 @@ package main
 
 // 2. Import statement - import packages yang dibutuhkan
 import (
-    "fmt"    // Format I/O (print, scan, etc.)
-    "os"     // OS interaction
+ "fmt" // Format I/O (print, scan, etc.)
+ "os" // OS interaction
 )
 
 // 3. Function main() - entry point program
 // Hanya package main yang punya fungsi main()
 func main() {
-    fmt.Println("Hello, World!")
+ fmt.Println("Hello, World!")
 }
 ```
 
@@ -71,8 +70,8 @@ package main
 import "fmt"
 
 func main() {
-    greet()
-    fmt.Println(add(3, 5))
+ greet()
+ fmt.Println(add(3, 5))
 }
 
 // helpers.go (dalam package yang sama)
@@ -80,11 +79,11 @@ package main
 import "fmt"
 
 func greet() {
-    fmt.Println("Selamat datang!")
+ fmt.Println("Selamat datang!")
 }
 
 func add(a, b int) int {
-    return a + b
+ return a + b
 }
 ```
 
@@ -98,14 +97,13 @@ func add(a, b int) int {
 
 - Go tidak mengizinkan unused imports — akan error saat kompilasi
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas hello world: program pertama dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas hello world: program pertama dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

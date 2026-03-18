@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep slice: array dinamis dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Slice: Array Dinamis** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Slice: Array Dinamis** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk slice: array dinamis yang mudah digunakan dan efisien
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas slice: array dinamis dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas slice: array dinamis dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

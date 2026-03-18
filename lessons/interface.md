@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep interface dan polymorphism dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Interface dan Polymorphism** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Interface dan Polymorphism** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk interface dan polymorphism yang mudah digunakan dan e
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas interface dan polymorphism dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas interface dan polymorphism dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

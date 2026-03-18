@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep pointer dan referensi dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Pointer dan Referensi** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Pointer dan Referensi** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk pointer dan referensi yang mudah digunakan dan efisie
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas pointer dan referensi dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas pointer dan referensi dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

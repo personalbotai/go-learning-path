@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep operator aritmatika, logika, dan perbandingan dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Operator Aritmatika, Logika, dan Perbandingan** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Operator Aritmatika, Logika, dan Perbandingan** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk operator aritmatika, logika, dan perbandingan yang mu
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas operator aritmatika, logika, dan perbandingan dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas operator aritmatika, logika, dan perbandingan dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

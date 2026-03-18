@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Menginstal Go, mengkonfigurasi workspace, dan memahami struktur proyek Go.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-Dalam modul ini, kita akan menginstal Go dan menyiapkan development environment.
+ Dalam modul ini, kita akan menginstal Go dan menyiapkan development environment.
 
 ### Instalasi Go
 
@@ -47,7 +46,7 @@ go mod init github.com/username/hello-go
 
 # Struktur yang tercipta:
 # hello-go/
-# ├── go.mod      # Module definition & dependencies
+# ├── go.mod # Module definition & dependencies
 # └── (source files)
 ```
 
@@ -83,14 +82,13 @@ Rekomendasi:
 
 - **Vim/Neovim** + vim-go / gopls
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas instalasi dan setup environment dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas instalasi dan setup environment dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

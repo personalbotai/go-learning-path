@@ -1,56 +1,49 @@
 ## Tujuan Pembelajaran
 
-                
-                    
-- Memahami konsep json dan encoding
+ 
 
-                    
-- Menerapkan konsep dalam kode Go
+ - Memahami konsep json dan encoding
 
-                    
-- Memahami best practices dalam Go
+ - Menerapkan konsep dalam kode Go
 
-                
-            
+ - Memahami best practices dalam Go
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Pengantar
 
-                
-**JSON dan Encoding** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
+ **JSON dan Encoding** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
 
-                
+ 
 ## Topik yang Dibahas
 
-                
-            
-- Marshal dan Unmarshal JSON
+ 
 
-            
-- Struct tags untuk JSON
+ - Marshal dan Unmarshal JSON
 
-            
-- json.Encoder dan json.Decoder
+ - Struct tags untuk JSON
 
-            
-- Handling JSON errors
+ - json.Encoder dan json.Decoder
 
-            
-- Custom JSON marshaling
+ - Handling JSON errors
 
-                
+ - Custom JSON marshaling
 
-                
+ 
+
+ 
 ## Penjelasan
 
-                
-Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami json dan encoding akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
+ Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami json dan encoding akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
 
-                
+ 
 ### Contoh Kode
 
-                
+ 
 ```
 // Contoh implementasi json dan encoding
 package main
@@ -58,38 +51,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: JSON dan Encoding")
+ fmt.Println("Belajar: JSON dan Encoding")
 }
-
 ```
 
-                
+ 
 ## Praktik Terbaik
 
-                
-                    
-- Ikuti konvensi penulisan Go (gofmt)
+ 
 
-                    
-- Gunakan nama yang deskriptif dan jelas
+ - Ikuti konvensi penulisan Go (gofmt)
 
-                    
-- Handle errors dengan baik
+ - Gunakan nama yang deskriptif dan jelas
 
-                    
-- Write idiomatic Go code
+ - Handle errors dengan baik
 
-                
-            
+ - Write idiomatic Go code
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Rangkuman
 
-                
-Dalam modul ini, Anda telah mempelajari tentang json dan encoding dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
+ Dalam modul ini, Anda telah mempelajari tentang json dan encoding dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
 
-            
+ 
 
-            
-                Kembali ke Daftar Modul
+ 
+ Kembali ke Daftar Modul

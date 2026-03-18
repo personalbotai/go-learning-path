@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep mutex dan synchronization dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Mutex dan Synchronization** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Mutex dan Synchronization** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk mutex dan synchronization yang mudah digunakan dan ef
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas mutex dan synchronization dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas mutex dan synchronization dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

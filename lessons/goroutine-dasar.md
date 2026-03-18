@@ -1,56 +1,49 @@
 ## Tujuan Pembelajaran
 
-                
-                    
-- Memahami konsep goroutine dasar
+ 
 
-                    
-- Menerapkan konsep dalam kode Go
+ - Memahami konsep goroutine dasar
 
-                    
-- Memahami best practices dalam Go
+ - Menerapkan konsep dalam kode Go
 
-                
-            
+ - Memahami best practices dalam Go
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Pengantar
 
-                
-**Goroutine Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
+ **Goroutine Dasar** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
 
-                
+ 
 ## Topik yang Dibahas
 
-                
-            
-- Apa itu goroutine
+ 
 
-            
-- go keyword untuk menjalankan goroutine
+ - Apa itu goroutine
 
-            
-- Goroutine vs thread
+ - go keyword untuk menjalankan goroutine
 
-            
-- GOMAXPROCS
+ - Goroutine vs thread
 
-            
-- WaitGroup untuk sinkronisasi
+ - GOMAXPROCS
 
-                
+ - WaitGroup untuk sinkronisasi
 
-                
+ 
+
+ 
 ## Penjelasan
 
-                
-Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami goroutine dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
+ Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami goroutine dasar akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
 
-                
+ 
 ### Contoh Kode
 
-                
+ 
 ```
 // Contoh implementasi goroutine dasar
 package main
@@ -58,38 +51,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: Goroutine Dasar")
+ fmt.Println("Belajar: Goroutine Dasar")
 }
-
 ```
 
-                
+ 
 ## Praktik Terbaik
 
-                
-                    
-- Ikuti konvensi penulisan Go (gofmt)
+ 
 
-                    
-- Gunakan nama yang deskriptif dan jelas
+ - Ikuti konvensi penulisan Go (gofmt)
 
-                    
-- Handle errors dengan baik
+ - Gunakan nama yang deskriptif dan jelas
 
-                    
-- Write idiomatic Go code
+ - Handle errors dengan baik
 
-                
-            
+ - Write idiomatic Go code
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Rangkuman
 
-                
-Dalam modul ini, Anda telah mempelajari tentang goroutine dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
+ Dalam modul ini, Anda telah mempelajari tentang goroutine dasar dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
 
-            
+ 
 
-            
-                Kembali ke Daftar Modul
+ 
+ Kembali ke Daftar Modul

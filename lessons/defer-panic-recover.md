@@ -1,15 +1,14 @@
 ## Tujuan Pembelajaran
 
-                
+ 
 - Memahami konsep defer, panic, dan recover dalam Go dan penerapannya.
 
-            
-            
-                
+ 
+ 
+ 
 ## Materi
 
-                
-**Defer, Panic, dan Recover** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
+ **Defer, Panic, dan Recover** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer.
 
 ### Pengantar
 
@@ -26,14 +25,13 @@ Go menyediakan fitur untuk defer, panic, dan recover yang mudah digunakan dan ef
 // Pelajari lebih lanjut di dokumentasi resmi Go
 ```
 
-            
-            
-                
+ 
+ 
+ 
 ## Rangkuman
 
-                
-Modul ini membahas defer, panic, dan recover dalam Go. Praktikkan dengan membuat kode sendiri.
+ Modul ini membahas defer, panic, dan recover dalam Go. Praktikkan dengan membuat kode sendiri.
 
-            
-            
-                ← Kembali
+ 
+ 
+ ← Kembali

@@ -1,56 +1,49 @@
 ## Tujuan Pembelajaran
 
-                
-                    
-- Memahami konsep loop dan iterasi
+ 
 
-                    
-- Menerapkan konsep dalam kode Go
+ - Memahami konsep loop dan iterasi
 
-                    
-- Memahami best practices dalam Go
+ - Menerapkan konsep dalam kode Go
 
-                
-            
+ - Memahami best practices dalam Go
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Pengantar
 
-                
-**Loop dan Iterasi** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
+ **Loop dan Iterasi** adalah konsep penting dalam Go yang perlu dipahami oleh setiap developer. Go (Golang) adalah bahasa pemrograman yang dikembangkan oleh Google dengan fokus pada kesederhanaan, efisiensi, dan concurrency.
 
-                
+ 
 ## Topik yang Dibahas
 
-                
-            
-- For loop sebagai satu-satunya loop di Go
+ 
 
-            
-- For dengan kondisi
+ - For loop sebagai satu-satunya loop di Go
 
-            
-- For sebagai while loop
+ - For dengan kondisi
 
-            
-- Infinite loop dengan for {}
+ - For sebagai while loop
 
-            
-- Break dan continue
+ - Infinite loop dengan for {}
 
-                
+ - Break dan continue
 
-                
+ 
+
+ 
 ## Penjelasan
 
-                
-Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami loop dan iterasi akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
+ Go dirancang dengan prinsip "less is more" — bahasa yang sederhana dengan fitur yang powerful. Memahami loop dan iterasi akan membantu Anda menulis kode Go yang bersih, efisien, dan maintainable.
 
-                
+ 
 ### Contoh Kode
 
-                
+ 
 ```
 // Contoh implementasi loop dan iterasi
 package main
@@ -58,38 +51,34 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: Loop dan Iterasi")
+ fmt.Println("Belajar: Loop dan Iterasi")
 }
-
 ```
 
-                
+ 
 ## Praktik Terbaik
 
-                
-                    
-- Ikuti konvensi penulisan Go (gofmt)
+ 
 
-                    
-- Gunakan nama yang deskriptif dan jelas
+ - Ikuti konvensi penulisan Go (gofmt)
 
-                    
-- Handle errors dengan baik
+ - Gunakan nama yang deskriptif dan jelas
 
-                    
-- Write idiomatic Go code
+ - Handle errors dengan baik
 
-                
-            
+ - Write idiomatic Go code
 
-            
-                
+ 
+
+ 
+
+ 
+ 
 ## Rangkuman
 
-                
-Dalam modul ini, Anda telah mempelajari tentang loop dan iterasi dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
+ Dalam modul ini, Anda telah mempelajari tentang loop dan iterasi dalam Go. Konsep ini merupakan fondasi penting untuk pengembangan aplikasi dengan Go.
 
-            
+ 
 
-            
-                Kembali ke Daftar Modul
+ 
+ Kembali ke Daftar Modul
