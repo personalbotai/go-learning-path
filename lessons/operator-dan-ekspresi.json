@@ -1,0 +1,3 @@
+{
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tx := 10\n\ty := 3\n\n\tfmt.Println(\"=== Operator Aritmatika ===\")\n\tfmt.Printf(\"%d + %d = %d\\n\", x, y, x+y)\n\tfmt.Printf(\"%d / %d = %d (Integer division)\\n\", x, y, x/y)\n\tfmt.Printf(\"%d %% %d = %d (Modulus)\\n\", x, y, x%y)\n\n\tfmt.Println(\"\\n=== Increment / Decrement ===\")\n\t// x++ adalah statement, tidak bisa dimasukkan ke variabel lain\n\tx++\n\tfmt.Printf(\"Setelah x++, nilai x = %d\\n\", x)\n\n\tfmt.Println(\"\\n=== Operator Logika & Perbandingan ===\")\n\tisActive := true\n\thasAccess := false\n\tfmt.Printf(\"x > y && isActive = %v\\n\", x > y && isActive)\n\tfmt.Printf(\"isActive || hasAccess = %v\\n\", isActive || hasAccess)\n}"
+}

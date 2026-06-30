@@ -1,0 +1,3 @@
+{
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\t// Short variable declaration (Sangat idiomatik di Go)\n\tname := \"Cloud Engineer\"\n\tversion := 1.22\n\n\t// Deklarasi standar tanpa nilai awal (Zero Value)\n\tvar requestCount int\n\tvar isReady bool\n\n\tfmt.Println(\"=== Tipe Data dan Variabel ===\")\n\t// %T digunakan untuk mencetak Tipe Data, %v untuk nilainya\n\tfmt.Printf(\"Name    : %v (Type: %T)\\n\", name, name)\n\tfmt.Printf(\"Version : %v (Type: %T)\\n\", version, version)\n\t\n\tfmt.Println(\"\\n=== Zero Values ===\")\n\tfmt.Printf(\"requestCount (int)  : %v\\n\", requestCount)\n\tfmt.Printf(\"isReady (bool)      : %v\\n\", isReady)\n}"
+}

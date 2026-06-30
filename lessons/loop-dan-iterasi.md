@@ -1,26 +1,32 @@
-# Loop Dan Iterasi
+# Loop dan Iterasi
 
-**ID**: `loop-dan-iterasi`
-**Duration**: 20-25 menit
+Di Go, satu-satunya kata kunci untuk melakukan perulangan adalah **`for`**. Go tidak memiliki `while` atau `do-while`. Keputusan desain ini membuat bahasa Go menjadi sangat ringkas dan sederhana.
 
-## Materi
-
-### Penjelasan
-Loop Dan Iterasi adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
-
-### Contoh Kode
+## 1. For Loop Tradisional
+Mirip dengan bahasa C, menggunakan init; condition; post.
 ```go
-package main
-import "fmt"
-
-func main() {
-    fmt.Println("Belajar: Loop Dan Iterasi")
+for i := 0; i < 5; i++ {
+    fmt.Println(i)
 }
 ```
 
-### Praktik
-Buat program Go yang menggunakan loop dan iterasi.
+## 2. "While" Loop di Go
+Jika Anda menghilangkan statemen `init` dan `post`, `for` loop di Go bertingkah persis seperti `while` di bahasa lain.
+```go
+counter := 0
+for counter < 3 {
+    fmt.Println(counter)
+    counter++
+}
+```
 
-## Rangkuman
-- Praktikkan loop dan iterasi dengan kode
-- Referensi: go.dev/doc
+## 3. Infinite Loop (Perulangan Tak Terbatas)
+Untuk membuat proses yang terus berjalan (seperti *background worker* atau *HTTP Server* yang mendengarkan *request*), hilangkan seluruh kondisinya:
+```go
+for {
+    // akan berjalan selamanya, gunakan 'break' untuk berhenti
+}
+```
+
+## 4. For-Range Loop (Standar Industri)
+Ini adalah bentuk loop yang paling banyak dipakai dalam *development* Go sehari-hari. `range` digunakan untuk mengiterasi *array*, *slice*, *map*, atau *channel*. `range` mengembalikan dua nilai: **index** (atau key) dan **value**.

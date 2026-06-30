@@ -1,26 +1,29 @@
-# Operator Dan Ekspresi
+# Operator dan Ekspresi
 
-**ID**: `operator-dan-ekspresi`
-**Duration**: 20-25 menit
+Go memiliki operator standar yang mirip dengan bahasa turunan C (C++, Java, JavaScript), dengan beberapa perbedaan penting agar lebih aman dan tidak ambigu.
 
-## Materi
+## 1. Operator Aritmatika
+Operator matematika dasar: `+`, `-`, `*`, `/`, `%` (modulus).
 
-### Penjelasan
-Operator Dan Ekspresi adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
+## 2. Operator Perbandingan (Relasional)
+Digunakan untuk membandingkan dua nilai dan selalu menghasilkan `bool` (`true` atau `false`):
+`==`, `!=`, `<`, `>`, `<=`, `>=`
 
-### Contoh Kode
+## 3. Operator Logika
+Digunakan untuk kondisi majemuk:
+- `&&` (AND)
+- `||` (OR)
+- `!` (NOT)
+
+## Perbedaan Penting di Go (Standar Industri)
+
+Di banyak bahasa seperti C atau JavaScript, operasi inkremen `++` dan dekremen `--` adalah sebuah *ekspresi* (bisa dimasukkan ke dalam variabel atau parameter operasi lain).
+
+Di Go, **`++` dan `--` adalah sebuah *statement* (pernyataan), BUKAN *ekspresi*.** 
+Anda **TIDAK** bisa melakukan ini di Go:
 ```go
-package main
-import "fmt"
-
-func main() {
-    fmt.Println("Belajar: Operator Dan Ekspresi")
-}
+// INI ERROR DI GO!
+a := 1
+b := a++ // Syntax error
 ```
-
-### Praktik
-Buat program Go yang menggunakan operator dan ekspresi.
-
-## Rangkuman
-- Praktikkan operator dan ekspresi dengan kode
-- Referensi: go.dev/doc
+Anda harus menulisnya dalam baris terpisah. Ini menghilangkan kebingungan umum yang sering terjadi di C/C++ terkait urutan evaluasi eksekusi.
