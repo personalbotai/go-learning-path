@@ -1,0 +1,3 @@
+{
+  "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\t// Cetak pesan ke layar\n\tfmt.Println(\"Hello, Go!\")\n\tfmt.Println(\"Selamat datang di dunia Cloud Native.\")\n}"
+}

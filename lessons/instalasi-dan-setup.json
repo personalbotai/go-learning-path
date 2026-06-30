@@ -1,0 +1,3 @@
+{
+  "code": "package main\n\nimport (\n\t\"fmt\"\n\t\"runtime\"\n)\n\nfunc main() {\n\tfmt.Println(\"Memeriksa lingkungan Go Anda...\")\n\tfmt.Printf(\"Versi Go: %s\\n\", runtime.Version())\n\tfmt.Printf(\"Sistem Operasi: %s\\n\", runtime.GOOS)\n\tfmt.Printf(\"Arsitektur CPU: %s\\n\", runtime.GOARCH)\n}"
+}
