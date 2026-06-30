@@ -1,40 +1,56 @@
 # Variabel dan Tipe Data
 
-Go adalah bahasa yang **Statically Typed**. Artinya, tipe data dari sebuah variabel diketahui pada saat *compile time*. Ini membuat Go sangat aman dan cepat.
+**ID**: `variabel-dan-tipe-data`
+**Duration**: 15-20 menit
 
-## Deklarasi Variabel
+## Materi
 
-Ada beberapa cara mendeklarasikan variabel di Go:
+### Penjelasan
+Go adalah bahasa yang **statically typed**. Artinya, setiap variabel harus diketahui tipe datanya pada saat kompilasi (compile-time). Hal ini mengurangi *runtime error* secara drastis dibandingkan JavaScript atau Python.
 
-**1. Deklarasi Lengkap (menggunakan `var`)**
-Biasanya digunakan untuk variabel tingkat *package* atau ketika Anda tidak langsung memberikan nilai awal.
+Namun, Go dirancang agar terasa seperti bahasa dinamis melalui fitur **Type Inference**. Anda tidak perlu menuliskan tipe data secara eksplisit jika Go bisa menebaknya dari nilai yang Anda berikan.
+
+Go memiliki 3 cara utama mendeklarasikan variabel:
+1. `var` dengan deklarasi eksplisit: `var umur int = 25`
+2. `var` dengan type inference: `var nama = "Gopher"`
+3. **Short Variable Declaration** (`:=`): `pekerjaan := "Engineer"` (Sangat umum digunakan di dalam sebuah fungsi).
+
+**Konstanta**
+Gunakan `const` untuk nilai yang tidak akan pernah berubah (immutable). Contoh: `const Pi = 3.14`.
+
+### Contoh Kode
 ```go
-var name string = "Archon"
-var age int // Akan memiliki nilai default (Zero Value)
+package main
+
+import "fmt"
+
+func main() {
+	// 1. Deklarasi eksplisit
+	var bahasa string = "Go"
+	
+	// 2. Short declaration (Type Inference)
+	versi := 1.22
+	
+	// 3. Deklarasi multiple
+	var (
+		isAwesome bool = true
+		creator   string = "Google"
+	)
+	
+	// 4. Konstanta
+	const timeout = 30 // detik
+
+	fmt.Printf("Belajar %s versi %.2f (Dibuat oleh %s)
+", bahasa, versi, creator)
+	fmt.Printf("Keren? %v. Batas waktu default: %d detik
+", isAwesome, timeout)
+}
 ```
 
-**2. Type Inference (tanpa menyebutkan tipe)**
-Go cukup pintar untuk menebak tipe data dari nilai yang diberikan.
-```go
-var isActive = true // otomatis menjadi bool
-```
+### Praktik
+Cobalah menggunakan `:=` untuk mendeklarasikan umur Anda, lalu coba ubah nilainya (re-assign) menggunakan `=` (tanpa titik dua). Ingat, `:=` hanya digunakan untuk *deklarasi pertama kali*.
 
-**3. Short Variable Declaration (`:=`)**
-Ini adalah **standar industri** dan cara paling umum di Go untuk mendeklarasikan variabel di dalam sebuah fungsi.
-```go
-version := 1.22
-```
-
-## Zero Values
-
-Di Go, jika Anda mendeklarasikan variabel tanpa memberinya nilai, variabel tersebut tidak akan bernilai `null` atau `undefined`. Go memberikan nilai default bawaan yang disebut **Zero Value**:
-- `0` untuk tipe numerik (`int`, `float64`, dll)
-- `false` untuk `bool`
-- `""` (string kosong) untuk `string`
-- `nil` untuk pointer, fungsi, interface, slice, channel, dan map.
-
-## Aturan Ketat Go
-
-Go sangat tidak menoleransi **variabel yang tidak digunakan (unused variables)**. Jika Anda mendeklarasikan variabel lokal tetapi tidak pernah membacanya, program **tidak akan bisa di-compile**. Ini menjaga basis kode Go tetap bersih dari kode "sampah".
-
-Coba jalankan dan perhatikan tipe data pada kode di editor!
+## Rangkuman
+- Gunakan `:=` di dalam fungsi untuk kode yang lebih ringkas.
+- Gunakan `var` untuk variabel tingkat *package* (di luar fungsi).
+- Tipe data primitif di Go meliputi: `int`, `float64`, `string`, dan `bool`.

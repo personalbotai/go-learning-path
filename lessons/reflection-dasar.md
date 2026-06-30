@@ -6,31 +6,69 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **Reflection Dasar** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+*Reflection* (Refleksi) adalah kemampuan suatu program untuk memeriksa, membongkar struktur, tipe variabel (type-checking di runtime), maupun memodifikasi keadaan objek *saat program sedang berjalan* secara dinamis, menggunakan paket standar `reflect`.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Reflection Dasar` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Kemampuan ini umum digunakan untuk membuat fungsi yang melayani beragam input misterius. Contoh konkret di dunia nyata adalah paket `encoding/json` atau kerangka kerja Basis Data (*ORM Database* seperti GORM). Mereka menggunakan fitur *reflection* untuk "melihat" struktur bidang (*struct fields*) Anda, membaca *Struct Tags* nya, lantas menghubungkannya dengan entitas Tabel *Database* secara dinamis.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+Terdapat tiga tiang utama paket *reflect*:
+1. `reflect.TypeOf(val)`: Mencari tahu Tipe data (Name, Kind, detail struct).
+2. `reflect.ValueOf(val)`: Mengambil nilai operasional (Mengizinkan pembaruan nilai variabel jika ia berupa Pointer).
+3. **Peringatan Industri:** Operasi dengan refleksi secara signifikan **berjalan lebih lambat (slow overhead)** daripada perulangan kode statis biasa karena lolos dari optimasi masa kompilasi (*compile-time optmizations*). Hanya gunakan pada skenario abstraksi (seperti membuat *library*/framework) dan kurangi di alur bisnis Anda sehari-hari (*business logic flow*).
 
-### Contoh Kode Umum
+### Contoh Kode
+Berikut ini adalah ilustrasi di mana *Reflection* digunakan untuk mendeteksi *Struct Tag* yang Tuan miliki dan mencetaknya.
+
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
+
+type Konfigurasi struct {
+	// Bayangkan validasi otomatis dari sebuah web framework
+	ServerURL string `validasi:"wajib" format:"url"`
+	BatasWkt  int    `validasi:"opsional" max:"60"`
+}
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Reflection Dasar")
-    // TODO: Implementasi logika Reflection Dasar di sini
+	cfg := Konfigurasi{ServerURL: "http://localhost", BatasWkt: 30}
+
+	// 1. Dapatkan Representasi Tipe 
+	tipeStruktur := reflect.TypeOf(cfg)
+	nilaiStruktur := reflect.ValueOf(cfg)
+
+	fmt.Printf("Menganalisis Tipe Data: %s
+", tipeStruktur.Name())
+	fmt.Println("-------------------------------")
+
+	// 2. Iterasi / Membedah semua field dalam Struct
+	for i := 0; i < tipeStruktur.NumField(); i++ {
+		field := tipeStruktur.Field(i)
+		isiNilai := nilaiStruktur.Field(i)
+
+		// 3. Mengambil Nilai Tag Kustom
+		tagValidasi := field.Tag.Get("validasi")
+
+		fmt.Printf("Nama Field : %s
+", field.Name)
+		fmt.Printf("Tipe Asli  : %s
+", field.Type)
+		fmt.Printf("Isi Value  : %v
+", isiNilai.Interface())
+		fmt.Printf("Aturan Tag : %s
+", tagValidasi)
+		fmt.Println("-------------------------------")
+	}
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Reflection Dasar berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+Gunakan `reflect.ValueOf()` pada sebuah variabel berjenis Integer (misal `x := 10`). Untuk memodifikasi nilainya dari paket `reflect`, Anda wajib meng-oper *Pointer* (`reflect.ValueOf(&x).Elem()`) dan menggunakan `.SetInt(99)`. Coba terapkan hal yang lumayan rumit namun memukau ini.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- *Reflection* menembus pertahanan ketat bahasa *Static Typed*, memberi daya dinamis layaknya skrip (scripting language).
+- `reflect.TypeOf` memberi Anda Meta-Data.
+- `reflect.ValueOf` memberi Anda akses baca/tulis terhadap data.
+- Refleksi rentan *panic* (kesalahan tipe, tidak *pointer*) dan cukup lambat. Gunakan dengan bijaksana.

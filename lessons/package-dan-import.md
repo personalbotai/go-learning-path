@@ -1,36 +1,67 @@
-# Package Dan Import
+# Package dan Import System
 
 **ID**: `package-dan-import`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Package Dan Import** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Go dikonstruksi secara *modular* menggunakan **Package**. Setiap file `.go` di baris pertamanya wajib mendeklarasikan bahwa ia termasuk ke dalam *package* apa (contoh: `package main`, `package models`).
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Package Dan Import` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Aturan penting dari sistem Package di Go adalah **Visibility (Hak Akses/Export):**
+Di bahasa lain kita memiliki kata kunci `public`, `private`, atau `protected`. Go menghapusnya.
+Sistem akses di Go ditentukan sepenuhnya oleh **Huruf Kapital**:
+- Jika nama fungsi, struct, atau variabel diawali dengan **Huruf Besar** (contoh: `Config`), maka ia bersifat **Public (Exported)** dan bisa dipanggil oleh *package* lain.
+- Jika diawali dengan **huruf kecil** (contoh: `dbConn`), maka ia **Private (Unexported)**, tersembunyi dan hanya bisa diakses dari dalam folder *package* yang sama.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+Khusus untuk nama `package main`:
+Itu adalah *package* khusus yang akan dikompilasi oleh sistem menjadi file biner yang dapat dijalankan (executable file).
 
-### Contoh Kode Umum
+### Contoh Kode
+Misalkan Anda memiliki susunan folder seperti ini:
+```
+proyek-saya/
+  ├── main.go
+  └── utils/
+      └── hitung.go
+```
+
+**Di `utils/hitung.go`:**
+```go
+package utils
+
+// Public (Bisa diimpor) karena huruf awalan besar
+func Tambah(a, b int) int {
+	return a + b
+}
+
+// Private (Hanya bisa digunakan di dalam folder utils)
+func kurangi(a, b int) int {
+	return a - b
+}
+```
+
+**Di `main.go`:**
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"proyek-saya/utils" // Mengimpor package utils
+)
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Package Dan Import")
-    // TODO: Implementasi logika Package Dan Import di sini
+	// Sukses karena Tambah diawali huruf kapital
+	hasil := utils.Tambah(5, 5)
+	fmt.Println(hasil)
+	
+	// utils.kurangi(5, 5) -> AKAN ERROR! Unexported name.
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Package Dan Import berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+Ketik program yang menggunakan paket standar Go seperti `fmt`, `strings`, dan `math`. Perhatikan bahwa semua fungsi di paket standar (`Println`, `ToUpper`, `Max`) diawali dengan huruf besar agar bisa Anda akses!
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Gunakan `import` untuk memasukkan kode modular.
+- Penamaan huruf pertama (Kapital = Public, Kecil = Private) mengatur ekspor modul. Singkat, ketat, dan taktis.

@@ -1,32 +1,65 @@
 # Loop dan Iterasi
 
-Di Go, satu-satunya kata kunci untuk melakukan perulangan adalah **`for`**. Go tidak memiliki `while` atau `do-while`. Keputusan desain ini membuat bahasa Go menjadi sangat ringkas dan sederhana.
+**ID**: `loop-dan-iterasi`
+**Duration**: 15-20 menit
 
-## 1. For Loop Tradisional
-Mirip dengan bahasa C, menggunakan init; condition; post.
+## Materi
+
+### Penjelasan
+Demi menjaga kesederhanaan, Go mengambil keputusan arsitektur yang radikal: **Hanya ada satu kata kunci untuk perulangan, yaitu `for`.** 
+
+Go tidak memiliki `while`, `do-while`, atau `forEach`. Namun, `for` di Go sangat fleksibel dan dapat mensimulasikan semua jenis perulangan tersebut.
+
+**4 Cara Menggunakan `for` di Go:**
+1. **Three-component loop** (Gaya C klasik): `for init; condition; post {}`
+2. **Condition-only loop** (Pengganti `while`): `for condition {}`
+3. **Infinite loop** (Sering digunakan dengan *goroutine/channel*): `for {}`
+4. **For-Range** (Digunakan untuk iterasi Array, Slice, Map, dan String).
+
+### Contoh Kode
 ```go
-for i := 0; i < 5; i++ {
-    fmt.Println(i)
+package main
+
+import "fmt"
+
+func main() {
+	// 1. For klasik
+	fmt.Print("Klasik: ")
+	for i := 1; i <= 3; i++ {
+		fmt.Print(i, " ")
+	}
+	fmt.Println()
+
+	// 2. For sebagai while
+	fmt.Print("While: ")
+	n := 1
+	for n <= 3 {
+		fmt.Print(n, " ")
+		n++
+	}
+	fmt.Println()
+
+	// 3. For Range (Sangat sering digunakan!)
+	fmt.Println("Range:")
+	buah := []string{"Apel", "Mangga", "Pisang"}
+	
+	for index, nama := range buah {
+		fmt.Printf("- Index %d: %s
+", index, nama)
+	}
+
+	// Jika Anda hanya butuh value tanpa index, gunakan Blank Identifier (_)
+	for _, nama := range buah {
+		fmt.Printf("Makan %s
+", nama)
+	}
 }
 ```
 
-## 2. "While" Loop di Go
-Jika Anda menghilangkan statemen `init` dan `post`, `for` loop di Go bertingkah persis seperti `while` di bahasa lain.
-```go
-counter := 0
-for counter < 3 {
-    fmt.Println(counter)
-    counter++
-}
-```
+### Praktik
+Buat perulangan tak terbatas (`for {}`) dan gunakan fungsi kondisional `if` serta kata kunci `break` untuk keluar dari loop tersebut ketika sebuah variabel *counter* mencapai angka 5.
 
-## 3. Infinite Loop (Perulangan Tak Terbatas)
-Untuk membuat proses yang terus berjalan (seperti *background worker* atau *HTTP Server* yang mendengarkan *request*), hilangkan seluruh kondisinya:
-```go
-for {
-    // akan berjalan selamanya, gunakan 'break' untuk berhenti
-}
-```
-
-## 4. For-Range Loop (Standar Industri)
-Ini adalah bentuk loop yang paling banyak dipakai dalam *development* Go sehari-hari. `range` digunakan untuk mengiterasi *array*, *slice*, *map*, atau *channel*. `range` mengembalikan dua nilai: **index** (atau key) dan **value**.
+## Rangkuman
+- `for` adalah satu-satunya loop di Go.
+- Gunakan `for index, value := range collection` untuk iterasi yang elegan pada *data structures*.
+- Gunakan `_` (Blank Identifier) jika Anda tidak berniat menggunakan suatu nilai yang dikembalikan oleh `range` atau fungsi.

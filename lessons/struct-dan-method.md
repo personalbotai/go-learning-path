@@ -1,23 +1,69 @@
 # Struct dan Method
 
-Go **bukan** bahasa berbasis objek (OOP) klasik. Tidak ada `class`, tidak ada *inheritance* (`extends`). Sebagai gantinya, Go menggunakan **Struct** dan **Composition**.
+**ID**: `struct-dan-method`
+**Duration**: 20-30 menit
 
-## 1. Mendeklarasikan Struct
-Struct adalah koleksi variabel (disebut *field*) yang dikelompokkan menjadi satu.
+## Materi
+
+### Penjelasan
+Go **bukan** bahasa *Object Oriented Programming* (OOP) konvensional. Go tidak memiliki *Class*, *Inheritance* (pewarisan), atau kata kunci `this` dan `super`. 
+
+Alih-alih *Class*, Go menggunakan **Struct** (kumpulan field ber-tipe data). 
+Dan Anda bisa menempelkan "Method" pada *Struct* tersebut menggunakan konsep **Receiver Function**.
+
+Ada dua jenis *Receiver*:
+1. **Value Receiver** `(s Struct)`: Beroperasi pada *salinan* (copy) dari struct tersebut. Modifikasi pada *field* tidak akan mengubah objek aslinya.
+2. **Pointer Receiver** `(s *Struct)`: Beroperasi pada memori aslinya. **Wajib** digunakan jika *method* tersebut bertugas mengubah nilai internal *Struct*, atau jika struktur datanya sangat besar untuk menghindari beban menyalin memori. 
+
+*(Aturan umum industri: Gunakan Pointer Receiver untuk sebagian besar method agar konsisten).*
+
+### Contoh Kode
 ```go
-type User struct {
-    ID       int
-    Username string
-    IsActive bool
+package main
+
+import "fmt"
+
+// 1. Deklarasi Struct
+type Pengguna struct {
+	ID    int
+	Nama  string
+	Email string
+}
+
+// 2. Method dengan Value Receiver (Hanya untuk read/cetak)
+// (p Pengguna) di antara func dan nama fungsi adalah deklarasi receiver.
+func (p Pengguna) TampilkanProfil() {
+	fmt.Printf("[%d] %s (%s)
+", p.ID, p.Nama, p.Email)
+}
+
+// 3. Method dengan Pointer Receiver (Bisa memodifikasi data asli)
+func (p *Pengguna) GantiEmail(emailBaru string) {
+	p.Email = emailBaru
+}
+
+func main() {
+	// Inisialisasi struct
+	user1 := Pengguna{
+		ID:    1,
+		Nama:  "Gopher",
+		Email: "gopher@golang.org",
+	}
+
+	user1.TampilkanProfil()
+
+	// Memanggil pointer receiver
+	user1.GantiEmail("super.gopher@google.com")
+	
+	fmt.Println("Setelah diubah:")
+	user1.TampilkanProfil()
 }
 ```
-*Catatan:* Jika nama Field diawali huruf KAPITAL (misal `Username`), ia bersifat **Public** (dapat diakses package luar). Jika diawali huruf kecil, ia **Private** (hanya bisa diakses di package yang sama).
 
-## 2. Method
-Anda bisa menempelkan fungsi ke sebuah struct. Ini disebut Method. Fungsi tersebut memiliki **Receiver** khusus.
+### Praktik
+Buat struct `Keranjang` yang memiliki *slice* of `string` (daftar belanja). Buat *Pointer Receiver Method* `TambahBarang(nama string)` untuk meng-`append` barang ke keranjang tersebut.
 
-**Value Receiver vs Pointer Receiver (Standar Industri)**
-*   **Value Receiver**: Mengkopi seluruh data struct ke fungsi. Digunakan jika struct hanya untuk dibaca (*read-only*) dan ukurannya kecil.
-*   **Pointer Receiver (`*User`)**: Me-referensi memori aslinya. **Wajib digunakan jika Anda ingin mengubah/memodifikasi properti struct dari dalam method.** 
-
-Secara umum di industri, menggunakan **Pointer Receiver** lebih sering dipakai untuk menghindari overhead *copy memory* pada struct yang besar.
+## Rangkuman
+- Struct di Go adalah komposit (*composite*) data untuk merepresentasikan entitas.
+- Tidak ada kata sandi `this`. Anda memberi nama variabel bebas di bagian *receiver* (biasanya disingkat dengan 1 atau 2 huruf depan, misal `(p *Pengguna)`).
+- Mayoritas *method* di aplikasi tingkat korporat akan menggunakan *Pointer Receiver* `(*Struct)` demi performa dan kemampuan merubah nilai (mutabilitas).

@@ -1,29 +1,55 @@
 # Closure dan Anonymous Functions
 
-Karena fungsi di Go adalah *first-class citizen*, Anda bisa:
-1. Menyimpan fungsi dalam variabel.
-2. Mengirim fungsi sebagai argumen ke fungsi lain.
-3. Mengembalikan fungsi dari sebuah fungsi.
+**ID**: `closure-dan-anonymous`
+**Duration**: 15-20 menit
 
-## Anonymous Function (Fungsi Tanpa Nama)
-Sering digunakan saat membuat *goroutine* secara *inline* atau mengeksekusi operasi `defer`.
+## Materi
+
+### Penjelasan
+Di Go, fungsi berstatus sebagai *First-Class Citizen*. Artinya, fungsi dapat diperlakukan selayaknya variabel biasa: dapat dioper oper sebagai parameter, di-*return* oleh fungsi lain, atau dideklarasikan secara *inline* tanpa nama (*Anonymous Function*).
+
+**Closure** adalah sifat sebuah fungsi *anonymous* yang secara referensial mengingat, menangkap (capture), atau mengikat (bind) variabel yang berada di luar ruang lingkup (scope) aslinya. 
+
+Konsep ini sangat krusial saat Anda membuat *Middleware* HTTP, atau mendelegasikan tugas ke Goroutine dengan parameter dinamis.
+
+### Contoh Kode
 ```go
-func() {
-    fmt.Println("Dieksekusi langsung!")
-}()
-```
+package main
 
-## Closures
-*Closure* adalah *anonymous function* yang merujuk pada variabel yang dideklarasikan di luar tubuh fungsinya. Fungsi ini bisa mengakses dan mengubah nilai variabel tersebut, menciptakan keadaan (*state*) internal.
-Pola ini sangat sering dipakai dalam **HTTP Middleware** di Go.
+import "fmt"
 
-```go
-func sequence() func() int {
-    i := 0
-    return func() int {
-        i++
-        return i
-    }
+// Fungsi ini mengembalikan fungsi (Closure)
+func pengali(faktor int) func(int) int {
+	// Anonymous function ini 'menangkap' variabel faktor dari fungsi luarnya
+	return func(angka int) int {
+		return angka * faktor
+	}
+}
+
+func main() {
+	// 1. Anonymous Function langsung dijalankan (IIFE)
+	func(pesan string) {
+		fmt.Println("Pesan Rahasia:", pesan)
+	}("Go is Awesome!")
+
+	// 2. Assign function ke variabel
+	sapa := func(nama string) {
+		fmt.Println("Halo,", nama)
+	}
+	sapa("Budi")
+
+	// 3. Menggunakan Closure
+	kaliDua := pengali(2)
+	kaliTiga := pengali(3)
+
+	fmt.Println("5 x 2 =", kaliDua(5))
+	fmt.Println("5 x 3 =", kaliTiga(5))
 }
 ```
-Setiap kali fungsi kembalian dari `sequence()` dipanggil, nilai `i` akan bertambah, dan ia "mengingat" nilai sebelumnya!
+
+### Praktik
+Buatlah sebuah fungsi *closure* pembuat *counter*. Fungsi induk bernama `BikinCounter() func() int`. Setiap kali fungsi *anonymous* panggilannya dieksekusi, nilai angkanya terus bertambah satu.
+
+## Rangkuman
+- Fungsi anonim (tanpa nama) sangat berguna untuk perintah `defer` dan peluncuran `goroutine`.
+- *Closure* memungkinkan sebuah fungsi anonim mengingat dan mengubah variabel di lingkungan *parent*-nya (*lexical scope*).

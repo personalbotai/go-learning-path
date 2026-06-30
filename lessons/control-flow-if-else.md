@@ -1,28 +1,58 @@
 # Control Flow: If dan Else
 
-Percabangan di Go menggunakan `if`, `else if`, dan `else`. Sintaksnya mirip dengan C atau Java, tetapi ada perbedaan mencolok: **Go tidak menggunakan tanda kurung `()`** mengelilingi kondisinya.
+**ID**: `control-flow-if-else`
+**Duration**: 15-20 menit
 
+## Materi
+
+### Penjelasan
+Struktur kondisional di Go sangat mirip dengan C, Java, atau JavaScript, tetapi dengan satu perbedaan sintaks yang menonjol: **Tanda kurung `()` tidak diperlukan di sekitar kondisi, tetapi kurung kurawal `{}` WAJIB ada.**
+
+Fitur paling *powerful* dari `if` di Go adalah **Initial Statement**.
+Anda dapat mengeksekusi sebuah perintah singkat (biasanya inisialisasi variabel) tepat sebelum kondisi dievaluasi. Variabel yang dibuat dalam *initial statement* ini scope-nya (ruang lingkupnya) hanya sebatas blok `if-else` tersebut, sehingga mencegah "sampah" variabel di fungsi Anda.
+
+Fitur ini adalah tulang punggung idiom *error handling* di Go.
+
+### Contoh Kode
 ```go
-if score >= 80 {
-    fmt.Println("Lulus")
-} else {
-    fmt.Println("Belum Lulus")
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	
+	// 1. If-Else biasa
+	umur := 18
+	if umur >= 17 {
+		fmt.Println("Bisa membuat KTP")
+	} else {
+		fmt.Println("Belum cukup umur")
+	}
+
+	// 2. If dengan Initial Statement (Sangat Idiomatik)
+	// Kita membuat variabel 'skor' dan langsung mengeceknya dalam satu baris.
+	if skor := rand.Intn(100); skor >= 80 {
+		fmt.Printf("Skor %d: Lulus dengan pujian!
+", skor)
+	} else if skor >= 60 {
+		fmt.Printf("Skor %d: Lulus
+", skor)
+	} else {
+		fmt.Printf("Skor %d: Tidak Lulus
+", skor)
+	}
+	// Variabel 'skor' sudah tidak ada (undefined) di baris ini.
 }
 ```
-*Catatan:* Kurung kurawal `{ }` adalah wajib, bahkan jika isinya hanya satu baris kode. Ini memaksakan format kode yang seragam (dijaga oleh `gofmt`).
 
-## Idiom Go: If dengan Initialization Statement
+### Praktik
+Uji logika inisialisasi `if err := doSomething(); err != nil { ... }`. Coba buat sebuah fungsi fiktif yang mereturn nilai dan error, lalu tangkap dan periksa nilai error tersebut dalam satu baris `if`.
 
-Fitur *control flow* Go yang paling sering digunakan dalam pengembangan software profesional adalah kemampuan mengeksekusi *statement* inisialisasi pendek tepat sebelum evaluasi kondisi.
-
-```go
-if err := processData(); err != nil {
-    // Tangani error
-    return err
-}
-// Variabel 'err' tidak lagi ada di luar scope if ini!
-```
-**Kenapa ini penting?**
-Ini membatasi ruang lingkup (*scope*) variabel pembantu (seperti `err` atau hasil komputasi sementara) hanya ke dalam blok `if` tersebut. Ini menjaga kode tetap bersih, mencegah tabrakan nama variabel, dan mengurangi *memory footprint*.
-
-Lihat contoh di samping untuk melihat bagaimana hal ini diterapkan!
+## Rangkuman
+- Kurung `()` opsional, Kurawal `{}` wajib.
+- Maksimalkan penggunaan *If Initial Statement* untuk membatasi *scope* variabel sementara (terutama saat mengecek kembalian *error*).

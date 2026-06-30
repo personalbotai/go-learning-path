@@ -1,29 +1,57 @@
 # Operator dan Ekspresi
 
-Go memiliki operator standar yang mirip dengan bahasa turunan C (C++, Java, JavaScript), dengan beberapa perbedaan penting agar lebih aman dan tidak ambigu.
+**ID**: `operator-dan-ekspresi`
+**Duration**: 10-15 menit
 
-## 1. Operator Aritmatika
-Operator matematika dasar: `+`, `-`, `*`, `/`, `%` (modulus).
+## Materi
 
-## 2. Operator Perbandingan (Relasional)
-Digunakan untuk membandingkan dua nilai dan selalu menghasilkan `bool` (`true` atau `false`):
-`==`, `!=`, `<`, `>`, `<=`, `>=`
+### Penjelasan
+Go menyediakan operator standar seperti bahasa pemrograman turunan C lainnya. 
 
-## 3. Operator Logika
-Digunakan untuk kondisi majemuk:
-- `&&` (AND)
-- `||` (OR)
-- `!` (NOT)
+Kategori utama meliputi:
+1. **Aritmatika**: `+`, `-`, `*`, `/`, `%` (Modulus/sisa bagi).
+2. **Perbandingan**: `==` (Sama dengan), `!=` (Tidak sama), `<`, `>`, `<=`, `>=`.
+3. **Logika**: `&&` (AND), `||` (OR), `!` (NOT).
+4. **Bitwise**: `&`, `|`, `^`, `<<`, `>>` (Biasa digunakan pada optimasi *low-level*).
 
-## Perbedaan Penting di Go (Standar Industri)
+**Penting:** Tidak seperti JavaScript, Go **TIDAK** memiliki fitur *type coercion* (konversi tipe implisit). Anda tidak bisa membandingkan atau menjumlahkan tipe `int` dan `float64` tanpa melakukan konversi secara eksplisit (misal: `float64(variabelInt)`).
 
-Di banyak bahasa seperti C atau JavaScript, operasi inkremen `++` dan dekremen `--` adalah sebuah *ekspresi* (bisa dimasukkan ke dalam variabel atau parameter operasi lain).
-
-Di Go, **`++` dan `--` adalah sebuah *statement* (pernyataan), BUKAN *ekspresi*.** 
-Anda **TIDAK** bisa melakukan ini di Go:
+### Contoh Kode
 ```go
-// INI ERROR DI GO!
-a := 1
-b := a++ // Syntax error
+package main
+
+import "fmt"
+
+func main() {
+	a := 10
+	b := 3
+
+	// Aritmatika
+	fmt.Println("Penjumlahan:", a + b)
+	fmt.Println("Modulus:", a % b)
+
+	// Perbandingan
+	fmt.Println("Apakah a lebih besar dari b?", a > b)
+
+	// Logika (Short-circuit)
+	isValid := true
+	hasAccess := false
+	fmt.Println("Bisa login?", isValid && hasAccess)
+
+	// Konversi Eksplisit (Strongly Typed)
+	var pi float64 = 3.14
+	var radius int = 5
+	
+	// Error jika: pi * radius
+	// Benar:
+	luas := pi * float64(radius*radius)
+	fmt.Println("Luas:", luas)
+}
 ```
-Anda harus menulisnya dalam baris terpisah. Ini menghilangkan kebingungan umum yang sering terjadi di C/C++ terkait urutan evaluasi eksekusi.
+
+### Praktik
+Buatlah kalkulator diskon sederhana. Harga barang adalah tipe `int` (misal 50000), dan persentase diskon adalah `float64` (misal 0.15). Hitung dan cetak harga akhir!
+
+## Rangkuman
+- Go itu *Strongly Typed*, konversi tipe harus eksplisit.
+- Tidak ada operator *ternary* (seperti `kondisi ? a : b`) di Go. Anda harus menggunakan `if-else`.

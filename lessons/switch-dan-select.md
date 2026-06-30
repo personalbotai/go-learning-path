@@ -1,22 +1,57 @@
-# Switch dan Select
+# Switch dan Select Statement
 
-## 1. Switch Statement
-Sama seperti `for`, Go meningkatkan fitur `switch` agar lebih aman dari *bug* umum yang sering terjadi di bahasa pemrograman klasik.
+**ID**: `switch-dan-select`
+**Duration**: 15-20 menit
 
-**Keunggulan Switch di Go:**
-1. **TIDAK ada *implicit fallthrough*.** Di C atau Java, jika Anda lupa menulis `break`, kode akan bocor mengeksekusi *case* di bawahnya (fallthrough). Di Go, `break` sudah otomatis diimplementasikan secara internal. (Jika Anda benar-benar butuh fallthrough, Anda harus menulis kata kunci `fallthrough` secara eksplisit).
-2. **Kondisi multi-nilai.** Satu `case` dapat memiliki beberapa nilai yang dipisahkan dengan koma.
-3. **Switch tanpa kondisi.** Berguna sebagai pengganti deretan `if-else` yang panjang.
+## Materi
 
+### Penjelasan
+**1. Switch**
+Pengkondisian menggunakan `switch` di Go jauh lebih aman dan bersih dibandingkan di C atau Java. Mengapa? 
+- **Tidak butuh `break`**: Di Go, eksekusi akan otomatis berhenti setelah sebuah *case* terpenuhi. Anda tidak akan pernah mengalami bug *fall-through* karena lupa menulis `break`.
+- **Kondisi Dinamis**: Anda bisa menggunakan `switch` tanpa variabel awal, membuatnya berfungsi seperti deretan `if-else` yang rapi.
+
+**2. Select**
+Go memiliki sepupu *switch* bernama `select`. Jika *switch* digunakan untuk menguji nilai variabel, **`select` khusus digunakan untuk operasi channel dan concurrency**.
+
+### Contoh Kode
 ```go
-switch os := runtime.GOOS; os {
-case "darwin", "linux":
-    fmt.Println("Unix-like system")
-default:
-    fmt.Println("Other system")
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	// 1. Switch biasa (Otomatis break)
+	sistem := "macOS"
+	switch sistem {
+	case "windows":
+		fmt.Println("Pakai `.exe`")
+	case "macOS", "linux": // Bisa menumpuk beberapa kondisi
+		fmt.Println("Berbasis Unix")
+	default:
+		fmt.Println("OS tidak dikenal")
+	}
+
+	// 2. Switch tanpa variabel (Pengganti if-else panjang)
+	jam := time.Now().Hour()
+	switch { // Mirip 'switch true'
+	case jam < 12:
+		fmt.Println("Selamat Pagi")
+	case jam < 18:
+		fmt.Println("Selamat Siang")
+	default:
+		fmt.Println("Selamat Malam")
+	}
 }
 ```
 
-## 2. Select Statement
-Ini adalah fitur *killer* Go untuk *concurrency*. `select` secara eksklusif beroperasi dengan **Channel**.
-Sintaksnya mirip `switch`, tetapi fungsinya adalah **menunggu operasi channel yang siap**. Ini adalah tulang punggung (*backbone*) dari aplikasi *microservice* yang efisien dan *timeout handling* di Go. (Kita akan mempelajari ini lebih detail di modul Goroutine & Channel).
+### Praktik
+Jika Anda secara spesifik *ingin* eksekusi turun ke *case* di bawahnya meskipun *case* saat ini sudah terpenuhi, cobalah letakkan *keyword* `fallthrough` di akhir salah satu blok `case`. Lihat apa yang terjadi!
+
+## Rangkuman
+- `switch` di Go secara otomatis `break`.
+- Beberapa *case* dapat digabungkan dengan koma.
+- Gunakan `switch {}` tanpa ekspresi sebagai alternatif yang lebih bersih dari `if-else if-else`.

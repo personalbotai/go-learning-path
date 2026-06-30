@@ -1,20 +1,68 @@
-# Goroutine Dasar
+# Goroutine: Concurrency Ringan di Go
 
-*Concurrency* (konkurensi) adalah fitur bintang utama di Go. Go tidak menggunakan *Thread OS* (*Operating System Thread*) secara langsung, melainkan menggunakan **Goroutine**.
+**ID**: `goroutine`
+**Duration**: 30-45 menit
 
-## Apa itu Goroutine?
-Goroutine adalah *"Lightweight Thread"* (thread yang sangat ringan) yang dikelola oleh *runtime* Go (bukan oleh OS).
-1. **Sangat Ringan**: Ukuran awalnya hanya ~2KB memori (sedangkan Thread Java/C++ memakan ~1MB).
-2. **Murah**: Anda bisa menyalakan ratusan ribu *Goroutine* di laptop biasa tanpa *lag*.
-3. **Fleksibel**: Goroutine bisa bertumbuh/menyusut ukuran memorinya secara otomatis.
+## Materi
 
-## Cara Menggunakan
-Cukup tambahkan kata kunci `go` di depan pemanggilan fungsi.
+### Penjelasan
+Salah satu fitur paling revolusioner di Go adalah **Goroutine**. Goroutine adalah fungsi atau metode yang dieksekusi secara konkuren (bersamaan) dengan Goroutine lainnya dalam ruang alamat (address space) yang sama.
+
+Mengapa Goroutine begitu spesial?
+1. **Sangat Ringan (Ultra-Lightweight)**: Tidak seperti OS Threads biasa (seperti di Java atau C++) yang memakan memori ~1MB - 2MB per thread, Goroutine hanya berukuran ~2KB saat awal dibuat.
+2. **Skalabilitas Masif**: Karena ukurannya yang kecil, Anda bisa menjalankan ratusan ribu bahkan jutaan Goroutine secara bersamaan tanpa membuat mesin Anda kehabisan memori (OOM).
+3. **Go Runtime Scheduler**: Go memiliki *scheduler* bawaan yang secara otomatis memetakan (multiplexing) ribuan Goroutine ke dalam beberapa OS Threads yang tersedia di CPU secara efisien.
+
+Cara menggunakan Goroutine sangat sederhana: cukup tambahkan *keyword* **`go`** di depan pemanggilan fungsi.
+
+Namun hati-hati, karena fungsi `main` juga berjalan sebagai Goroutine utama, jika fungsi `main` selesai, maka seluruh Goroutine yang sedang berjalan akan langsung dihentikan secara paksa (*terminated*). Oleh karena itu, kita sering butuh mekanisme sinkronisasi seperti `sync.WaitGroup` untuk menunggu mereka selesai.
+
+### Contoh Kode
 ```go
-go jalankanProsesBerat()
-```
-Fungsi `jalankanProsesBerat()` sekarang akan dieksekusi di *background*, dan program Anda akan langsung lanjut ke baris berikutnya tanpa menunggu fungsi itu selesai.
+package main
 
-## Waspada! (The Main Goroutine)
-Fungsi `main()` di Go adalah sebuah Goroutine utama. **Jika fungsi `main()` selesai, semua Goroutine lain yang masih berjalan di latar belakang akan otomatis dibunuh paksa!**
-Itu sebabnya Anda harus menggunakan teknik sinkronisasi (seperti `sync.WaitGroup` atau *Channel*) untuk memastikan `main()` menunggu semua Goroutine selesai.
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+// Fungsi yang akan dieksekusi sebagai goroutine
+func prosesData(id int, wg *sync.WaitGroup) {
+	// Pastikan Done() dipanggil saat fungsi selesai
+	defer wg.Done()
+	
+	fmt.Printf("Pekerja %d: Mulai memproses...
+", id)
+	time.Sleep(1 * time.Second) // Simulasi kerja I/O lambat (DB, Network)
+	fmt.Printf("Pekerja %d: Selesai!
+", id)
+}
+
+func main() {
+	start := time.Now()
+	var wg sync.WaitGroup // Sinkronisasi
+
+	// Kita meluncurkan 5 Goroutine secara paralel
+	for i := 1; i <= 5; i++ {
+		wg.Add(1) // Menambah counter goroutine yang ditunggu
+		go prosesData(i, &wg) // Eksekusi konkuren!
+	}
+
+	fmt.Println("Main: Menunggu semua pekerja selesai...")
+	wg.Wait() // Blokir eksekusi di baris ini sampai counter menjadi 0
+	
+	fmt.Printf("Selesai total dalam %v
+", time.Since(start))
+}
+```
+
+### Praktik
+1. Jalankan kode di atas. Waktu eksekusi total harusnya hanya sekitar ~1 detik, padahal ada 5 pekerja yang masing-masing tertidur 1 detik. Inilah kekuatan konkurensi!
+2. Coba hilangkan perintah `go` di depan pemanggilan `prosesData`. Jalankan lagi, dan perhatikan bahwa waktu eksekusinya menjadi 5 detik berurutan (sekuensial).
+
+## Rangkuman
+- Goroutine adalah *lightweight thread* yang dikelola oleh Go runtime.
+- Dibuat hanya dengan menambahkan kata kunci `go`.
+- Dibutuhkan mekanisme seperti `sync.WaitGroup` atau `Channel` untuk mensinkronkan Goroutine agar fungsi utama tidak keluar lebih dulu.
+- Referensi: [A Tour of Go: Goroutines](https://go.dev/tour/concurrency/1)

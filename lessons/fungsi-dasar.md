@@ -1,33 +1,65 @@
 # Fungsi Dasar
 
-Di Go, fungsi adalah "first-class citizen". Anda dapat menggunakannya dengan sangat fleksibel. Standar industri di Go sangat bergantung pada fitur **Multiple Return Values**, di mana sebuah fungsi bisa mengembalikan lebih dari satu nilai (biasanya nilai hasil dan error).
+**ID**: `fungsi-dasar`
+**Duration**: 15-20 menit
 
-## 1. Deklarasi Dasar
-Tipe data argumen ditulis **setelah** nama variabel, dan tipe pengembalian (return) ditulis di akhir.
+## Materi
+
+### Penjelasan
+Fungsi adalah blok bangunan (*building block*) utama dalam bahasa Go. Go mendukung beberapa fitur fungsi yang sangat disukai oleh *engineer* sistem, yaitu **Multiple Return Values**.
+
+Sebuah fungsi di Go dapat mengembalikan lebih dari satu nilai. Ini adalah fondasi dari pola *error handling* di Go, di mana sebuah fungsi biasanya mengembalikan `(hasil, error)`.
+
+Anda juga dapat menggunakan **Named Return Values** (Nilai kembalian bernama). Jika digunakan, Anda cukup memanggil kata kunci `return` tanpa menyertakan variabelnya, yang disebut sebagai *Naked Return*.
+
+### Contoh Kode
 ```go
-func add(x int, y int) int {
-    return x + y
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
+// 1. Fungsi biasa
+func Tambah(a int, b int) int {
+	return a + b
+}
+
+// 2. Fungsi dengan Multiple Return Values (Nilai & Error)
+func Bagi(a, b float64) (float64, error) {
+	if b == 0 {
+		return 0, errors.New("tidak bisa dibagi dengan nol")
+	}
+	return a / b, nil
+}
+
+// 3. Fungsi dengan Named Return Values
+func KalkulasiPersegi(sisi float64) (luas float64, keliling float64) {
+	luas = sisi * sisi
+	keliling = 4 * sisi
+	// Naked return: otomatis mengembalikan variabel luas dan keliling
+	return 
+}
+
+func main() {
+	// Menangkap multiple return
+	hasil, err := Bagi(10, 2)
+	if err != nil {
+		fmt.Println("Gagal:", err)
+	} else {
+		fmt.Println("Hasil Pembagian:", hasil)
+	}
+
+	luas, keliling := KalkulasiPersegi(5)
+	fmt.Printf("Luas: %.0f, Keliling: %.0f
+", luas, keliling)
 }
 ```
 
-## 2. Multiple Return Values
-Ini adalah pola paling sering muncul di Go. Biasanya digunakan untuk mengembalikan data dan `error`.
-```go
-func getUser(id int) (string, error) {
-    if id == 1 {
-        return "Archon", nil
-    }
-    return "", errors.New("User not found")
-}
-```
+### Praktik
+Ubah fungsi `Tambah` di atas agar menerima tipe parameter sekaligus, misal `func Tambah(a, b int)`. Go mengizinkan penyederhanaan jika beberapa parameter berurutan memiliki tipe yang sama.
 
-## 3. Named Return Values
-Anda bisa memberi nama pada nilai yang dikembalikan. Ini berfungsi ganda sebagai deklarasi variabel lokal dan dokumentasi. Sangat berguna untuk fungsi yang kompleks.
-```go
-func rectangleProps(length, width float64) (area float64, perimeter float64) {
-    area = length * width
-    perimeter = 2 * (length + width)
-    return // "Naked return": otomatis mengembalikan area dan perimeter
-}
-```
-*Catatan:* "Naked return" bisa mengurangi kejelasan pada fungsi yang panjang, jadi gunakan dengan bijak.
+## Rangkuman
+- Go sangat mengandalkan *Multiple Return Values* untuk manajemen status dan error.
+- Gunakan *Named Return Values* hanya pada fungsi pendek, karena pada fungsi panjang (lebih dari 20 baris), hal ini dapat mengurangi *readability* (keterbacaan).

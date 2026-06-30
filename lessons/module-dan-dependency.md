@@ -1,36 +1,57 @@
-# Module Dan Dependency
+# Go Modules dan Dependency Management
 
 **ID**: `module-dan-dependency`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Module Dan Dependency** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Sejak Go 1.11, manajemen pustaka (dependensi eksternal) ditangani secara rapi oleh **Go Modules** (menggantikan ekosistem GOPATH yang lama). 
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Module Dan Dependency` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Go Modules terdiri dari dua file utama (mirip seperti `package.json` dan `package-lock.json` di ekosistem Node.js):
+1. **`go.mod`**: Menyimpan identitas proyek Anda dan daftar pustaka yang Anda butuhkan (beserta standar versinya).
+2. **`go.sum`**: Disimpan oleh sistem yang memuat checksum kriptografis dari pustaka yang didownload untuk menjamin kode pustaka pihak ketiga tidak dimodifikasi orang jahat (*supply chain security*).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+Perintah esensial di terminal:
+- `go mod init <nama-module>`: Inisialisasi awal. (Contoh: `go mod init github.com/user/proyek`)
+- `go get <url>`: Mendownload *library* pihak ketiga. (Contoh: `go get github.com/gin-gonic/gin`)
+- `go mod tidy`: Perintah sapu jagat. Menghapus library yang tidak lagi di-import, dan mengunduh library yang di-import tapi belum ada. Wajib Anda eksekusi secara rutin!
 
-### Contoh Kode Umum
+### Contoh Cara Penggunaan
+
+1. Buka Terminal, buat direktori baru dan inisiasi modul:
+```bash
+mkdir appku
+cd appku
+go mod init appku
+```
+
+2. Tulis kode Anda (misal `main.go`) lalu sertakan paket eksternal (contoh menggunakan `uuid` dari google):
 ```go
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/google/uuid"
+)
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Module Dan Dependency")
-    // TODO: Implementasi logika Module Dan Dependency di sini
+	id := uuid.New()
+	fmt.Println("ID Anda:", id.String())
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Module Dan Dependency berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+3. Pada tahap ini, terminal akan memberikan peringatan bahwa package eksternal hilang. Rapikan dengan Tidy:
+```bash
+go mod tidy
+```
+*(Perintah ini akan secara otomatis mencari ke GitHub, mengunduh, menambahkan ke `go.mod`, dan `go.sum` lalu mempersiapkannya).*
+
+4. Jalankan kode!
+```bash
+go run main.go
+```
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Gunakan pola penamaan URL Git (contoh `github.com/akun/repo`) saat melakukan `go mod init` jika Anda berencana meng-open-source kan library Anda di masa depan.
+- *Best practice* di perusahaan adalah menjalankan `go mod tidy` sebelum melalukan Commit ke Git.
