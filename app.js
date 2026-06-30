@@ -34,7 +34,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/apa-itu-go.md",
         "description": "<p><strong>Apa Itu Go</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -55,7 +55,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/array.md",
         "description": "<p><strong>Array</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -76,7 +76,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/array-dan-slice.md",
         "description": "<p><strong>Array Dan Slice</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -97,7 +97,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/break-continue.md",
         "description": "<p><strong>Break Continue</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -118,7 +118,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/channel.md",
         "description": "<p><strong>Channel</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -139,7 +139,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/channel-dasar.md",
         "description": "<p><strong>Channel Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -160,7 +160,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/cli-application.md",
         "description": "<p><strong>Cli Application</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -181,7 +181,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/closure-dan-anonymous.md",
         "description": "<p><strong>Closure Dan Anonymous</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -202,7 +202,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/context-dan-timeout.md",
         "description": "<p><strong>Context Dan Timeout</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -223,7 +223,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/control-flow-if-else.md",
         "description": "<p><strong>Control Flow If Else</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -244,7 +244,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/custom-error.md",
         "description": "<p><strong>Custom Error</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -265,7 +265,7 @@ const lessons = [
         "moduleId": 1,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/defer-panic-recover.md",
         "description": "<p><strong>Defer Panic Recover</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -286,7 +286,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/embedding.md",
         "description": "<p><strong>Embedding</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -307,7 +307,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/error-handling.md",
         "description": "<p><strong>Error Handling</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -328,7 +328,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/file-io.md",
         "description": "<p><strong>File Io</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -349,7 +349,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/file-io-dasar.md",
         "description": "<p><strong>File Io Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -370,7 +370,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/for-loop.md",
         "description": "<p><strong>For Loop</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -391,7 +391,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/fungsi-dasar.md",
         "description": "<p><strong>Fungsi Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -412,7 +412,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/generics-dasar.md",
         "description": "<p><strong>Generics Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -433,7 +433,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/goroutine.md",
         "description": "<p><strong>Goroutine</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -454,7 +454,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/goroutine-dasar.md",
         "description": "<p><strong>Goroutine Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -475,7 +475,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/hello-world.md",
         "description": "<p><strong>Hello World</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -496,7 +496,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/http-server-dasar.md",
         "description": "<p><strong>Http Server Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -517,7 +517,7 @@ const lessons = [
         "moduleId": 2,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/if-else.md",
         "description": "<p><strong>If Else</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -538,7 +538,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/input-output.md",
         "description": "<p><strong>Input Output</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -559,7 +559,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/instalasi-dan-setup.md",
         "description": "<p><strong>Instalasi Dan Setup</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -580,7 +580,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/interface.md",
         "description": "<p><strong>Interface</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -601,7 +601,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/interface-dasar.md",
         "description": "<p><strong>Interface Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -622,7 +622,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/json-dan-encoding.md",
         "description": "<p><strong>Json Dan Encoding</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -643,7 +643,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/loop-dan-iterasi.md",
         "description": "<p><strong>Loop Dan Iterasi</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -664,7 +664,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/map.md",
         "description": "<p><strong>Map</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -685,7 +685,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/map-dan-key-value.md",
         "description": "<p><strong>Map Dan Key Value</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -706,7 +706,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/method.md",
         "description": "<p><strong>Method</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -727,7 +727,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/module-dan-dependency.md",
         "description": "<p><strong>Module Dan Dependency</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -748,7 +748,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/multiple-return.md",
         "description": "<p><strong>Multiple Return</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -769,7 +769,7 @@ const lessons = [
         "moduleId": 3,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/mutex-sync.md",
         "description": "<p><strong>Mutex Sync</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -790,7 +790,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/operator.md",
         "description": "<p><strong>Operator</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -811,7 +811,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/operator-dan-ekspresi.md",
         "description": "<p><strong>Operator Dan Ekspresi</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -832,7 +832,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/package-dan-import.md",
         "description": "<p><strong>Package Dan Import</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -853,7 +853,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/pointer.md",
         "description": "<p><strong>Pointer</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -874,7 +874,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/pointer-dasar.md",
         "description": "<p><strong>Pointer Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -895,7 +895,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/reflection-dasar.md",
         "description": "<p><strong>Reflection Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -916,7 +916,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/rest-api-project.md",
         "description": "<p><strong>Rest Api Project</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -937,7 +937,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/select.md",
         "description": "<p><strong>Select</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -958,7 +958,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/select-dan-concurrency.md",
         "description": "<p><strong>Select Dan Concurrency</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -979,7 +979,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/slice.md",
         "description": "<p><strong>Slice</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1000,7 +1000,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/struct.md",
         "description": "<p><strong>Struct</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1021,7 +1021,7 @@ const lessons = [
         "moduleId": 4,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/struct-dan-method.md",
         "description": "<p><strong>Struct Dan Method</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1042,7 +1042,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/switch.md",
         "description": "<p><strong>Switch</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1063,7 +1063,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/switch-dan-select.md",
         "description": "<p><strong>Switch Dan Select</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1084,7 +1084,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/testing-dasar.md",
         "description": "<p><strong>Testing Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1105,7 +1105,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/tipe-data-dasar.md",
         "description": "<p><strong>Tipe Data Dasar</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1126,7 +1126,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/tools-dan-editor.md",
         "description": "<p><strong>Tools Dan Editor</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1147,7 +1147,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variabel-dan-konstanta.md",
         "description": "<p><strong>Variabel Dan Konstanta</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1168,7 +1168,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variabel-dan-tipe-data.md",
         "description": "<p><strong>Variabel Dan Tipe Data</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1189,7 +1189,7 @@ const lessons = [
         "moduleId": 5,
         "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/variadic-fungsi.md",
         "description": "<p><strong>Variadic Fungsi</strong></p>",
-        "defaultCode": "package main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, Go!\")\n}",
+        
         "expectedOutput": "Hello, Go!",
         "hint": "Pelajari materi.",
         "quiz": {
@@ -1363,7 +1363,22 @@ async function runCode() {
     }
 }
 
-function resetCode() { document.getElementById('code-editor').value = lessons[currentLesson].defaultCode; }
+
+async function resetCode() { 
+    let editorCode = (lessons[currentLesson].defaultCode || '').replace(/\\n/g, '\n');
+    try {
+        let slug = lessons[currentLesson].mdFile.split('/').pop().replace('.md', '');
+        const jsonResponse = await fetch('lessons/' + slug + '.json');
+        if (jsonResponse.ok) {
+            const data = await jsonResponse.json();
+            if (data.code) {
+                editorCode = data.code.replace(/\\n/g, '\n');
+            }
+        }
+    } catch(e) {}
+    document.getElementById('code-editor').value = editorCode; 
+}
+
 function checkQuiz() {
     const selected = document.querySelector('input[name="quiz"]:checked');
     if (!selected) return alert('Pilih jawaban dulu!');
