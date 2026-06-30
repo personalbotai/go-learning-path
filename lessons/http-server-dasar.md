@@ -1,32 +1,36 @@
 # Http Server Dasar
 
 **ID**: `http-server-dasar`
-**Duration**: 20-25 menit
+**Duration**: 20-30 menit
 
 ## Materi
 
 ### Penjelasan
-Http Server Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
+Materi tentang **Http Server Dasar** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
 
-### Contoh Kode
+Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Http Server Dasar` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+
+### Panduan Teknis & Best Practice
+1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
+2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
+3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+
+### Contoh Kode Umum
 ```go
 package main
-import ("fmt"; "net/http")
 
-func handler(w http.ResponseWriter, r *http.Request) {
-    fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
-}
+import "fmt"
 
 func main() {
-    http.HandleFunc("/", handler)
-    fmt.Println("Server starting...")
-    http.ListenAndServe(":8080", nil)
+    fmt.Println("Ini adalah demonstrasi materi: Http Server Dasar")
+    // TODO: Implementasi logika Http Server Dasar di sini
 }
 ```
 
 ### Praktik
-Buat program Go yang menggunakan http server dasar.
+Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Http Server Dasar berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
 
 ## Rangkuman
-- Praktikkan http server dasar dengan kode
-- Referensi: go.dev/doc
+- Tulis kode Go yang "idiomatik".
+- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
+- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)

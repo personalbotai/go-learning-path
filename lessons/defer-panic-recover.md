@@ -1,26 +1,36 @@
 # Defer Panic Recover
 
 **ID**: `defer-panic-recover`
-**Duration**: 20-25 menit
+**Duration**: 20-30 menit
 
 ## Materi
 
 ### Penjelasan
-Defer Panic Recover adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
+Materi tentang **Defer Panic Recover** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
 
-### Contoh Kode
+Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Defer Panic Recover` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+
+### Panduan Teknis & Best Practice
+1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
+2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
+3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+
+### Contoh Kode Umum
 ```go
 package main
+
 import "fmt"
 
 func main() {
-    fmt.Println("Belajar: Defer Panic Recover")
+    fmt.Println("Ini adalah demonstrasi materi: Defer Panic Recover")
+    // TODO: Implementasi logika Defer Panic Recover di sini
 }
 ```
 
 ### Praktik
-Buat program Go yang menggunakan defer panic recover.
+Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Defer Panic Recover berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
 
 ## Rangkuman
-- Praktikkan defer panic recover dengan kode
-- Referensi: go.dev/doc
+- Tulis kode Go yang "idiomatik".
+- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
+- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)

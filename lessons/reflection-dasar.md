@@ -1,31 +1,36 @@
 # Reflection Dasar
 
 **ID**: `reflection-dasar`
-**Duration**: 20-25 menit
+**Duration**: 20-30 menit
 
 ## Materi
 
 ### Penjelasan
-Reflection Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
+Materi tentang **Reflection Dasar** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
 
-### Contoh Kode
+Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Reflection Dasar` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+
+### Panduan Teknis & Best Practice
+1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
+2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
+3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+
+### Contoh Kode Umum
 ```go
 package main
-import ("fmt"; "os")
+
+import "fmt"
 
 func main() {
-    err := os.WriteFile("test.txt", []byte("Hello Go!"), 0644)
-    if err != nil { fmt.Println(err); return }
-    
-    data, err := os.ReadFile("test.txt")
-    if err != nil { fmt.Println(err); return }
-    fmt.Println(string(data))
+    fmt.Println("Ini adalah demonstrasi materi: Reflection Dasar")
+    // TODO: Implementasi logika Reflection Dasar di sini
 }
 ```
 
 ### Praktik
-Buat program Go yang menggunakan reflection dasar.
+Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Reflection Dasar berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
 
 ## Rangkuman
-- Praktikkan reflection dasar dengan kode
-- Referensi: go.dev/doc
+- Tulis kode Go yang "idiomatik".
+- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
+- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
