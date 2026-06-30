@@ -1273,7 +1273,25 @@ async function loadLesson(index) {
             prose-strong:text-white prose-a:text-blue-400">
             ${contentHtml}
         </div>`;
-    document.getElementById('code-editor').value = (lesson.defaultCode || '').replace(/\\n/g, '\n');
+    
+    let editorCode = (lesson.defaultCode || '').replace(/\\n/g, '\n');
+    
+    // Attempt to load dynamic code from JSON file if slug/filename exists
+    try {
+        let slug = lesson.mdFile.split('/').pop().replace('.md', '');
+        const jsonResponse = await fetch('lessons/' + slug + '.json');
+        if (jsonResponse.ok) {
+            const data = await jsonResponse.json();
+            if (data.code) {
+                editorCode = data.code.replace(/\\n/g, '\n');
+            }
+        }
+    } catch(e) {
+        console.log("No specific code json found for this lesson, using default.");
+    }
+
+    document.getElementById('code-editor').value = editorCode;
+
     document.getElementById('output').innerHTML = '<span class="text-gray-500">// Output akan muncul di sini</span>';
     document.getElementById('validation-msg').className = 'mt-4 p-3 rounded hidden';
     if (lesson.quiz) {
