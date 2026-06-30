@@ -1,30 +1,28 @@
-# Array Dan Slice
+# Array dan Slice
 
-**ID**: `array-dan-slice`
-**Duration**: 20-25 menit
+Di Go, pemahaman tentang **Array** dan **Slice** sangat krusial karena berkaitan langsung dengan cara Go menangani memori (stack vs heap).
 
-## Materi
-
-### Penjelasan
-Array Dan Slice adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
-
-### Contoh Kode
+## 1. Array (Statis & Fixed)
+Array memiliki panjang yang tetap dan tidak bisa diubah setelah dibuat.
 ```go
-package main
-import "fmt"
+var primes [5]int = [5]int{2, 3, 5, 7, 11}
+```
+Di industri, Array mentah jarang digunakan secara langsung. Array biasanya hanya bertindak sebagai struktur data di balik layar (Backing Array) untuk Slice.
 
-func main() {
-    s := []int{1, 2, 3, 4, 5}
-    s = append(s, 6)
-    fmt.Println(s)
-    fmt.Println(s[1:3])
-    fmt.Println(len(s))
-}
+## 2. Slice (Dinamis & Fleksibel)
+Slice adalah lapisan fleksibel di atas Array. Anda bisa menambah elemennya (menggunakan `append`). Ini adalah tipe data urutan standar yang digunakan 99% dalam pemrograman Go.
+
+**Anatomi Slice:**
+Slice memiliki 3 komponen internal:
+1. **Pointer**: Menunjuk ke indeks Array asli di memori.
+2. **Length (len)**: Jumlah elemen yang saat ini ada di slice.
+3. **Capacity (cap)**: Kapasitas maksimal array di belakang slice.
+
+```go
+// Membuat slice kosong dengan make (Sangat disarankan untuk optimasi performa)
+// Panjang awal 0, kapasitas awal 5
+users := make([]string, 0, 5) 
 ```
 
-### Praktik
-Buat program Go yang menggunakan array dan slice.
-
-## Rangkuman
-- Praktikkan array dan slice dengan kode
-- Referensi: go.dev/doc
+**Perhatian (Memory Leak Trap):**
+Jika Anda membuat sebuah slice kecil dari slice yang sangat besar (misal: `bigSlice[:10]`), *Backing Array* asli tidak akan dihapus oleh *Garbage Collector* karena slice kecil masih memegang pointernya! Selalu gunakan `copy()` jika butuh sebagian kecil memori dan ingin melepaskan sisanya.

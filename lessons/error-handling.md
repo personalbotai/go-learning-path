@@ -1,38 +1,30 @@
 # Error Handling
 
-**ID**: `error-handling`
-**Duration**: 20-25 menit
+Go tidak memiliki *Exception* (seperti `try-catch` di Java/Python/JS). 
+Filosofi Go menganggap **error adalah sekadar nilai biasa**. Error harus ditangani di mana ia terjadi. Ini memaksa developer memikirkan setiap kemungkinan kegagalan *flow* aplikasi, menghasilkan *software* yang sangat tangguh (*resilient*).
 
-## Materi
-
-### Penjelasan
-Error Handling adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
-
-### Contoh Kode
+## Interface Error
+Dalam bahasa Go, `error` pada dasarnya adalah antarmuka sederhana dengan satu fungsi bawaan:
 ```go
-package main
-import ("fmt"; "errors")
-
-func bagi(a, b float64) (float64, error) {
-    if b == 0 {
-        return 0, errors.New("div by zero")
-    }
-    return a / b, nil
-}
-
-func main() {
-    hasil, err := bagi(10, 0)
-    if err != nil {
-        fmt.Println("Error:", err)
-    } else {
-        fmt.Println(hasil)
-    }
+type error interface {
+    Error() string
 }
 ```
 
-### Praktik
-Buat program Go yang menggunakan error handling.
+## Pola Dasar (Standar Industri)
+Ini adalah pola yang akan Anda lihat di setiap baris kode Go profesional:
+```go
+file, err := os.Open("config.json")
+if err != nil {
+    // Tangani error secara eksplisit (misal: log, return ke fungsi parent, dll)
+    return fmt.Errorf("gagal membuka config: %w", err)
+}
+// Jika berhasil, lanjut operasi
+```
 
-## Rangkuman
-- Praktikkan error handling dengan kode
-- Referensi: go.dev/doc
+## Error Wrapping (Go 1.13+)
+Di aplikasi skala besar, error bisa terjadi di lapisan paling bawah (database), tapi Anda ingin memberikan informasi tambahan di lapisan atas (API/HTTP layer). Gunakan **`%w` (wrap)**.
+```go
+fmt.Errorf("gagal memproses user id %d: %w", id, errDatabase)
+```
+Nantinya, Anda bisa mengekstrak atau memeriksa jenis error aslinya menggunakan fungsi canggih `errors.Is()` dan `errors.As()`.

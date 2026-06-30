@@ -1,37 +1,20 @@
 # Goroutine Dasar
 
-**ID**: `goroutine-dasar`
-**Duration**: 20-25 menit
+*Concurrency* (konkurensi) adalah fitur bintang utama di Go. Go tidak menggunakan *Thread OS* (*Operating System Thread*) secara langsung, melainkan menggunakan **Goroutine**.
 
-## Materi
+## Apa itu Goroutine?
+Goroutine adalah *"Lightweight Thread"* (thread yang sangat ringan) yang dikelola oleh *runtime* Go (bukan oleh OS).
+1. **Sangat Ringan**: Ukuran awalnya hanya ~2KB memori (sedangkan Thread Java/C++ memakan ~1MB).
+2. **Murah**: Anda bisa menyalakan ratusan ribu *Goroutine* di laptop biasa tanpa *lag*.
+3. **Fleksibel**: Goroutine bisa bertumbuh/menyusut ukuran memorinya secara otomatis.
 
-### Penjelasan
-Goroutine Dasar adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
-
-### Contoh Kode
+## Cara Menggunakan
+Cukup tambahkan kata kunci `go` di depan pemanggilan fungsi.
 ```go
-package main
-import ("fmt"; "sync")
-
-func worker(id int, wg *sync.WaitGroup) {
-    defer wg.Done()
-    fmt.Printf("Worker %d selesai\n", id)
-}
-
-func main() {
-    var wg sync.WaitGroup
-    for i := 1; i <= 3; i++ {
-        wg.Add(1)
-        go worker(i, &wg)
-    }
-    wg.Wait()
-    fmt.Println("Semua selesai!")
-}
+go jalankanProsesBerat()
 ```
+Fungsi `jalankanProsesBerat()` sekarang akan dieksekusi di *background*, dan program Anda akan langsung lanjut ke baris berikutnya tanpa menunggu fungsi itu selesai.
 
-### Praktik
-Buat program Go yang menggunakan goroutine dasar.
-
-## Rangkuman
-- Praktikkan goroutine dasar dengan kode
-- Referensi: go.dev/doc
+## Waspada! (The Main Goroutine)
+Fungsi `main()` di Go adalah sebuah Goroutine utama. **Jika fungsi `main()` selesai, semua Goroutine lain yang masih berjalan di latar belakang akan otomatis dibunuh paksa!**
+Itu sebabnya Anda harus menggunakan teknik sinkronisasi (seperti `sync.WaitGroup` atau *Channel*) untuk memastikan `main()` menunggu semua Goroutine selesai.

@@ -1,32 +1,33 @@
-# Map Dan Key Value
+# Map (Key-Value)
 
-**ID**: `map-dan-key-value`
-**Duration**: 20-25 menit
+`map` adalah struktur data *hash table* di Go yang digunakan untuk menyimpan pasangan *key-value*. Map tidak memiliki urutan (*unordered*).
 
-## Materi
+## Inisialisasi Map
+Jangan pernah menulis ke map yang belum diinisialisasi (bernilai `nil`), hal tersebut akan menyebabkan program *panic*. Gunakan `make`!
 
-### Penjelasan
-Map Dan Key Value adalah konsep penting dalam Go untuk pengembangan aplikasi modern.
-
-### Contoh Kode
 ```go
-package main
-import "fmt"
+// BENAR: Menggunakan make
+configs := make(map[string]string)
+configs["env"] = "production"
 
-func main() {
-    m := map[string]int{
-        "alice": 25,
-        "bob": 30,
-    }
-    m["charlie"] = 35
-    fmt.Println(m["alice"])
-    fmt.Println(len(m))
+// BENAR: Menggunakan literal
+ports := map[string]int{
+    "http": 80,
+    "https": 443,
 }
 ```
 
-### Praktik
-Buat program Go yang menggunakan map dan key value.
+## Memeriksa Keberadaan Kunci (The "ok" Idiom)
+Bagaimana membedakan apakah kunci "admin" bernilai kosong, atau kunci "admin" memang tidak ada di map? Gunakan dua variabel kembalian:
 
-## Rangkuman
-- Praktikkan map dan key value dengan kode
-- Referensi: go.dev/doc
+```go
+value, isExist := users["admin"]
+if isExist {
+    fmt.Println("User ditemukan:", value)
+}
+```
+
+## Catatan Standar Industri (Concurrency)
+**Map standar di Go TIDAK *Thread-Safe* (Aman digunakan secara konkuren).**
+Jika Anda memiliki beberapa *Goroutine* yang membaca dan menulis ke map yang sama secara bersamaan, aplikasi Anda akan *crash* dengan error `fatal error: concurrent map writes`. 
+Solusinya: Gunakan `sync.RWMutex` untuk mengunci map saat menulis, atau gunakan tipe `sync.Map` dari pustaka standar.
