@@ -426,27 +426,7 @@ const lessons = [
             "answer": 0
         }
     },
-    {
-        "id": 20,
-        "title": "20. Goroutine",
-        "module": "Dasar",
-        "moduleId": 2,
-        "mdFile": "https://raw.githubusercontent.com/personalbotai/go-learning-path/main/lessons/goroutine.md",
-        "description": "<p><strong>Goroutine</strong></p>",
-        
-        "expectedOutput": "Hello, Go!",
-        "hint": "Pelajari materi.",
-        "quiz": {
-            "question": "Apa yang dipelajari di Goroutine?",
-            "options": [
-                "A",
-                "B",
-                "C",
-                "D"
-            ],
-            "answer": 0
-        }
-    },
+    
     {
         "id": 21,
         "title": "21. Goroutine Dasar",
