@@ -1,36 +1,77 @@
-# Generics Dasar
+# Generics Dasar (Go 1.18+)
 
 **ID**: `generics-dasar`
-**Duration**: 20-30 menit
+**Duration**: 25-30 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Generics Dasar** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Go versi 1.18 membawa pembaruan terbesar dalam sejarah bahasa Go dengan diperkenalkannya **Type Parameters** (dikenal sebagai **Generics**). Generics memungkinkan Anda untuk menulis sebuah fungsi atau tipe data independen dari tipe data tertentu (dinamis secara statis).
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Generics Dasar` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Sebelum adanya Generics, jika Anda butuh fungsi yang menjumlahkan tipe `int` dan tipe `float64`, Anda harus menulis dua fungsi terpisah (`JumlahkanInt` dan `JumlahkanFloat`). Jika Anda menggunakan `interface{}`, Anda kehilangan keamanan tipe saat masa kompilasi (tipe *safety* hilang) dan program akan lebih lambat akibat proses refleksi.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+Dengan Generics, Anda mendefinisikan *Constraint* (Batasan) menggunakan tanda kurung siku `[ ]`. Tipe-tipe generik biasanya dideklarasikan dengan penamaan tunggal `T` (singkatan dari *Type*). Go 1.18 juga memperkenalkan kata kunci *built-in* baru `any` sebagai alias (nama lain) untuk antarmuka kosong `interface{}`.
 
-### Contoh Kode Umum
+**Konstraint Kunci yang Tersedia:**
+- `any`: Bisa tipe apa saja (alias dari `interface{}`).
+- `comparable`: Tipe yang mendukung operator persamaan `==` dan `!=` (penting jika Anda membuat generik *Map* di mana *key*-nya wajib setara).
+
+### Contoh Kode
+
 ```go
 package main
 
 import "fmt"
 
+// Number adalah custom constraint yang memungkinkan tipe int ATAU float64
+type Number interface {
+	int | float64
+}
+
+// Fungsi Generic (Type Parameter dideklarasikan di dalam tanda kurung siku [])
+func Jumlahkan[T Number](a, b T) T {
+	return a + b
+}
+
+// Fungsi Generic untuk mengekstrak keys dari Map apa pun.
+// K (Key) dibatasi harus `comparable` agar bisa menjadi kunci Map.
+// V (Value) dibatasi `any` karena valuenya bisa apapun.
+func AmbilKunci[K comparable, V any](m map[K]V) []K {
+	var keys []K
+	for key := range m {
+		keys = append(keys, key)
+	}
+	return keys
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Generics Dasar")
-    // TODO: Implementasi logika Generics Dasar di sini
+	// Memanggil fungsi generik dengan tipe integer
+	hasilInt := Jumlahkan(5, 10)
+	fmt.Printf("Int   : 5 + 10 = %v
+", hasilInt)
+
+	// Memanggil fungsi generik dengan tipe float64
+	hasilFloat := Jumlahkan(3.5, 4.2)
+	fmt.Printf("Float : 3.5 + 4.2 = %v
+", hasilFloat)
+
+	// Mendemonstrasikan AmbilKunci dengan map ber-key string
+	mString := map[string]int{"Alice": 25, "Bob": 30}
+	fmt.Println("Keys (String) :", AmbilKunci(mString))
+
+	// Mendemonstrasikan AmbilKunci dengan map ber-key integer
+	mInt := map[int]string{1: "Senin", 2: "Selasa"}
+	fmt.Println("Keys (Integer):", AmbilKunci(mInt))
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Generics Dasar berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+Buatlah sebuah *generic slice function* bernama `Contains` yang menerima sebuah `[]T` dan elemen pencarian bertipe `T`. Fungsi harus mengembalikan nilai boolean `true` jika elemen tersebut ada di dalam slice. 
+*Petunjuk: Batasi tipe `T` dengan konstrain `comparable` agar Anda bisa menggunakan operator `==`.*
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Gunakan tanda `[ ]` untuk mendefinisikan paramater tipe generik.
+- `any` adalah ekuivalen yang modern dan ringkas dari `interface{}`.
+- Generics menghasilkan performa kompilasi yang kuat dan tingkat tinggi (tidak mengandalkan refleksi).
+- Jangan gunakan Generics di semua hal. Cukup pada fungsi yang memang sangat memanipulasi algoritme dasar atau struktur koleksi (slices/maps) untuk beragam tipe.
+- Referensi: [Tutorial: Getting started with generics - go.dev](https://go.dev/doc/tutorial/generics)
