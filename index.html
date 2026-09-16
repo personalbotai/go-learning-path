@@ -30,7 +30,7 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
     <!-- Icons & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -194,7 +194,7 @@
                                     <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
                                     <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
                                 </div>
-                                <span class="text-xs text-slate-400 font-mono flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> main.go — Go 1.22</span>
+                                <span class="text-xs text-slate-400 font-mono flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> main.go — Go 1.22+</span>
                             </div>
                             <div class="flex gap-2">
                                 <button onclick="copyCode()" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-medium rounded-lg transition"><i class="far fa-copy"></i> Copy</button>
@@ -213,7 +213,7 @@
                                 <span class="flex items-center gap-2 text-[11px] font-semibold tracking-wider text-slate-400 uppercase"><i class="fas fa-terminal text-[10px]"></i> Output</span>
                                 <button onclick="clearOutput()" class="text-[11px] text-slate-500 hover:text-white transition">Clear</button>
                             </div>
-                            <div id="output" class="px-5 py-4 bg-black/40 font-['JetBrains_Mono',monospace] text-sm text-emerald-400 min-h-[80px] max-h-[260px] overflow-auto whitespace-pre-wrap"><span class="text-slate-600">$ go run main.go — tekan Run</span></div>
+                            <div id="output" class="px-5 py-4 bg-black/40 font-['JetBrains_Mono',monospace] text-sm text-emerald-400 min-h-[80px] max-h-[260px] overflow-auto whitespace-pre-wrap"><span class="text-slate-600">$ go run main.go — Go 1.22+</span></div>
                         </div>
                     </div>
                     <div id="validation-msg" class="mt-3 p-4 rounded-xl hidden text-sm border"></div>
@@ -257,7 +257,6 @@
         </main>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
     <script src="app.js"></script>
     <script>
     // Theme toggle (light/dark) — persist
