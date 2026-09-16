@@ -840,49 +840,40 @@ function filteredLessons(){
   return lessons.filter(l=> l.title.toLowerCase().includes(q) || l.slug.includes(q) || l.module.toLowerCase().includes(q));
 }
 
-function renderNav(){
+function renderNav(filter){
+  if(typeof filter==='string') filterQuery=filter;
   const nav=document.getElementById('lessons-nav');
   if(!nav) return;
-  const q=filterQuery;
-  const allLessons = lessons;
-  nav.innerHTML = MODULES.map(mod=>{
-    const modLessons = allLessons.filter(l=>l.moduleId===mod.id);
-    const completed = modLessons.filter(l=>progress[l.id]).length;
-    const visible = q ? modLessons.filter(l=> l.title.toLowerCase().includes(q.toLowerCase()) || l.slug.includes(q.toLowerCase())) : modLessons;
-    if(q && visible.length===0) return '';
-    const isOpen = q ? true : (currentLesson>=0 ? mod.id===lessons[currentLesson].moduleId : mod.id===1);
-    return `
-      <div class="mod-group">
-        <div class="mod-head ${isOpen?'open':''}" onclick="toggleModule(${mod.id})">
-          <span><i class="${mod.icon} mod-icon"></i>${mod.title}</span>
-          <span style="display:flex;align-items:center;gap:8px"><span class="mod-count">${completed}/${modLessons.length}</span><i class="fa-solid fa-chevron-right chevron"></i></span>
-        </div>
-        <div id="module-${mod.id}" class="mod-lessons ${isOpen?'open':''}">
-          ${modLessons.map(l=>{
-            const idx=lessons.indexOf(l);
-            const active = idx===currentLesson ? 'active' : '';
-            const done = progress[l.id] ? 'done' : '';
-            const hidden = q && !visible.includes(l) ? 'style="display:none"' : '';
-            return `<div onclick="loadLesson(${idx})" class="lesson-nav ${active} ${done}" ${hidden}>
-              <span class="nav-check">${progress[l.id]?'✓':''}</span>
-              <span style="flex:1">${l.title}</span>
-              <span style="font-size:.6rem;color:var(--text-d)">${l.duration}</span>
-            </div>`;
-          }).join('')}
-        </div>
-      </div>`;
+  const q=(filterQuery||'').toLowerCase().trim();
+  const curModId = lessons[currentLesson] ? lessons[currentLesson].moduleId : 1;
+  nav.innerHTML = MODULES.map(function(mod){
+    const modLessons = lessons.filter(function(l){ return l.moduleId===mod.id; });
+    const filtered = q ? modLessons.filter(function(l){ return l.title.toLowerCase().includes(q) || mod.title.toLowerCase().includes(q) || (l.slug||'').includes(q); }) : modLessons;
+    if(q && filtered.length===0) return '';
+    const doneCount = modLessons.filter(function(l){ return !!progress[l.id]; }).length;
+    const isCurrentModule = q ? true : mod.id===curModId;
+    const lessonRows = filtered.map(function(l){
+      const idx = lessons.findIndex(function(x){ return x.id===l.id; });
+      const isActive = idx===currentLesson;
+      const isDone = !!progress[l.id];
+      const cls = isActive ? 'lesson-active font-semibold' : 'text-slate-400 hover:text-slate-200 hover:bg-white/5';
+      return '<button onclick="loadLesson('+idx+'); if(typeof closeSidebar===\'function\')closeSidebar();" class="w-full text-left px-3 py-2 rounded-lg text-xs transition flex items-center gap-2.5 '+cls+'">' +
+        '<span class="text-[11px] shrink-0">'+(isDone ? '&#9989;' : '&#9675;')+'</span>' +
+        '<span class="truncate flex-1">'+l.title+'</span></button>';
+    }).join('');
+    const badgeCls = doneCount===modLessons.length ? 'bg-emerald-500/20 text-emerald-300' : 'bg-white/5 text-slate-500';
+    return '<div class="mb-1">' +
+      '<button onclick="toggleModule('+mod.id+')" class="w-full flex items-center justify-between px-4 py-2.5 text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition rounded-lg text-left">' +
+      '<span class="flex items-center gap-2 truncate"><i class="'+mod.icon+' text-cyan-400 text-sm w-4 text-center"></i><span class="truncate">'+mod.title+'</span></span>' +
+      '<span class="text-[10px] font-mono px-2 py-0.5 rounded-full '+badgeCls+'">'+doneCount+'/'+modLessons.length+'</span></button>' +
+      '<div id="module-'+mod.id+'" class="space-y-0.5 mt-0.5 px-2 '+(isCurrentModule?'':'hidden')+'">'+lessonRows+'</div></div>';
   }).join('');
-  const totalDone=Object.keys(progress).length;
-  const pct=Math.round((totalDone/lessons.length)*100);
-  const elP=document.getElementById('course-progress'); if(elP) elP.textContent=pct+'%';
-  const elF=document.getElementById('progress-fill'); if(elF) elF.style.width=pct+'%';
-  const elDone=document.getElementById('stat-done'); if(elDone) elDone.textContent=totalDone;
+  updateProgress();
 }
 
 function toggleModule(id){
   const el=document.getElementById('module-'+id);
-  const head=el?.previousElementSibling;
-  if(el){ el.classList.toggle('open'); head?.classList.toggle('open'); }
+  if(el) el.classList.toggle('hidden');
 }
 
 function updateGutter(){
@@ -897,9 +888,7 @@ async function loadLesson(index){
   if(index<0||index>=lessons.length) return;
   currentLesson=index;
   const lesson=lessons[index];
-  // close mobile drawer
-  document.getElementById('sidebar')?.classList.remove('open');
-  document.getElementById('backdrop')?.classList.remove('show');
+  if(typeof closeSidebar==='function') closeSidebar();
   const bc=document.getElementById('breadcrumb');
   const lt=document.getElementById('lesson-title');
   const ld=document.getElementById('lesson-duration');
@@ -912,7 +901,7 @@ async function loadLesson(index){
   if(li) li.textContent=lesson.slug;
 
   const contentEl=document.getElementById('lesson-content');
-  if(contentEl) contentEl.innerHTML=`<div style="text-align:center;padding:40px;color:var(--text-d)"><i class="fa-solid fa-spinner fa-spin"></i> Memuat materi…</div>`;
+  if(contentEl) contentEl.innerHTML=`<div style="text-align:center;padding:40px;color:var(--text-muted)"><i class="fa-solid fa-spinner fa-spin"></i> Memuat materi…</div>`;
 
   let html = lesson.description || '';
   try{
@@ -924,10 +913,10 @@ async function loadLesson(index){
         html=marked.parse(md);
       } else html=`<pre>${escapeHtml(md)}</pre>`;
     } else {
-      html+=`<div style="margin-top:12px;padding:12px;background:rgba(245,158,11,.08);border:1px solid #f59e0b;border-radius:8px;color:#f59e0b">Materi <code>${lesson.mdFile}</code> belum tersedia. Editor di bawah tetap bisa dipakai.</div>`;
+      html+=`<div style="margin-top:12px;padding:12px;background:rgba(6,182,212,.08);border:1px solid #06b6d4;border-radius:8px;color:#22d3ee">Materi <code>${lesson.mdFile}</code> belum tersedia. Editor di bawah tetap bisa dipakai.</div>`;
     }
   }catch(e){
-    html+=`<div style="color:var(--text-d);font-size:.8rem;margin-top:8px">Gagal memuat markdown: ${escapeHtml(e.message)}</div>`;
+    html+=`<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat markdown: ${escapeHtml(e.message)}</div>`;
   }
   if(contentEl) contentEl.innerHTML='<div class="prose max-w-none">'+html+'</div>';
 
@@ -951,20 +940,22 @@ async function loadLesson(index){
   if(qr) qr.textContent='';
   if(lesson.quiz && qc && qs){
     qs.classList.remove('hidden');
-    qc.innerHTML=`<p>${escapeHtml(lesson.quiz.question)}</p><div>${lesson.quiz.options.map((o,i)=>`<label class="quiz-option"><input type="radio" name="quiz" value="${i}"><span>${escapeHtml(o)}</span></label>`).join('')}</div>`;
+    qc.innerHTML='<p class="text-slate-200 text-sm font-medium mb-3">'+escapeHtml(lesson.quiz.question)+'</p>' +
+      '<div class="space-y-2">'+lesson.quiz.options.map(function(opt,i){
+        return '<label class="flex items-center gap-3 p-3 rounded-xl bg-slate-800/60 hover:bg-white/5 border border-white/5 cursor-pointer transition text-xs sm:text-sm text-slate-300">' +
+          '<input type="radio" name="quiz-opt" value="'+i+'" class="accent-cyan-500">' +
+          '<span>'+escapeHtml(opt)+'</span></label>';
+      }).join('')+'</div>';
   } else if(qs){ qs.classList.add('hidden'); }
 
   const prev=document.getElementById('prev-btn');
   const next=document.getElementById('next-btn');
   if(prev) prev.disabled=index===0;
   if(next) next.disabled=index===lessons.length-1;
-  const cb=document.getElementById('complete-btn');
-  const cbd=document.getElementById('completed-btn');
-  if(progress[lesson.id]){ if(cb) cb.style.display='none'; if(cbd) cbd.style.display='block'; }
-  else { if(cb) cb.style.display='block'; if(cbd) cbd.style.display='none'; }
+  updateCompleteButtons();
 
   renderNav();
-  document.querySelector('.content-area')?.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('content-scroll')?.scrollTo({top:0,behavior:'smooth'});
 }
 
 // Terminal simulation
@@ -1028,7 +1019,7 @@ async function runCode(){
   const validation=document.getElementById('validation-msg');
   if(!codeEl||!out) return;
   const code=codeEl.value;
-  out.innerHTML='<span style="color:#f59e0b">⏳ Menjalankan Go…</span>';
+  out.innerHTML='<span style="color:#22d3ee">⏳ Menjalankan Go…</span>';
   if(validation){ validation.className='validation hidden'; validation.innerHTML=''; }
   // try play.golang.org
   let success=false;
@@ -1056,11 +1047,9 @@ async function runCode(){
           if(validation){ validation.className='validation correct'; validation.innerHTML='✅ Output sesuai ekspektasi! <b>'+escapeHtml(expected)+'</b> — progress tersimpan.'; }
           progress[lessons[currentLesson].id]=true;
           localStorage.setItem('go_progress',JSON.stringify(progress));
-          renderNav();
-          const cb=document.getElementById('complete-btn'); const cbd=document.getElementById('completed-btn');
-          if(cb) cb.style.display='none'; if(cbd) cbd.style.display='block';
+          updateProgress(); renderNav(); updateCompleteButtons();
         } else if(expected){
-          if(validation){ validation.className='validation wrong'; validation.innerHTML='💡 Hint: output harus mengandung <b>'+escapeHtml(expected)+'</b><br><span style="color:var(--text-d)">'+escapeHtml(lessons[currentLesson]?.hint||'')+'</span>'; }
+          if(validation){ validation.className='validation wrong'; validation.innerHTML='💡 Hint: output harus mengandung <b>'+escapeHtml(expected)+'</b><br><span style="color:var(--text-muted)">'+escapeHtml(lessons[currentLesson]?.hint||'')+'</span>'; }
         }
       }
       success=true;
@@ -1079,7 +1068,7 @@ async function runCode(){
         if(validation){ validation.className='validation correct'; validation.innerHTML='✅ Simulasi lokal: output mengandung <b>'+escapeHtml(expected)+'</b>'; }
         progress[lessons[currentLesson].id]=true;
         localStorage.setItem('go_progress',JSON.stringify(progress));
-        renderNav();
+        updateProgress(); renderNav(); updateCompleteButtons();
       } else if(expected){
         if(validation){ validation.className='validation wrong'; validation.innerHTML='💡 Simulasi: output harus mengandung <b>'+escapeHtml(expected)+'</b>'; }
       }
@@ -1129,9 +1118,11 @@ async function resetCode(){
   clearOutput();
 }
 function checkQuiz(){
-  const sel=document.querySelector('input[name="quiz"]:checked');
+  const lesson=lessons[currentLesson];
+  if(!lesson||!lesson.quiz) return;
+  const sel=document.querySelector('input[name="quiz-opt"]:checked');
   const res=document.getElementById('quiz-result');
-  if(!sel){ if(res){res.textContent='Pilih jawaban dulu!'; res.className='quiz-result wrong';} return; }
+  if(!sel){ if(res){res.innerHTML='<div class="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-300 text-xs">Pilih salah satu jawaban dahulu.</div>';} return; }
   const isCorrect=parseInt(sel.value)===lessons[currentLesson].quiz.answer;
   const qc=document.getElementById('quiz-content');
   let msg=document.getElementById('quiz-feedback');
@@ -1139,33 +1130,60 @@ function checkQuiz(){
   if(isCorrect){
     msg.style.background='rgba(16,185,129,.08)'; msg.style.border='1px solid #10b981'; msg.style.color='#10b981';
     msg.innerHTML='<i class="fa-solid fa-circle-check"></i> Benar! Lanjutkan ke pelajaran selanjutnya.';
-    if(res){res.textContent='✓ Benar'; res.className='quiz-result correct';}
-    progress[lessons[currentLesson].id]=true;
-    localStorage.setItem('go_progress',JSON.stringify(progress)); renderNav();
+    if(res){res.innerHTML='<div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs"><div class="font-bold flex items-center gap-2"><i class="fas fa-check-circle"></i> Jawaban Benar!</div></div>';}
+    progress[lesson.id]=true;
+    localStorage.setItem('go_progress',JSON.stringify(progress));
+    updateProgress(); renderNav(); updateCompleteButtons();
   } else {
     msg.style.background='rgba(239,68,68,.08)'; msg.style.border='1px solid #ef4444'; msg.style.color='#ef4444';
-    msg.innerHTML='<i class="fa-solid fa-circle-xmark"></i> Kurang tepat — coba lagi!';
-    if(res){res.textContent='✗ Salah'; res.className='quiz-result wrong';}
+    msg.innerHTML='<i class="fa-solid fa-circle-xmark"></i> Kurang tepat — coba lagi! Baca kembali materinya.';
+    if(res){res.innerHTML='<div class="p-4 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-300 text-xs"><div class="font-bold flex items-center gap-2"><i class="fas fa-times-circle"></i> Belum tepat</div><p class="text-slate-400 mt-1">Coba baca kembali materinya.</p></div>';}
   }
 }
 function nextLesson(){ if(currentLesson < lessons.length-1) loadLesson(currentLesson+1); }
 function prevLesson(){ if(currentLesson > 0) loadLesson(currentLesson-1); }
+function updateCompleteButtons(){
+  const cur=lessons[currentLesson];
+  const isDone=cur && !!progress[cur.id];
+  const a=document.getElementById('complete-btn');
+  const b=document.getElementById('completed-btn');
+  const m=document.getElementById('complete-btn-mobile');
+  if(isDone){
+    if(a){ a.classList.add('hidden'); a.classList.remove('sm:flex'); }
+    if(b){ b.classList.remove('hidden'); b.classList.add('flex'); }
+    if(m) m.style.display='none';
+  } else {
+    if(a){ a.classList.remove('hidden'); a.classList.add('sm:flex'); }
+    if(b){ b.classList.add('hidden'); b.classList.remove('flex'); }
+    if(m) m.style.display='flex';
+  }
+}
 function markComplete(){
   if(currentLesson<0) return;
   progress[lessons[currentLesson].id]=true;
   localStorage.setItem('go_progress',JSON.stringify(progress));
-  const cb=document.getElementById('complete-btn'); const cbd=document.getElementById('completed-btn');
-  if(cb) cb.style.display='none'; if(cbd) cbd.style.display='block';
-  renderNav();
+  updateProgress(); renderNav(); updateCompleteButtons();
   if(currentLesson < lessons.length-1) setTimeout(()=>loadLesson(currentLesson+1),600);
 }
-function updateProgress(){ renderNav(); }
-function resetProgress(){ if(!confirm('Reset semua progress?')) return; progress={}; localStorage.removeItem('go_progress'); renderNav(); const cb=document.getElementById('complete-btn'); const cbd=document.getElementById('completed-btn'); if(currentLesson>=0 && cb && cbd){ cb.style.display='block'; cbd.style.display='none'; } }
+function updateProgress(){
+  const done=Object.keys(progress).filter(function(k){return !!progress[k];}).length;
+  const total=lessons.length;
+  const pct=Math.round((done/total)*100);
+  const elP=document.getElementById('course-progress'); if(elP) elP.textContent=pct+'%';
+  const elF=document.getElementById('progress-fill'); if(elF) elF.style.width=pct+'%';
+  const elDone=document.getElementById('stat-done'); if(elDone) elDone.textContent=String(done);
+  const mob=document.getElementById('mobile-progress'); if(mob) mob.textContent=pct+'%';
+  const bar=document.getElementById('progress-fill-bar'); if(bar) bar.style.width=pct+'%';
+  const t=document.getElementById('progress-text'); if(t) t.textContent=pct+'%';
+}
+function resetProgress(){ if(!confirm('Reset semua progress?')) return; progress={}; localStorage.removeItem('go_progress'); updateProgress(); renderNav(); updateCompleteButtons(); }
 function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 document.addEventListener('DOMContentLoaded',()=>{
   progress=JSON.parse(localStorage.getItem('go_progress')||'{}');
   renderNav();
+  updateProgress();
+  updateCompleteButtons();
   // gutter live
   const ed=document.getElementById('code-editor');
   if(ed){ ed.addEventListener('input',updateGutter); ed.addEventListener('scroll',()=>{ const g=document.getElementById('editor-gutter'); if(g) g.scrollTop=ed.scrollTop; }); }
