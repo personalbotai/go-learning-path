@@ -1,91 +1,75 @@
-# Go Learning Path — Interactive Tutorial 🚀
+# Go Learning Path 🐹
 
-<p align="center">
-  <a href="https://personalbotai.github.io/go-learning-path/">
-    <img src="https://img.shields.io/badge/🔴_LIVE-Go_Learning_Path-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Live Demo">
-  </a>
-  <a href="https://github.com/personalbotai/go-learning-path/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/personalbotai/go-learning-path/deploy.yml?label=Deploy&logo=github&style=for-the-badge" alt="Deploy">
-  </a>
-</p>
+> **Master Go (Golang) interactively from foundations to high-concurrency production systems.**
 
-Kuasai **Go (Golang)** secara interaktif — dari nol ke production-grade. **53 pelajaran** terkurasi dengan editor Go live, terminal simulasi, quiz adaptif, dan progress tracking. Semua berjalan di browser, tanpa install.
-
-## ✨ Features
-
-| Feature | Detail |
-|---------|--------|
-| **53 Pelajaran** | Dari "Apa itu Go?" sampai REST API & Testing |
-| **5 Modul Terstruktur** | Fondasi → Kontrol & Fungsi → Data Structure → Lanjutan → Concurrency |
-| **Live Code Editor** | Tulis Go langsung, dijalankan via play.golang.org, auto-validated |
-| **Terminal Simulasi** | `go run`, `go build`, `go test`, `go fmt` — tanpa install Go |
-| **Quiz Adaptif** | Setiap pelajaran memiliki quiz bermakna dengan jawaban tervalidasi |
-| **Progress Tracking** | LocalStorage-based, progress tersimpan otomatis |
-| **Responsive UI** | Mobile-first premium design, dark mode, search, keyboard shortcuts |
-| **Offline Fallback** | Simulasi lokal saat play.golang.org tidak tersedia |
-
-## 🎯 Kurikulum
-
-1. **Fondasi Go** (11 pelajaran) — Apa itu Go, instalasi, variabel, tipe data, operator, I/O
-2. **Kontrol & Fungsi** (11 pelajaran) — if/else, for loop, switch, fungsi, closure, variadic
-3. **Struktur Data** (11 pelajaran) — Array, slice, map, struct, method, pointer, package
-4. **Lanjutan & Idiomatik** (10 pelajaran) — Interface, generics, error handling, JSON, file I/O
-5. **Concurrency & Production** (10 pelajaran) — Goroutine, channel, select, mutex, HTTP server, REST API, testing
-
-## 🚀 Live Demo
-
-**➡️ [personalbotai.github.io/go-learning-path](https://personalbotai.github.io/go-learning-path/)**
-
-## 🛠 Tech Stack
-
-- HTML5, CSS3 (custom premium design system), JavaScript ES6+
-- [Tailwind CSS](https://tailwindcss.com/) (CDN) — utility classes
-- [marked.js](https://marked.js.org/) — Markdown rendering
-- [Font Awesome 6](https://fontawesome.com/) — icons
-- [Google Fonts](https://fonts.google.com/) — Inter, JetBrains Mono, Space Grotesk
-- [Go Playground API](https://play.golang.org/) — live code execution
-- LocalStorage — progress persistence
-
-## ⌨️ Keyboard Shortcuts
-
-| Key | Action |
-|-----|--------|
-| `/` | Focus search |
-| `Cmd/Ctrl + Enter` | Run code |
-| `Esc` | Close sidebar (mobile) |
-
-## 📁 Project Structure
-
-```
-go-learning-path/
-├── index.html          # Main app shell
-├── styles.css          # Premium CSS design system
-├── app.js              # Core logic: 53 lessons, quiz, editor, terminal
-├── enhancement.js      # Theme toggle, smooth scroll, observers
-├── lessons/            # 53 markdown + 16 JSON code files
-│   ├── apa-itu-go.md
-│   ├── apa-itu-go.json
-│   ├── hello-world.md
-│   └── ...
-├── .github/workflows/
-│   └── deploy.yml      # GitHub Pages deployment
-└── README.md
-```
-
-## 🤝 Contributing
-
-1. Fork repo
-2. Tambah/perbaiki materi di `lessons/*.md`
-3. Update `app.js` jika menambah pelajaran baru
-4. Buat Pull Request
-
-## 📄 License
-
-MIT — bebas digunakan, dimodifikasi, dan didistribusikan.
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-06b6d4?style=for-the-badge&logo=github&logoColor=white)](https://personalbotai.github.io/go-learning-path/)
+[![Hub Portal](https://img.shields.io/badge/🚀_Hub_Portal-hub.syamsulbahri.dev-10b981?style=for-the-badge)](https://hub.syamsulbahri.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 ---
 
-<p align="center">
-  Dibuat dengan ❤️ untuk komunitas Go Indonesia<br>
-  <a href="https://go.dev">go.dev</a> • <a href="https://github.com/personalbotai/go-learning-path">GitHub</a>
-</p>
+## 🚀 Live Application
+
+- **Live URL:** [https://personalbotai.github.io/go-learning-path/](https://personalbotai.github.io/go-learning-path/)
+- **Hub Portal:** [https://hub.syamsulbahri.dev](https://hub.syamsulbahri.dev)
+- **Repository:** [https://github.com/personalbotai/go-learning-path](https://github.com/personalbotai/go-learning-path)
+
+---
+
+## ✨ Features
+
+- 💻 **Live Go Code Runner:** Execute Go snippets via in-browser playground execution with terminal simulation (`go run`, `go build`, `go fmt`).
+- 📖 **69 Comprehensive Lessons:** Structured curriculum spanning basic syntax to advanced concurrency patterns and microservices.
+- 🎯 **Interactive Quizzes & Challenges:** Validate understanding with instant feedback on each module.
+- 📊 **Progress Persistence:** Automatic status saving using `localStorage`.
+- 🎨 **Responsive Dark Interface:** Mobile-friendly sidebar, keyword search, and developer-tailored theme.
+- ⚡ **Zero Setup Required:** Learn Go without needing a local compiler or toolchain.
+
+---
+
+## 📚 Curriculum Overview
+
+1. **Go Foundations** — Workspace setup, packages, imports, variables, constants, typed vs untyped constants.
+2. **Basic Data Types & Operators** — Integers, floats, complex, strings, runes, type conversions, arithmetic & bitwise operators.
+3. **Control Structures** — `if`/`else` with initial statements, `for` loops (all forms), `switch`/`case` without break, `defer`.
+4. **Functions & Error Handling** — Multiple return values, named returns, variadic functions, closures, explicit error handling, `panic` & `recover`.
+5. **Composite Types** — Arrays, slices (capacity vs length, reslicing), maps, structs, embedded structs.
+6. **Pointers & Memory** — Pointer semantics, pass-by-value vs reference, `new()` vs `make()`, escape analysis.
+7. **Methods & Interfaces** — Value vs pointer receivers, implicit interface implementation, type assertions, empty interface `any`.
+8. **Concurrency & Goroutines** — Goroutines, channels (buffered & unbuffered), `select`, `sync.WaitGroup`, `sync.Mutex`.
+9. **Context & Standard Library** — `context.Context` (cancellation, timeouts), `io.Reader`/`Writer`, `net/http`, `encoding/json`.
+10. **Testing & Production** — Unit testing with `testing.T`, table-driven tests, benchmarking, project layout (`cmd/`, `internal/`).
+
+---
+
+## 🌐 Multi-Language Learning Path Series
+
+This repository is part of the **PersonalBot Interactive Learning Series**:
+
+| Track | Language | Lessons | Live Demo |
+|---|---|---|---|
+| 🐍 | **Python** | 55 Lessons | [Open Python Path](https://personalbotai.github.io/python-learning-path/) |
+| ⚡ | **JavaScript** | 54 Lessons | [Open JavaScript Path](https://personalbotai.github.io/javascript-learning-path/) |
+| 📘 | **TypeScript** | 77 Lessons | [Open TypeScript Path](https://personalbotai.github.io/typescript-learning-path/) |
+| 🐹 | **Go (Golang)** | 69 Lessons | [Open Go Path](https://personalbotai.github.io/go-learning-path/) |
+| ☕ | **Java** | 30 Lessons | [Open Java Path](https://personalbotai.github.io/java-learning-path/) |
+
+---
+
+## 🛠️ Local Development
+
+Clone and run locally using any static web server:
+
+```bash
+git clone https://github.com/personalbotai/go-learning-path.git
+cd go-learning-path
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080` in your web browser.
+
+---
+
+## 📄 License
+
+Distributed under the [MIT License](LICENSE). Built with ❤️ by [PersonalBot AI](https://github.com/personalbotai).
