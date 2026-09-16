@@ -1028,7 +1028,7 @@ async function runCode(){
   try{
     const controller=new AbortController();
     const t=setTimeout(()=>controller.abort(),8000);
-    const res=await fetch('https://go.dev/_/compile?output=json',{
+    const res=await fetch('https://play.golang.org/compile?output=json',{
       method:'POST',
       headers:{'Content-Type':'application/x-www-form-urlencoded'},
       body:'version=2&body='+encodeURIComponent(code),
