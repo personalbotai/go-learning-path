@@ -28,4 +28,4 @@ Perusahaan teknologi raksasa mengandalkan Go untuk infrastruktur backend mereka:
 
 Mari kita lihat struktur paling dasar dari program Go. Setiap aplikasi Go membutuhkan sebuah `package main` dan sebuah fungsi `main()` sebagai titik awal (*entry point*) eksekusi.
 
-Coba jalankan kode di editor samping!
+Coba jalankan kode di editor di bawah!

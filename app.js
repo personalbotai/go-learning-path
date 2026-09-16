@@ -871,6 +871,8 @@ function renderNav(filter){
   updateProgress();
 }
 
+
+function closeSidebar(){ try{ document.getElementById('sidebar')?.classList.remove('open'); document.getElementById('backdrop')?.classList.remove('show'); document.getElementById('sidebarOverlay')?.classList.remove('show'); document.getElementById('sidebar-overlay')?.classList.add('hidden'); }catch(e){} }
 function toggleModule(id){
   const el=document.getElementById('module-'+id);
   if(el) el.classList.toggle('hidden');
@@ -1198,8 +1200,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
   // search
-  const s=document.getElementById('searchInput');
-  const sm=document.getElementById('searchInputMobile');
+  const s=document.getElementById('searchInput') || document.getElementById('lesson-search');
+  const sm=document.getElementById('searchInputMobile') || document.getElementById('lesson-search-mobile');
   const handler=(v)=>{ filterQuery=v; renderNav(); };
   if(s) s.addEventListener('input',e=>handler(e.target.value));
   if(sm) sm.addEventListener('input',e=>{ handler(e.target.value); if(s) s.value=e.target.value; });

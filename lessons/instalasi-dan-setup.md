@@ -49,4 +49,4 @@ Untuk menulis Go secara profesional, dua *editor* ini menjadi standar industri:
 
 Di modul pembelajaran ini, kami menyediakan *editor online* dengan lingkungan eksekusi Go (*WebAssembly* atau *Remote Execution*). 
 
-Lihat kode di samping, ini adalah contoh memeriksa versi Go dan lingkungan sistem menggunakan *standard library* Go `runtime`.
+Lihat kode di bawah, ini adalah contoh memeriksa versi Go dan lingkungan sistem menggunakan *standard library* Go `runtime`.
