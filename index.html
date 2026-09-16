@@ -1,140 +1,162 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Go Learning Path - Course</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * { box-sizing: border-box; }
-        body { background: #1c1d1f; color: #d1d7dc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        .sidebar { width: 340px; background: #1c1d1f; border-right: 1px solid #3e4143; height: 100vh; overflow-y: auto; }
-        .section-header { background: #2d2f31; padding: 12px 16px; cursor: pointer; border-bottom: 1px solid #3e4143; }
-        .section-header:hover { background: #3e4143; }
-        .section-title { font-weight: 600; font-size: 14px; color: #f7f9fa; }
-        .section-meta { font-size: 12px; color: #9da5b1; margin-top: 2px; }
-        .lesson-item { display: flex; align-items: center; padding: 10px 16px 10px 24px; border-bottom: 1px solid #2d2f31; cursor: pointer; transition: background 0.1s; }
-        .lesson-item:hover { background: #2d2f31; }
-        .lesson-item.active { background: #3e4143; border-left: 3px solid #00ADD8; }
-        .lesson-item.completed { opacity: 0.7; }
-        .lesson-icon { width: 20px; margin-right: 12px; text-align: center; flex-shrink: 0; }
-        .lesson-icon.playing { color: #00ADD8; }
-        .lesson-icon.completed { color: #007d9c; }
-        .lesson-title { font-size: 13px; flex: 1; line-height: 1.4; }
-        .lesson-duration { font-size: 11px; color: #9da5b1; margin-left: 8px; }
-        .content-area { flex: 1; overflow-y: auto; height: 100vh; }
-        .video-placeholder { background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; }
-        .lesson-content { max-width: 800px; margin: 0 auto; padding: 32px 24px; }
-        .lesson-content h1 { font-size: 28px; font-weight: 700; color: #f7f9fa; margin-bottom: 16px; }
-        .lesson-content h2 { font-size: 22px; font-weight: 600; color: #f7f9fa; margin: 32px 0 12px; border-bottom: 1px solid #3e4143; padding-bottom: 8px; }
-        .lesson-content h3 { font-size: 18px; font-weight: 600; color: #f7f9fa; margin: 24px 0 8px; }
-        .lesson-content h4 { font-size: 16px; font-weight: 600; color: #e0e0e0; margin: 16px 0 8px; }
-        .lesson-content p { font-size: 15px; line-height: 1.7; margin-bottom: 12px; color: #b0b0b0; }
-        .lesson-content ul, .lesson-content ol { margin: 12px 0; padding-left: 24px; }
-        .lesson-content li { font-size: 14px; line-height: 1.6; margin-bottom: 6px; color: #c0c0c0; }
-        .lesson-content code { background: #2d2f31; padding: 2px 6px; border-radius: 3px; font-size: 13px; color: #e06c75; }
-        .lesson-content pre { background: #2d2f31; padding: 16px; border-radius: 6px; overflow-x: auto; margin: 16px 0; border: 1px solid #3e4143; }
-        .lesson-content pre code { background: none; padding: 0; color: #d1d7dc; }
-        .lesson-content strong { color: #f7f9fa; }
-        .lesson-content a { color: #00ADD8; text-decoration: none; }
-        .lesson-content a:hover { text-decoration: underline; }
-        .lesson-content img { max-width: 100%; border-radius: 6px; margin: 12px 0; }
-        .code-section { background: #1c1d1f; border-top: 1px solid #3e4143; padding: 16px; }
-        .code-editor { width: 100%; height: 200px; background: #1e1e1e; color: #d4d4d4; border: 1px solid #3e4143; border-radius: 6px; padding: 12px; font-family: 'Fira Code', 'Consolas', monospace; font-size: 13px; resize: vertical; }
-        .code-editor:focus { outline: none; border-color: #00ADD8; }
-        .output-area { width: 100%; height: 120px; background: #0a0a0a; color: #22c55e; border: 1px solid #3e4143; border-radius: 6px; padding: 12px; font-family: 'Fira Code', monospace; font-size: 13px; overflow: auto; margin-top: 8px; }
-        .btn-run { background: #00ADD8; color: white; border: none; padding: 8px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; }
-        .btn-run:hover { background: #9130d9; }
-        .btn-reset { background: #3e4143; color: #d1d7dc; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; margin-left: 8px; }
-        .btn-reset:hover { background: #4e5153; }
-        .quiz-section { background: #2d2f31; border-radius: 8px; padding: 20px; margin: 24px 0; }
-        .quiz-title { font-size: 16px; font-weight: 600; color: #f7f9fa; margin-bottom: 12px; }
-        .quiz-option { display: flex; align-items: flex-start; padding: 10px 12px; margin: 6px 0; background: #1c1d1f; border: 1px solid #3e4143; border-radius: 6px; cursor: pointer; }
-        .quiz-option:hover { border-color: #00ADD8; }
-        .quiz-option input { margin-right: 10px; margin-top: 3px; }
-        .quiz-option label { font-size: 14px; cursor: pointer; }
-        .progress-bar { height: 4px; background: #3e4143; border-radius: 2px; overflow: hidden; margin-top: 8px; }
-        .progress-fill { height: 100%; background: #00ADD8; transition: width 0.3s; }
-        .header-bar { background: #2d2f31; border-bottom: 1px solid #3e4143; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
-        .course-title { font-size: 16px; font-weight: 600; color: #f7f9fa; }
-        .course-progress { font-size: 13px; color: #9da5b1; }
-        .nav-buttons { display: flex; gap: 8px; margin-top: 24px; padding-top: 16px; border-top: 1px solid #3e4143; }
-        .btn-nav { padding: 10px 20px; border-radius: 6px; font-size: 14px; cursor: pointer; border: none; }
-        .btn-prev { background: #3e4143; color: #d1d7dc; }
-        .btn-next { background: #00ADD8; color: white; font-weight: 600; }
-        .btn-complete { background: #007d9c; color: white; padding: 10px 20px; border-radius: 6px; border: none; cursor: pointer; font-weight: 600; margin-left: auto; }
-        .btn-complete:hover { background: #6b3ae0; }
-        .btn-completed { background: #1e7e34; color: white; padding: 10px 20px; border-radius: 6px; border: none; cursor: default; margin-left: auto; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Go Learning Path — Master Golang dari Nol ke Production</title>
+<meta name="description" content="Kuasai Go (Golang) secara interaktif: 53 pelajaran, editor kode live, terminal simulasi, dan quiz. Gratis, open-source, siap production.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="styles.css">
+<script>
+tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','monospace'],display:['Space Grotesk','sans-serif']}}}}
+</script>
 </head>
-<body>
-    <div class="flex h-screen">
-        <!-- Sidebar -->
-        <aside class="sidebar flex-shrink-0">
-            <div class="header-bar">
-                <div>
-                    <div class="course-title"><i class="fab fa-golang mr-2 text-cyan-400"></i>Go Learning Path</div>
-                    <div class="course-progress" id="course-progress">0% complete</div>
-                    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 0%"></div></div>
-                </div>
-            </div>
-            <div id="lessons-nav">
-                <!-- Modules rendered here -->
-            </div>
-        </aside>
+<body class="antialiased">
+<!-- Top Bar -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <button id="menuToggle" class="menu-btn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    <a class="brand" href="#">
+      <span class="brand-mark"><i class="fa-brands fa-golang"></i></span>
+      <span class="brand-text"><b>Go</b> Learning Path <span class="brand-badge">PRO</span></span>
+    </a>
+    <div class="topbar-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input id="searchInput" placeholder="Cari pelajaran… ( / )" autocomplete="off">
+      <kbd>/</kbd>
+    </div>
+    <div class="topbar-actions">
+      <div class="progress-wrap" title="Progress keseluruhan">
+        <span id="course-progress">0%</span>
+        <div class="progress-track"><div id="progress-fill" class="progress-fill" style="width:0%"></div></div>
+      </div>
+      <button id="themeToggle" class="icon-btn" title="Toggle theme"><i id="themeToggleIcon" class="fa-solid fa-moon"></i></button>
+      <a href="https://github.com/personalbotai/go-learning-path" target="_blank" class="icon-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </div>
+</header>
 
-        <!-- Main Content -->
-        <main class="content-area">
-            <div id="lesson-header" style="background: #2d2f31; padding: 16px 24px; border-bottom: 1px solid #3e4143;">
-                <div class="text-xs text-gray-500 mb-1" id="breadcrumb">Module 1</div>
-                <h1 id="lesson-title" style="font-size: 20px; font-weight: 600; color: #f7f9fa; margin: 0;">Select a lesson</h1>
-            </div>
-            
-            <!-- Lesson Content -->
-            <div class="lesson-content" id="lesson-content">
-                <p class="text-gray-500">Select a lesson from the sidebar to begin.</p>
-            </div>
+<div class="layout">
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-head">
+      <div class="sidebar-title">Kurikulum</div>
+      <div class="sidebar-sub"><span id="stat-lessons">53</span> pelajaran • <span id="stat-modules">5</span> modul • <span id="stat-done">0</span> selesai</div>
+      <div class="sidebar-search-mobile">
+        <i class="fa-solid fa-magnifying-glass"></i><input id="searchInputMobile" placeholder="Cari…">
+      </div>
+    </div>
+    <nav id="lessons-nav" class="nav-scroll"></nav>
+    <div class="sidebar-foot">
+      <button onclick="resetProgress()" class="btn-ghost w-full"><i class="fa-solid fa-rotate-left mr-2"></i>Reset Progress</button>
+      <div class="foot-note">Progress tersimpan otomatis di browser.</div>
+    </div>
+  </aside>
+  <div id="backdrop" class="backdrop"></div>
 
-            <!-- Code Editor -->
-            <div class="code-section" id="code-section" style="max-width: 800px; margin: 0 auto;">
-                <div class="flex items-center justify-between mb-3">
-                    <span class="text-sm font-semibold text-gray-300"><i class="fas fa-code mr-2"></i>Code Editor</span>
-                    <div>
-                        <button class="btn-run" onclick="runCode()"><i class="fas fa-play mr-2"></i>Run</button>
-                        <button class="btn-reset" onclick="resetCode()">Reset</button>
-                    </div>
-                </div>
-                <textarea id="code-editor" class="code-editor" spellcheck="false" placeholder="# Write your Go code here..."></textarea>
-                <div class="mt-2">
-                    <span class="text-xs text-gray-500">Output:</span>
-                    <div id="output" class="output-area"><span class="text-gray-600"># Output will appear here</span></div>
-                </div>
-                <div id="validation-msg" class="mt-3 p-3 rounded hidden"></div>
-            </div>
-
-            <!-- Quiz -->
-            <div class="quiz-section" id="quiz-section" style="max-width: 800px; margin: 24px auto; display: none;">
-                <div class="quiz-title"><i class="fas fa-question-circle mr-2 text-yellow-400"></i>Quiz</div>
-                <div id="quiz-content"></div>
-                <button class="btn-run mt-3" onclick="checkQuiz()">Submit Answer</button>
-                <div id="quiz-result"></div>
-            </div>
-
-            <!-- Navigation -->
-            <div class="nav-buttons" id="nav-buttons" style="max-width: 800px; margin: 0 auto; padding: 16px 24px;">
-                <button class="btn-nav btn-prev" id="prev-btn" onclick="prevLesson()" disabled><i class="fas fa-chevron-left mr-2"></i>Previous</button>
-                <button class="btn-complete" id="complete-btn" onclick="markComplete()" style="display:none;">Mark as Complete</button>
-                <button class="btn-completed" id="completed-btn" style="display:none;"><i class="fas fa-check mr-2"></i>Completed</button>
-                <button class="btn-nav btn-next" id="next-btn" onclick="nextLesson()">Next<i class="fas fa-chevron-right ml-2"></i></button>
-            </div>
-        </main>
+  <!-- Main -->
+  <main class="content-area">
+    <div id="lesson-header" class="lesson-header">
+      <div class="breadcrumb" id="breadcrumb">Pilih pelajaran untuk mulai</div>
+      <h1 id="lesson-title" class="lesson-h1">Selamat Datang, Gopher! 👋</h1>
+      <div class="lesson-meta">
+        <span id="lesson-duration" class="meta-pill"><i class="fa-regular fa-clock"></i> —</span>
+        <span id="lesson-level" class="meta-pill level">Pemula → Mahir</span>
+        <span id="lesson-id" class="meta-pill id"></span>
+      </div>
     </div>
 
-    <script src="app.js"></script>
+    <div class="content-wrap">
+      <!-- markdown -->
+      <article id="lesson-content" class="lesson-content prose">
+        <div class="hero">
+          <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Interaktif • Gratis • Production-Grade</div>
+          <h2>Belajar Go seperti engineer di Google, Tokopedia & Gojek.</h2>
+          <p>Go Learning Path menyatukan <b>53 pelajaran</b> terkurasi, <b>editor Go interaktif</b>, <b>terminal simulasi</b>, dan <b>quiz</b> yang memvalidasi pemahamanmu — semua jalan langsung di browser, tanpa install.</p>
+          <div class="hero-actions">
+            <button onclick="loadLesson(0)" class="btn-primary"><i class="fa-solid fa-play mr-2"></i>Mulai dari Awal</button>
+            <button onclick="loadLesson(12)" class="btn-secondary"><i class="fa-solid fa-rocket mr-2"></i>Lompat ke Variabel</button>
+          </div>
+          <div class="hero-stats">
+            <div><b>53</b><span>Materi</span></div><div><b>16+</b><span>Playground</span></div><div><b>100%</b><span>Gratis</span></div><div><b>∞</b><span>Bisa diulang</span></div>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="mini-card"><i class="fa-solid fa-code"></i><h3>Editor Live</h3><p>Tulis & jalankan Go langsung. Validasi output otomatis.</p></div>
+          <div class="mini-card"><i class="fa-solid fa-terminal"></i><h3>Terminal Sim</h3><p>Latih <code>go run</code>, <code>go build</code>, <code>go test</code> tanpa install.</p></div>
+          <div class="mini-card"><i class="fa-solid fa-brain"></i><h3>Quiz Adaptif</h3><p>Setiap bab ada quiz — lulus untuk membuka progress berikutnya.</p></div>
+        </div>
+        <p class="text-muted">Pilih pelajaran di sidebar untuk memulai. Progress akan tersimpan otomatis.</p>
+      </article>
 
+      <!-- Editor + Terminal -->
+      <section id="code-section" class="panel">
+        <div class="panel-head">
+          <div class="tabs">
+            <button class="tab active" data-tab="editor"><i class="fa-solid fa-code"></i> Editor</button>
+            <button class="tab" data-tab="terminal"><i class="fa-solid fa-terminal"></i> Terminal</button>
+          </div>
+          <div class="panel-actions">
+            <button class="btn-ghost-sm" onclick="copyCode()"><i class="fa-regular fa-copy"></i> Copy</button>
+            <button class="btn-ghost-sm" onclick="resetCode()"><i class="fa-solid fa-rotate-left"></i> Reset</button>
+            <button class="btn-primary-sm" onclick="runCode()"><i class="fa-solid fa-play"></i> Run <span class="kbd">⌘↵</span></button>
+          </div>
+        </div>
+        <div class="tab-panels">
+          <div id="tab-editor" class="tab-panel active">
+            <div class="editor-wrap">
+              <div class="editor-gutter" id="editor-gutter">1</div>
+              <textarea id="code-editor" class="code-editor" spellcheck="false" placeholder="package main&#10;&#10;import &quot;fmt&quot;&#10;&#10;func main(){&#10;  fmt.Println(&quot;Hello, Go!&quot;)&#10;}"></textarea>
+            </div>
+            <div class="editor-foot">
+              <span class="foot-lang"><span class="dot"></span> Go 1.22 • fmt • auto-validated</span>
+              <span class="foot-hint">Tip: tekan <b>Cmd/Ctrl + Enter</b> untuk Run</span>
+            </div>
+          </div>
+          <div id="tab-terminal" class="tab-panel">
+            <div class="terminal">
+              <div class="term-bar"><span class="term-dot r"></span><span class="term-dot y"></span><span class="term-dot g"></span><span class="term-title">zsh — go-learning-path</span><button class="btn-ghost-sm" onclick="clearTerminal()">Clear</button></div>
+              <div id="terminal-log" class="term-log"><div class="term-line muted">$ ketik perintah — coba: <code>go run main.go</code> • <code>go build</code> • <code>go test</code> • <code>help</code></div></div>
+              <div class="term-input-row"><span class="prompt">➜</span><input id="terminal-input" placeholder="go run main.go" autocomplete="off"><button onclick="runTerminal()" class="btn-primary-sm">Enter</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="output-wrap">
+          <div class="output-head"><span><i class="fa-solid fa-square-poll-vertical mr-2"></i>Output</span><button class="btn-ghost-sm" onclick="clearOutput()">Clear</button></div>
+          <pre id="output" class="output"><span class="muted"># Output akan muncul di sini — klik Run atau jalankan go run di terminal</span></pre>
+          <div id="validation-msg" class="validation hidden"></div>
+        </div>
+      </section>
+
+      <!-- Quiz -->
+      <section id="quiz-section" class="panel hidden">
+        <div class="quiz-head"><i class="fa-solid fa-circle-question"></i> Quiz — uji pemahamanmu</div>
+        <div id="quiz-content" class="quiz-content"></div>
+        <div class="quiz-actions">
+          <button class="btn-primary" onclick="checkQuiz()"><i class="fa-solid fa-paper-plane mr-2"></i>Submit Jawaban</button>
+          <span id="quiz-result" class="quiz-result"></span>
+        </div>
+      </section>
+
+      <!-- Nav -->
+      <div class="nav-buttons" id="nav-buttons">
+        <button class="btn-secondary" id="prev-btn" onclick="prevLesson()" disabled><i class="fa-solid fa-chevron-left mr-2"></i>Sebelumnya</button>
+        <div class="nav-center">
+          <button class="btn-complete" id="complete-btn" onclick="markComplete()"><i class="fa-solid fa-check mr-2"></i>Tandai Selesai</button>
+          <button class="btn-completed" id="completed-btn" style="display:none"><i class="fa-solid fa-check-double mr-2"></i>Selesai ✓</button>
+        </div>
+        <button class="btn-primary" id="next-btn" onclick="nextLesson()">Selanjutnya<i class="fa-solid fa-chevron-right ml-2"></i></button>
+      </div>
+      <footer class="site-foot">Dibuat dengan <i class="fa-solid fa-heart text-red-400"></i> untuk komunitas Go Indonesia • <a href="https://go.dev" target="_blank">go.dev</a> • <a href="https://github.com/personalbotai/go-learning-path" target="_blank">GitHub</a></footer>
+    </div>
+  </main>
+</div>
+
+<script src="app.js"></script>
 <script src="enhancement.js"></script>
 </body>
 </html>
