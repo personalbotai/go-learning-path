@@ -953,8 +953,8 @@ async function loadLesson(index){
   if(prev) prev.disabled=index===0;
   if(next) next.disabled=index===lessons.length-1;
   updateCompleteButtons();
-
   renderNav();
+  
   document.getElementById('content-scroll')?.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1228,4 +1228,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   if(stored==='light') document.body.classList.add('light');
   // initial gutter
   setTimeout(updateGutter,200);
+  // auto-load first lesson
+  if (typeof loadLesson === 'function') setTimeout(() => { try{ loadLesson(0);}catch(e){} }, 80);
 });
