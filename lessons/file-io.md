@@ -1,4 +1,4 @@
-# File Io
+# File I/O: Operasi Baca & Tulis File Modern di Go
 
 **ID**: `file-io`
 **Duration**: 20-30 menit
@@ -6,31 +6,48 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **File Io** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Go menyediakan package `os` dan `io` standar yang sangat efisien untuk interaksi dengan sistem berkas (file system).
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `File Io` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Pendekatan umum File I/O di Go modern (Go 1.16+):
+1. **`os.WriteFile` & `os.ReadFile`**: Cocok untuk file berukuran kecil/menengah secara instan dalam satu baris kode.
+2. **`os.Open` / `os.Create` + `bufio.Scanner`**: Digunakan untuk streaming file berukuran besar baris demi baris tanpa menghabiskan RAM.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: File Io")
-    // TODO: Implementasi logika File Io di sini
+    path := "/tmp/demo.txt"
+    pesan := "halo go: operasi file I/O berhasil!"
+
+    // 1. Menulis data ke file dengan permission 0644
+    err := os.WriteFile(path, []byte(pesan), 0644)
+    if err != nil {
+        fmt.Println("Gagal menulis file:", err)
+        return
+    }
+    fmt.Println("Berhasil membuat file di", path)
+
+    // 2. Membaca kembali isi file
+    data, err := os.ReadFile(path)
+    if err != nil {
+        fmt.Println("Gagal membaca file:", err)
+        return
+    }
+    fmt.Println("Isi File:", string(data))
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana File Io berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Safety
+- Selalu periksa error setiap kali membuka atau menulis berkas.
+- Gunakan `defer file.Close()` saat membuka file melalui `os.Open()` agar file descriptor tidak bocor (*descriptor leak*).
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Operasi file instan di Go sangat mudah menggunakan `os.ReadFile` dan `os.WriteFile`.
+- Untuk file besar atau streaming, gunakan `bufio` dan `io.Reader`.
+- Referensi: [Go os Package Documentation](https://pkg.go.dev/os)

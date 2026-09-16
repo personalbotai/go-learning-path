@@ -1,36 +1,56 @@
-# Switch
+# Switch Statement Modern di Go
 
 **ID**: `switch`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Switch** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Konstruksi **`switch`** di Go jauh lebih fleksibel dan bersih dibandingkan bahasa turunan C tradisional:
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Switch` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+1. **Auto Break**: Di Go, setiap `case` otomatis berhenti (*break*) tanpa perlu menulis kata kunci `break` secara manual di akhir blok.
+2. **Multiple Values**: Satu baris `case` dapat mencocokkan beberapa nilai sekaligus dipisahkan koma (contoh: `case "senin", "selasa":`).
+3. **Conditionless Switch**: `switch` tanpa ekspresi dapat berfungsi sebagai pengganti rantai `if-else if-else` yang panjang dan mudah dibaca.
+4. **Type Switch**: Digunakan untuk mengidentifikasi tipe konkret dari sebuah `interface{}`.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Switch")
-    // TODO: Implementasi logika Switch di sini
+    hari := "senin"
+
+    // 1. Value Switch
+    switch hari {
+    case "senin":
+        fmt.Println("Hari kerja dimulai: Semangat!")
+    case "jumat":
+        fmt.Println("Hampir weekend!")
+    case "sabtu", "minggu":
+        fmt.Println("Waktu libur akhir pekan.")
+    default:
+        fmt.Println("Hari kerja reguler.")
+    }
+
+    // 2. Conditionless Switch (Clean logic branching)
+    nilai := 88
+    switch {
+    case nilai >= 90:
+        fmt.Println("Predikat: Cumlaude")
+    case nilai >= 80:
+        fmt.Println("Predikat: Sangat Memuaskan")
+    default:
+        fmt.Println("Predikat: Memuaskan")
+    }
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Switch berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Jika Anda benar-benar membutuhkan eksekusi berlanjut ke case berikutnya, gunakan kata kunci `fallthrough` secara eksplisit.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- `switch` di Go otomatis break per case.
+- Conditionless switch membuat evaluasi banyak kondisi logis menjadi sangat rapi.
+- Referensi: [Effective Go: Switch](https://go.dev/doc/effective_go#switch)

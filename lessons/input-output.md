@@ -1,36 +1,50 @@
-# Input Output
+# Input & Output (I/O) Dasar dengan Package fmt
 
 **ID**: `input-output`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Input Output** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Package **`fmt`** (Format) adalah package pustaka standar Go yang mengimplementasikan I/O terformat analog dengan keluarga `printf` dan `scanf` di bahasa C.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Input Output` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Fungsi utama yang sering digunakan:
+1. **`fmt.Println` / `fmt.Print`**: Mencetak teks standar dengan pemisah spasi dan baris baru.
+2. **`fmt.Printf`**: Mencetak teks berdasarkan format verb khusus.
+3. **`fmt.Sprintf`**: Menghasilkan string terformat tanpa mencetaknya ke konsol (berguna untuk merangkai string).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+Format Verb Penting di Go:
+- `%v`: Mencetak nilai dalam format default (*value*).
+- `%+v`: Mencetak struct dengan nama-nama field-nya.
+- `%T`: Mencetak tipe data dari variabel.
+- `%s`, `%d`, `%f`: String, integer, dan floating-point.
+- `%t`: Boolean (`true` / `false`).
 
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Input Output")
-    // TODO: Implementasi logika Input Output di sini
+    name := "Gopher"
+    age := 7
+    rate := 98.75
+
+    // Printf dengan berbagai format verb
+    fmt.Printf("Halo %s, umur %d tahun\n", name, age)
+    fmt.Printf("Skor kepuasan: %.1f%% (Tipe data: %T)\n", rate, rate)
+
+    // Sprintf untuk membuat string baru
+    pesan := fmt.Sprintf("User: %s | Status: Aktif", name)
+    fmt.Println(pesan)
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Input Output berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Gunakan verb `%#v` ketika ingin mencetak representasi sintaks Go lengkap dari sebuah variabel untuk keperluan debugging.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Package `fmt` adalah fondasi cetak dan format teks di Go.
+- Kuasai format verbs `%v`, `%+v`, `%T`, dan `%s`/`%d`.
+- Referensi: [Package fmt Documentation](https://pkg.go.dev/fmt)

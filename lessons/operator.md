@@ -1,36 +1,50 @@
-# Operator
+# Operator Aritmatika, Perbandingan, dan Logika di Go
 
 **ID**: `operator`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Operator** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Go menyediakan sekumpulan operator standar yang ketat dan aman untuk operasi komputasi data:
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Operator` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+1. **Operator Aritmatika**: `+` (tambah), `-` (kurang), `*` (kali), `/` (bagi), `%` (modulus sisa bagi).
+2. **Operator Perbandingan**: `==` (sama dengan), `!=` (tidak sama dengan), `<`, `>`, `<=`, `>=`.
+3. **Operator Logika Boolean**: `&&` (AND logika), `||` (OR logika), `!` (NOT negasi).
+4. **Assignment Operator**: `=`, `+=`, `-=`, `*=`, `/=`.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
+*Catatan penting*: Go tidak mengizinkan operasi pada tipe data yang berbeda secara implisit (misal menjumlahkan `int` dan `float64` langsung); Anda wajib melakukan konversi tipe eksplisit.
 
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Operator")
-    // TODO: Implementasi logika Operator di sini
+    a, b := 10, 3
+
+    // Operasi Aritmatika
+    fmt.Println("a + b =", a+b)
+    fmt.Println("a - b =", a-b)
+    fmt.Println("a * b =", a*b)
+    fmt.Println("a / b =", a/b) // Pembagian integer menghasilkan 3
+    fmt.Println("a % b =", a%b) // Modulus menghasilkan 1
+
+    // Operasi Perbandingan
+    fmt.Println("a > b? ", a > b)
+    fmt.Println("a == b?", a == b)
+
+    // Logika Gabungan
+    isValid := (a > 5) && (b < 5)
+    fmt.Println("Valid (a>5 AND b<5):", isValid)
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Operator berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Di Go, operator increment `i++` dan `i--` adalah sebuah **statement**, bukan ekspresi. Jadi baris seperti `x = i++` adalah error kompilasi ilegal di Go.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Operasi di Go membutuhkan tipe data yang sama persis (eksplisit).
+- Operator `++` dan `--` adalah statement mandiri.
+- Referensi: [Go Language Specification: Operators](https://go.dev/ref/spec#Operators)

@@ -1,4 +1,4 @@
-# Struct
+# Struct: Definisi Tipe Kustom & Entitas di Go
 
 **ID**: `struct`
 **Duration**: 20-30 menit
@@ -6,31 +6,52 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **Struct** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Go bukan bahasa OOP berbasis kelas murni; sebagai gantinya, Go menggunakan **`struct`** untuk mengelompokkan sekumpulan atribut/field ke dalam satu tipe data komposit.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Struct` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Keunggulan struct di Go:
+1. **Memory Compact**: Field dalam struct dialokasikan secara berurutan dalam memori fisik tanpa pointer overhead yang tidak perlu.
+2. **Anonymous Fields & Embedding**: Go mendukung komposisi daripada *inheritance* (pewarisan).
+3. **Struct Tags**: Field dapat diberi anotasi tag seperti `json:"name"` atau `db:"id"` untuk integrasi serialisasi.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
+// Definisi Struct User
+type User struct {
+    ID       int
+    Name     string
+    Email    string
+    IsActive bool
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Struct")
-    // TODO: Implementasi logika Struct di sini
+    // Inisialisasi struct dengan field names (direkomendasikan)
+    u1 := User{
+        ID:       1,
+        Name:     "Budi",
+        Email:    "budi@example.com",
+        IsActive: true,
+    }
+
+    // Print struct dengan format %+v untuk melihat nama field
+    fmt.Printf("User Detail: %+v\n", u1)
+    fmt.Printf("Nama: %s, Email: %s\n", u1.Name, u1.Email)
+
+    // Anonymous Struct untuk data sementara / payload lokal
+    point := struct {
+        X, Y int
+    }{X: 10, Y: 20}
+    fmt.Printf("Koordinat: (%d, %d)\n", point.X, point.Y)
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Struct berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Selalu gunakan format `%+v` pada `fmt.Printf` saat men-debug isi struct untuk menampilkan label field secara jelas.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Struct adalah fondasi pemodelan domain objek di Go.
+- Go mengutamakan *composition over inheritance*.
+- Referensi: [A Tour of Go: Structs](https://go.dev/tour/moretypes/2)

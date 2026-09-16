@@ -1,36 +1,54 @@
-# Mutex Sync
+# Mutex & Sinkronisasi Concurrency di Go
 
 **ID**: `mutex-sync`
-**Duration**: 20-30 menit
+**Duration**: 25-35 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Mutex Sync** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Saat banyak goroutine mengakses dan memodifikasi data yang sama di memori secara bersamaan, akan terjadi kondisi balapan (**Race Condition** / Data Race) yang menyebabkan kerusakan data.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Mutex Sync` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Untuk mencegahnya, Go menyediakan **`sync.Mutex`** (Mutual Exclusion):
+1. **`mu.Lock()`**: Mengunci akses. Hanya satu goroutine yang dapat melewati titik ini; goroutine lain yang mencoba mengunci akan ditahan (*blocked*) sampai kunci dilepas.
+2. **`mu.Unlock()`**: Melepas kunci agar goroutine lain yang antre dapat melanjutkan eksekusi.
+3. **`sync.RWMutex`**: Mengizinkan banyak pembaca (*reader*) bersamaan, namun hanya satu penulis (*writer*) eksklusif.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "sync"
+)
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Mutex Sync")
-    // TODO: Implementasi logika Mutex Sync di sini
+    var mu sync.Mutex
+    counter := 0
+    var wg sync.WaitGroup
+
+    // Menjalankan 100 goroutine yang masing-masing menambah counter
+    for i := 0; i < 100; i++ {
+        wg.Add(1)
+        go func() {
+            defer wg.Done()
+
+            mu.Lock()         // Kunci akses eksklusif
+            counter++         // Modifikasi data bersama (Critical Section)
+            mu.Unlock()       // Lepas kunci
+        }()
+    }
+
+    wg.Wait()
+    fmt.Println("Hasil akhir counter (safe):", counter) // Pasti tepat 100
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Mutex Sync berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Deteksi Race Condition
+- Selalu uji kode konkurensi Anda dengan tool pendeteksi bawaan Go:
+  `go test -race` atau `go run -race main.go`.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Gunakan `sync.Mutex` untuk melindungi data bersama dari kerusakan data race.
+- Pastikan setiap `Lock()` selalu dipasangkan dengan `Unlock()`.
+- Referensi: [Go Data Race Detector](https://go.dev/doc/articles/race_detector)

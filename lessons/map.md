@@ -1,36 +1,51 @@
-# Map
+# Map: Hash Table Key-Value di Go
 
 **ID**: `map`
-**Duration**: 20-30 menit
+**Duration**: 20-25 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Map** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+`map` adalah struktur data bawaan Go untuk menyimpan pasangan *key-value* dengan performa lookup rata-rata $O(1)$.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Map` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Karakteristik penting `map`:
+1. **Reference Type**: Map adalah pointer ke struktur *hmap* internal di Go runtime. Mengoper map ke fungsi akan memodifikasi map asli.
+2. **Comma-ok Idiom**: Saat membaca key yang mungkin tidak ada, Go mengembalikan *zero value*. Gunakan pola `val, ok := m[key]` untuk memastikan keberadaan key.
+3. **Unordered Iteration**: Urutan iterasi `for k, v := range m` sengaja diacak oleh Go runtime untuk mencegah ketergantungan urutan (*non-deterministic*).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Map")
-    // TODO: Implementasi logika Map di sini
+    // Inisialisasi map
+    m := map[string]int{"apel": 5, "jeruk": 3}
+    fmt.Println("Map awal:", m)
+
+    // Menambah dan mengubah data
+    m["mangga"] = 7
+    m["apel"] = 10
+    fmt.Println("Setelah update:", m)
+
+    // Cek keberadaan key dengan comma-ok idiom
+    if val, ok := m["pisang"]; ok {
+        fmt.Println("Pisang ada:", val)
+    } else {
+        fmt.Println("Pisang tidak ditemukan dalam keranjang.")
+    }
+
+    // Menghapus key
+    delete(m, "jeruk")
+    fmt.Println("Setelah delete jeruk:", m)
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Map berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Concurrency Safety
+- Map bawaan Go **TIDAK thread-safe** untuk penulisan paralel. Jika diakses dari banyak goroutine secara simultan, gunakan `sync.Mutex` atau `sync.Map`.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Deklarasi map menggunakan `map[KeyType]ValueType` atau `make(map[K]V)`.
+- Selalu gunakan idiom `val, ok := map[key]` untuk memeriksa ada tidaknya data.
+- Referensi: [Go maps in action](https://go.dev/blog/maps)

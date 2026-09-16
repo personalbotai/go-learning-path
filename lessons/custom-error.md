@@ -1,4 +1,4 @@
-# Custom Error
+# Custom Error: Penanganan Error Terstruktur di Go
 
 **ID**: `custom-error`
 **Duration**: 20-30 menit
@@ -6,31 +6,61 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **Custom Error** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
-
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Custom Error` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
-
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+Di Go, error hanyalah sebuah nilai (*error is just a value*) yang mengimplementasikan interface standar bawaan:
 ```go
-package main
-
-import "fmt"
-
-func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Custom Error")
-    // TODO: Implementasi logika Custom Error di sini
+type error interface {
+    Error() string
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Custom Error berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+Untuk aplikasi berskala enterprise, string error sederhana (`fmt.Errorf`) sering kali tidak cukup karena kita membutuhkan *metadata* tambahan seperti HTTP status code, kode error spesifik, atau field validasi. Kita dapat membuat struct kustom yang mengimplementasikan method `Error() string`.
+
+### Contoh Kode
+```go
+package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+// AppError adalah Custom Error struct
+type AppError struct {
+    Code    int
+    Message string
+    Detail  string
+}
+
+// Implementasi interface error
+func (e *AppError) Error() string {
+    return fmt.Sprintf("code %d: %s (detail: %s)", e.Code, e.Message, e.Detail)
+}
+
+func findUser(id int) (string, error) {
+    if id != 1 {
+        return "", &AppError{Code: 404, Message: "not found", Detail: "User ID tidak terdaftar"}
+    }
+    return "Budi Santoso", nil
+}
+
+func main() {
+    _, err := findUser(99)
+    if err != nil {
+        fmt.Println("Standard Error Output:", err.Error())
+
+        // Memeriksa tipe kustom error menggunakan errors.As (Go 1.13+)
+        var appErr *AppError
+        if errors.As(err, &appErr) {
+            fmt.Printf("Terdeteksi AppError -> HTTP Code: %d, Pesan: %s\n", appErr.Code, appErr.Message)
+        }
+    }
+}
+```
+
+### Praktik & Best Practice
+- Gunakan `errors.As()` dan `errors.Is()` modern untuk membongkar dan memeriksa hierarki error yang dibungkus (*wrapped errors*).
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Tipe data apa pun yang memiliki method `Error() string` otomatis merupakan `error`.
+- Custom error memberikan kebebasan menyematkan informasi diagnostik terstruktur.
+- Referensi: [Working with Errors in Go 1.13](https://go.dev/blog/go1.13-errors)

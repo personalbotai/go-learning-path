@@ -1,36 +1,37 @@
-# Hello World
+# Hello World: Anatomi Program Pertama Go
 
 **ID**: `hello-world`
-**Duration**: 20-30 menit
+**Duration**: 10-15 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Hello World** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Setiap program aplikasi mandiri (executable) di Go dimulai dari package utama yang bernama **`package main`** dengan fungsi titik masuk **`func main()`**.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Hello World` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Anatomi struktur dasar program Go:
+1. **`package main`**: Mendeklarasikan bahwa berkas ini adalah program mandiri yang akan dikompilasi menjadi binary executable, bukan library pendukung.
+2. **`import "fmt"`**: Mengimpor package standar formatting untuk operasi output teks ke layar konsol (*stdout*).
+3. **`func main()`**: Fungsi utama yang dieksekusi pertama kali saat program dijalankan oleh sistem operasi.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Hello World")
-    // TODO: Implementasi logika Hello World di sini
+    // Mencetak teks ke konsol dengan baris baru
+    fmt.Println("Hello, Go!")
+    fmt.Println("Selamat datang di dunia pemrograman Go modern!")
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Hello World berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Perintah CLI
+Jalankan perintah berikut di terminal komputer Anda:
+- `go run main.go`: Mengompilasi kode ke memori sementara dan langsung menjalankannya.
+- `go build -o app main.go`: Menghasilkan binary mandiri tanpa ketergantungan runtime eksternal.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Program executable Go wajib memiliki `package main` dan fungsi `main()`.
+- Package standar `fmt` digunakan untuk formatting dan cetak output.
+- Referensi: [A Tour of Go: Hello World](https://go.dev/tour/welcome/1)

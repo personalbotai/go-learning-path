@@ -1,36 +1,55 @@
-# For Loop
+# For Loop: Kontrol Perulangan Komprehensif di Go
 
 **ID**: `for-loop`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **For Loop** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Di Go, **`for`** adalah satu-satunya konstruksi perulangan. Go secara sengaja tidak menyertakan kata kunci `while` atau `do-while` untuk menjaga kesederhanaan sintaksis.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `For Loop` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Empat bentuk variasi `for` di Go:
+1. **Three-Component Loop**: Bentuk standar C-style: `for init; condition; post {}`.
+2. **While-style Loop**: Hanya memeriksa kondisi: `for condition {}`.
+3. **Infinite Loop**: Perulangan tanpa henti: `for {}` (berhenti via `break` atau `return`).
+4. **Range Loop (Go 1.22+)**: Mengiterasi slice, map, string, atau langsung range integer (`for i := range 5`).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: For Loop")
-    // TODO: Implementasi logika For Loop di sini
+    // 1. Standard Three-component for loop
+    fmt.Print("Standard loop: ")
+    for i := 1; i <= 5; i++ {
+        fmt.Printf("%d ", i)
+    }
+    fmt.Println()
+
+    // 2. While-style loop
+    count := 3
+    fmt.Print("While-style loop: ")
+    for count > 0 {
+        fmt.Printf("%d ", count)
+        count--
+    }
+    fmt.Println()
+
+    // 3. Go 1.22+ Range-over-integer feature
+    fmt.Print("Go 1.22 range integer: ")
+    for n := range 4 { // Iterasi dari 0 sampai 3
+        fmt.Printf("%d ", n)
+    }
+    fmt.Println()
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana For Loop berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Sejak Go 1.22, variabel loop pada setiap iterasi dibuat terisolasi per iterasi, memecahkan bug klasik goroutine di dalam loop closure.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Semua pola perulangan di Go diselesaikan dengan kata kunci `for`.
+- Go 1.22 memperkenalkan iterasi langsung pada angka integer (`for i := range N`).
+- Referensi: [Effective Go: For loop](https://go.dev/doc/effective_go#for)

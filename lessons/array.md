@@ -1,36 +1,44 @@
-# Array
+# Array di Go: Karakteristik dan Penggunaan
 
 **ID**: `array`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Array** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Array di Go adalah kumpulan elemen bertipe data sama dengan **panjang tetap (fixed-length)** yang ditentukan pada saat deklarasi. 
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Array` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Karakteristik penting array di Go:
+1. **Ukuran adalah bagian dari tipe**: `[3]int` dan `[5]int` adalah tipe data yang sama sekali berbeda dan tidak bisa saling ditugaskan.
+2. **Value Type**: Ketika sebuah array di-assign ke variabel baru atau dioper ke fungsi, Go melakukan **salinan penuh (copy by value)**, bukan referensi pointer.
+3. **Zero Value**: Jika tidak diinisialisasi, seluruh elemen array akan bernilai default (*zero value*) dari tipe tersebut (misal `0` untuk int, `""` untuk string).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Array")
-    // TODO: Implementasi logika Array di sini
+    // Deklarasi eksplisit dengan inisialisasi
+    var a [3]int = [3]int{1, 2, 3}
+    fmt.Println("Array a:", a, "Panjang:", len(a))
+
+    // Inisialisasi dengan penghitungan otomatis oleh compiler (...)
+    names := [...]string{"Go", "Rust", "TypeScript"}
+    fmt.Println("Bahasa:", names, "Jumlah:", len(names))
+
+    // Iterasi array menggunakan for range
+    for idx, val := range names {
+        fmt.Printf("Index %d -> %s\n", idx, val)
+    }
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Array berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Di Go modern, Slice (`[]T`) lebih sering digunakan daripada Array mentah karena fleksibilitas ukuran. Namun memahami Array penting karena Slice dibangun di atas backing array.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Array memiliki ukuran statis tetap yang dihitung saat kompilasi.
+- Operasi passing array menduplikasi memori; gunakan pointer atau slice jika ingin efisiensi memori.
+- Referensi: [Effective Go: Arrays](https://go.dev/doc/effective_go#arrays)

@@ -1,4 +1,4 @@
-# Select
+# Select Statement: Multiplexing Channel di Go
 
 **ID**: `select`
 **Duration**: 20-30 menit
@@ -6,31 +6,48 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **Select** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Kata kunci **`select`** di Go memungkinkan sebuah goroutine menunggu (*multiplexing*) operasi komunikasi pada beberapa channel secara bersamaan.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Select` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Karakteristik `select`:
+1. **Non-blocking Wait**: `select` akan menahan eksekusi sampai salah satu `case` channel siap mengirim atau menerima data.
+2. **Pemilihan Acak (Pseudo-random)**: Jika beberapa channel siap bersamaan, `select` akan memilih salah satu secara acak (*fairness*).
+3. **Timeout Handling**: Menggabungkan `select` dengan `time.After()` adalah pola standar industri untuk mencegah goroutine hang selamanya.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "time"
+)
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Select")
-    // TODO: Implementasi logika Select di sini
+    ch1 := make(chan string)
+    ch2 := make(chan string)
+
+    // Goroutine pengirim sinyal
+    go func() {
+        time.Sleep(50 * time.Millisecond)
+        ch1 <- "Pesan dari Channel 1"
+    }()
+
+    // Menunggu sinyal tercepat atau batas waktu timeout
+    select {
+    case msg1 := <-ch1:
+        fmt.Println("Menerima:", msg1)
+    case msg2 := <-ch2:
+        fmt.Println("Menerima:", msg2)
+    case <-time.After(100 * time.Millisecond):
+        fmt.Println("Waktu tunggu habis (Timeout)!")
+    }
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Select berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Default Case
+- Menambahkan `default:` pada `select` menjadikannya operasi *non-blocking*: jika tidak ada channel yang siap seketika, blok `default` akan langsung dieksekusi.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- `select` adalah pengendali lalu lintas channel di Go.
+- Pola `case <-time.After()` mencegah kebocoran goroutine akibat deadlock komunikasi.
+- Referensi: [A Tour of Go: Select](https://go.dev/tour/concurrency/5)

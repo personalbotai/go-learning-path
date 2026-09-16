@@ -1,36 +1,56 @@
-# Break Continue
+# Kontrol Perulangan: Break dan Continue di Go
 
 **ID**: `break-continue`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Break Continue** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Saat menjalankan perulangan dengan `for`, kita sering kali perlu menghentikan iterasi lebih awal atau melewati langkah tertentu:
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Break Continue` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+1. **`break`**: Menghentikan seluruh jalannya loop seketika dan keluar dari blok perulangan terdekat.
+2. **`continue`**: Melewati sisa kode pada iterasi saat ini dan langsung melompat ke evaluasi kondisi/post-statement iterasi berikutnya.
+3. **Labeled Break/Continue**: Go mendukung label untuk keluar (*break*) dari *nested loop* (loop bersarang) secara langsung ke tingkat luar tanpa perlu bendera (*flag boolean*) manual.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Break Continue")
-    // TODO: Implementasi logika Break Continue di sini
+    fmt.Println("=== Contoh Continue & Break Sederhana ===")
+    for i := 1; i <= 10; i++ {
+        if i%2 == 0 {
+            continue // Lewati angka genap
+        }
+        if i > 7 {
+            break // Berhenti jika i sudah melebihi 7
+        }
+        fmt.Printf("%d ", i)
+    }
+    fmt.Println()
+
+    fmt.Println("=== Contoh Labeled Break (Outer Loop) ===")
+OuterLoop:
+    for row := 1; row <= 3; row++ {
+        for col := 1; col <= 3; col++ {
+            if row == 2 && col == 2 {
+                fmt.Printf("Break di row=%d, col=%d\n", row, col)
+                break OuterLoop // Keluar dari kedua loop sekaligus
+            }
+            fmt.Printf("[%d,%d] ", row, col)
+        }
+        fmt.Println()
+    }
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Break Continue berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Best Practice
+- Gunakan `continue` untuk mengurangi kedalaman indentasi if-else (*guard clause pattern*).
+- Gunakan label secara bijak saat memproses matriks atau parsing token agar kode tetap mudah dibaca.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- `break` mengakhiri loop, sedangkan `continue` melompat ke putaran berikutnya.
+- Go tidak memiliki loop `while` atau `do-while`; semua kontrol loop menggunakan `for` bersama `break` dan `continue`.
+- Referensi resmi: [Go Spec - Break & Continue](https://go.dev/ref/spec#Break_statements)

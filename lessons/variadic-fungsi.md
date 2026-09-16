@@ -1,36 +1,58 @@
-# Variadic Fungsi
+# Variadic Functions: Fungsi Berparameter Fleksibel
 
 **ID**: `variadic-fungsi`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Variadic Fungsi** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+**Variadic function** adalah fungsi yang dapat menerima nol atau lebih argumen dari tipe data yang sama. Di dalam tubuh fungsi, parameter variadik diperlakukan sebagai sebuah **Slice (`[]T`)**.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Variadic Fungsi` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Sintaks penandaan variadik di Go adalah dengan menyematkan tiga titik (`...`) sebelum tipe data parameter, misalnya `nums ...int`.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
+// Fungsi yang menjumlahkan sejumlah angka tak terhingga
+func sum(nums ...int) int {
+    total := 0
+    for _, n := range nums {
+        total += n
+    }
+    return total
+}
+
+// Fungsi dengan parameter wajib dan parameter variadik tambahan
+func logActivity(level string, messages ...string) {
+    fmt.Printf("[%s] ", level)
+    for _, msg := range messages {
+        fmt.Printf("%s ", msg)
+    }
+    fmt.Println()
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Variadic Fungsi")
-    // TODO: Implementasi logika Variadic Fungsi di sini
+    // Pemanggilan dengan variasi jumlah argumen
+    fmt.Println("Sum 0 argumen :", sum())
+    fmt.Println("Sum 2 argumen :", sum(10, 20))
+    fmt.Println("Sum 4 argumen :", sum(1, 2, 3, 4))
+
+    // Membentangkan (unpacking/spreading) slice yang sudah ada dengan ...
+    daftarAngka := []int{5, 15, 25}
+    fmt.Println("Sum dari slice:", sum(daftarAngka...))
+
+    logActivity("INFO", "Server", "mulai", "di port 8080")
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Variadic Fungsi berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Best Practice
+- Parameter variadik harus selalu berada di **posisi terakhir** pada daftar parameter fungsi.
+- Fungsi standar seperti `fmt.Println` dan `append` adalah contoh variadic function paling sering digunakan.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Tanda `...T` memungkinkan fungsi menerima jumlah argumen dinamis sebagai slice.
+- Gunakan `slice...` untuk mengoper slice ke fungsi variadik.
+- Referensi: [A Tour of Go: Variadic functions](https://go.dev/doc/effective_go)

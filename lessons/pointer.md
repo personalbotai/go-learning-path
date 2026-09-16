@@ -1,4 +1,4 @@
-# Pointer
+# Pointer di Go: Alamat Memori dan Referensi Aman
 
 **ID**: `pointer`
 **Duration**: 20-30 menit
@@ -6,31 +6,42 @@
 ## Materi
 
 ### Penjelasan
-Materi tentang **Pointer** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Pointer adalah variabel yang menyimpan alamat memori (*memory address*) dari variabel lain. Go menyediakan pointer yang aman: **tidak ada pointer arithmetic** liar (seperti di C/C++), sehingga mencegah banyak bug memori.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Pointer` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Dua operator utama pointer di Go:
+1. **`&` (Address-of Operator)**: Mengambil alamat memori dari sebuah variabel (contoh: `p := &x`).
+2. **`*` (Dereference Operator)**: Mengakses atau mengubah nilai aktual yang berada di alamat memori yang ditunjuk (contoh: `*p = 20`).
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
+// Fungsi yang memodifikasi nilai via pointer
+func tambahBonus(gaji *int, bonus int) {
+    *gaji = *gaji + bonus // Memutasi nilai di alamat aslinya
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Pointer")
-    // TODO: Implementasi logika Pointer di sini
+    x := 10
+    p := &x // p menyimpan alamat memori x
+
+    fmt.Printf("Nilai x: %d, Alamat &x: %p, Nilai *p: %d\n", x, p, *p)
+
+    *p = 20 // Mengubah nilai x melalui dereferensi pointer p
+    fmt.Println("Setelah mutasi *p=20 -> x:", x, "*p:", *p)
+
+    gajiKaryawan := 5000000
+    tambahBonus(&gajiKaryawan, 1500000)
+    fmt.Printf("Gaji setelah bonus: Rp %d\n", gajiKaryawan)
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Pointer berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Di Go, compiler melakukan analisis lolos memori (*escape analysis*) otomatis: variabel lokal yang di-return pointernya dari fungsi akan otomatis dialokasikan di *heap*, bukan *stack*, sehingga aman dari *dangling pointers*.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Pointer menyimpan alamat memori objek lain.
+- Gunakan `&` untuk membuat pointer dan `*` untuk membaca/menulis isi memorinya.
+- Referensi: [A Tour of Go: Pointers](https://go.dev/tour/moretypes/1)

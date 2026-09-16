@@ -1,36 +1,57 @@
-# Method
+# Method: Receiver Function pada Struct
 
 **ID**: `method`
-**Duration**: 20-30 menit
+**Duration**: 20-25 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Method** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+**Method** di Go adalah fungsi biasa yang memiliki parameter khusus yang disebut **Receiver**. Receiver mengikat fungsi tersebut ke tipe data tertentu (biasanya struct).
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Method` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Dua tipe Receiver di Go:
+1. **Value Receiver `(t Type)`**: Method menerima salinan dari struct. Perubahan nilai field di dalam method **tidak mengubah** nilai variabel asli pemanggil.
+2. **Pointer Receiver `(t *Type)`**: Method menerima pointer referensi ke struct asli. Perubahan field akan langsung **mengubah nilai variabel asli**, dan menghindari alokasi copy struct besar di memori.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
+type Counter struct {
+    count int
+}
+
+// Value Receiver: Hanya membaca nilai
+func (c Counter) Get() int {
+    return c.count
+}
+
+// Pointer Receiver: Memutasi state objek asli
+func (c *Counter) Inc() {
+    c.count++
+}
+
+func (c *Counter) Reset() {
+    c.count = 0
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Method")
-    // TODO: Implementasi logika Method di sini
+    c := &Counter{}
+    c.Inc()
+    c.Inc()
+    fmt.Println("Counter saat ini:", c.Get()) // Output: 2
+
+    c.Reset()
+    fmt.Println("Counter setelah reset:", c.Get()) // Output: 0
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Method berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Best Practice
+- **Konsistensi**: Jika salah satu method pada sebuah struct membutuhkan *pointer receiver*, jadikan semua method pada tipe tersebut memakai *pointer receiver*.
+- Gunakan pointer receiver jika struct berukuran besar untuk performa yang optimal.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Method adalah fungsi ber-receiver yang menempel pada tipe struct.
+- Gunakan `(r *T)` untuk memodifikasi struct atau menghindari penyalinan memori yang boros.
+- Referensi: [Effective Go: Methods](https://go.dev/doc/effective_go#methods)

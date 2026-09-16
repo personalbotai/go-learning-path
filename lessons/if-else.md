@@ -1,36 +1,49 @@
-# If Else
+# Percabangan If-Else dan Short Statement di Go
 
 **ID**: `if-else`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **If Else** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Percabangan logika kondisional di Go menggunakan **`if`**, **`else if`**, dan **`else`**. 
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `If Else` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Keunikan dan keunggulan sintaks If di Go:
+1. **Tanpa Tanda Kurung**: Kondisi tidak membutuhkan tanda kurung `()` seperti bahasa C/Java, namun kurung kurawal `{}` wajib digunakan.
+2. **If with a Short Statement**: Go mengizinkan deklarasi dan inisialisasi variabel lokal sebelum evaluasi kondisi (contoh: `if val, err := ambilData(); err != nil`). Variabel tersebut hanya hidup di dalam cakupan (*scope*) blok `if-else` tersebut.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
 import "fmt"
 
+func hitungGrade(nilai int) string {
+    if nilai >= 90 {
+        return "A — Luar Biasa"
+    } else if nilai >= 75 {
+        return "B — Lulus"
+    } else {
+        return "C — Remidi"
+    }
+}
+
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: If Else")
-    // TODO: Implementasi logika If Else di sini
+    nilaiUjian := 85
+    hasil := hitungGrade(nilaiUjian)
+    fmt.Printf("Nilai: %d -> %s\n", nilaiUjian, hasil)
+
+    // Contoh If dengan Short Statement (Local Scope Initialization)
+    if batas := 100; nilaiUjian < batas {
+        fmt.Printf("Nilai berada di bawah batas maksimal %d\n", batas)
+    }
 }
 ```
 
-### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana If Else berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+### Praktik & Clean Code
+- Terapkan pola **"Happy Path to the Left"**: selesaikan kondisi error atau kegagalan lebih awal (*early return*) agar kode utama tidak bertingkat-tingkat ke dalam (*nested*).
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- `if` di Go tidak memerlukan tanda kurung `()`.
+- Short statement `if init; condition {}` sangat berguna untuk isolasi scope variabel hasil fungsi.
+- Referensi: [A Tour of Go: If Statements](https://go.dev/tour/flowcontrol/5)

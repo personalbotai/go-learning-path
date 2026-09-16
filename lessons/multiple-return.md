@@ -1,36 +1,71 @@
-# Multiple Return
+# Multiple Return Values: Fungsi Multi-Hasil di Go
 
 **ID**: `multiple-return`
-**Duration**: 20-30 menit
+**Duration**: 15-20 menit
 
 ## Materi
 
 ### Penjelasan
-Materi tentang **Multiple Return** dalam bahasa pemrograman Go. Konsep ini adalah salah satu fondasi penting saat Anda mulai mengembangkan aplikasi dari tahap *beginner* ke level *production-grade*.
+Tidak seperti banyak bahasa yang hanya mengizinkan satu nilai balik atau mewajibkan wrapper objek/tuple, Go mendukung **Multiple Return Values** secara *first-class*.
 
-Go didesain untuk kesederhanaan dan kejelasan, dan fitur terkait `Multiple Return` direkayasa sedemikian rupa agar sangat performan dengan *overhead* memori dan eksekusi serendah mungkin dibandingkan dengan implementasi di bahasa *scripting* konvensional.
+Fitur ini menjadi fondasi utama penanganan kesalahan (*error handling*) idiomatik di Go: fungsi biasanya mengembalikan sepasang nilai `(result, error)`.
 
-### Panduan Teknis & Best Practice
-1. **Pemahaman Fundamental**: Selalu pastikan Anda menguji dampak performa (menggunakan benchmark bawaan Go `go test -bench`) jika operasi ini dilakukan dalam loop jutaan data (hot path).
-2. **Safety Guidelines**: Hati-hati dengan tipe *pointer*, penguncian (*locking* pada concurrency), dan *memory leaks* (seperti lupa menutup `response.Body` pada request HTTP atau channel yang terbuka selamanya).
-3. **Idiomatic Go**: Tulis struktur kode Anda agar *idiomatic*, menggunakan *Go-way*, bukan *Java-way* atau *Python-way*. Contohnya adalah sering me-return (mengembalikan) *error* sebagai *value* kedua dari fungsi daripada menggunakan *exception handling* try/catch.
-
-### Contoh Kode Umum
+### Contoh Kode
 ```go
 package main
 
-import "fmt"
+import (
+    "fmt"
+)
+
+// Fungsi pembagian dengan pengembalian nilai hasil dan error
+func bagi(a, b float64) (float64, error) {
+    if b == 0 {
+        return 0, fmt.Errorf("pembagi tidak boleh nol")
+    }
+    return a / b, nil
+}
+
+// Named Return Values: nama variabel return ditentukan di signature fungsi
+func minMax(nums []int) (min int, max int) {
+    if len(nums) == 0 {
+        return 0, 0
+    }
+    min, max = nums[0], nums[0]
+    for _, v := range nums {
+        if v < min {
+            min = v
+        }
+        if v > max {
+            max = v
+        }
+    }
+    return // Naked return
+}
 
 func main() {
-    fmt.Println("Ini adalah demonstrasi materi: Multiple Return")
-    // TODO: Implementasi logika Multiple Return di sini
+    // 1. Eksekusi sukses
+    if hasil, err := bagi(10, 2); err == nil {
+        fmt.Printf("Hasil 10 / 2 = %.2f\n", hasil)
+    }
+
+    // 2. Eksekusi gagal
+    if _, err := bagi(10, 0); err != nil {
+        fmt.Println("Error ditangkap:", err)
+    }
+
+    // 3. MinMax multi-return
+    angka := []int{12, 5, 89, 3, 44}
+    terkecil, terbesar := minMax(angka)
+    fmt.Printf("Min: %d, Max: %d\n", terkecil, terbesar)
 }
 ```
 
 ### Praktik
-Buatlah sebuah *package* mandiri (standalone package) Go, eksplorasi bagaimana Multiple Return berjalan. Buat sebuah modul fungsional yang menyertakan penanganan *error* yang baik.
+- Selalu periksa nilai `err != nil` sebelum menggunakan nilai hasil kalkulasi.
+- Gunakan *blank identifier* (`_`) jika ingin mengabaikan salah satu nilai balik.
 
 ## Rangkuman
-- Tulis kode Go yang "idiomatik".
-- Prioritaskan *Clean Code* namun tetap peka terhadap alokasi memori.
-- Referensi resmi: [Golang Official Documentation](https://go.dev/doc/effective_go)
+- Fungsi di Go dapat mengembalikan dua atau lebih nilai sekaligus.
+- Pola standar Go adalah `(data, error)`.
+- Referensi: [Effective Go: Multiple Return Values](https://go.dev/doc/effective_go#multiple-returns)
