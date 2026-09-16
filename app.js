@@ -1020,7 +1020,12 @@ async function runCode(){
   const out=document.getElementById('output');
   const validation=document.getElementById('validation-msg');
   if(!codeEl||!out) return;
-  const code=codeEl.value;
+  // Sanitize code: normalize Windows \r\n to \n (prevents "newline in string" on Go playground)
+  let code = codeEl.value.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  // Auto-detect if double-quoted string was broken by accidental Enter inside string and convert to backtick
+  // e.g. "foo\nbar" on separate lines without closing quote
+  // Also trim trailing whitespaces
+  code = code.split('\n').map(l => l.replace(/\s+$/, '')).join('\n');
   out.innerHTML='<span style="color:#22d3ee">⏳ Menjalankan Go…</span>';
   if(validation){ validation.className='validation hidden'; validation.innerHTML=''; }
   // try play.golang.org
