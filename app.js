@@ -61,7 +61,1516 @@ const MODULES = [
     "icon": "fa-solid fa-code"
   }
 ];
-const lessons = [];
+const lessons = [
+  {
+    "id": 1,
+    "slug": "go-1",
+    "title": "1. Sejarah Go dan Filosofi Desain Bahasa",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "moduleId": 1,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 1. Sejarah Go dan Filosofi Desain Bahasa
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"1. Sejarah Go dan Filosofi Desain Bahasa\") }",
+    "quiz": {
+      "question": "Konsep utama 1. Sejarah Go dan Filosofi Desain Bahasa?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 2,
+    "slug": "go-2",
+    "title": "2. Variabel, Konstanta, dan Tipe Dasar",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "moduleId": 1,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 2. Variabel, Konstanta, dan Tipe Dasar
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"2. Variabel, Konstanta, dan Tipe Dasar\") }",
+    "quiz": {
+      "question": "Konsep utama 2. Variabel, Konstanta, dan Tipe Dasar?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 3,
+    "slug": "go-3",
+    "title": "3. Operator dan Ekspresi",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "moduleId": 1,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 3. Operator dan Ekspresi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"3. Operator dan Ekspresi\") }",
+    "quiz": {
+      "question": "Konsep utama 3. Operator dan Ekspresi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 4,
+    "slug": "go-4",
+    "title": "4. Input/Output Sederhana dan Formatting",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "moduleId": 1,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 4. Input/Output Sederhana dan Formatting
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"4. Input/Output Sederhana dan Formatting\") }",
+    "quiz": {
+      "question": "Konsep utama 4. Input/Output Sederhana dan Formatting?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 5,
+    "slug": "go-5",
+    "title": "5. Comments, Dokumentasi, dan Code Style",
+    "module": "Modul 1: Fondasi Bahasa Go (Bahasa & Ekosistem)",
+    "moduleId": 1,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 5. Comments, Dokumentasi, dan Code Style
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"5. Comments, Dokumentasi, dan Code Style\") }",
+    "quiz": {
+      "question": "Konsep utama 5. Comments, Dokumentasi, dan Code Style?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 6,
+    "slug": "go-6",
+    "title": "6. If, Else If, Else",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 6. If, Else If, Else
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"6. If, Else If, Else\") }",
+    "quiz": {
+      "question": "Konsep utama 6. If, Else If, Else?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 7,
+    "slug": "go-7",
+    "title": "7. Switch Statement",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 7. Switch Statement
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"7. Switch Statement\") }",
+    "quiz": {
+      "question": "Konsep utama 7. Switch Statement?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 8,
+    "slug": "go-8",
+    "title": "8. For Loop (Satu-satunya Loop)",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 8. For Loop (Satu-satunya Loop)
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"8. For Loop (Satu-satunya Loop)\") }",
+    "quiz": {
+      "question": "Konsep utama 8. For Loop (Satu-satunya Loop)?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 9,
+    "slug": "go-9",
+    "title": "9. Range dan Iterasi Koleksi",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 9. Range dan Iterasi Koleksi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"9. Range dan Iterasi Koleksi\") }",
+    "quiz": {
+      "question": "Konsep utama 9. Range dan Iterasi Koleksi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 10,
+    "slug": "go-10",
+    "title": "10. Defer, Panic, dan Recover",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 10. Defer, Panic, dan Recover
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"10. Defer, Panic, dan Recover\") }",
+    "quiz": {
+      "question": "Konsep utama 10. Defer, Panic, dan Recover?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 11,
+    "slug": "go-11",
+    "title": "11. Pattern Matching dengan Select",
+    "module": "Modul 2: Struktur Kontrol & Alur Program",
+    "moduleId": 2,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 11. Pattern Matching dengan Select
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"11. Pattern Matching dengan Select\") }",
+    "quiz": {
+      "question": "Konsep utama 11. Pattern Matching dengan Select?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 12,
+    "slug": "go-12",
+    "title": "12. Deklarasi dan Pemanggilan Fungsi",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 12. Deklarasi dan Pemanggilan Fungsi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"12. Deklarasi dan Pemanggilan Fungsi\") }",
+    "quiz": {
+      "question": "Konsep utama 12. Deklarasi dan Pemanggilan Fungsi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 13,
+    "slug": "go-13",
+    "title": "13. Fungsi sebagai First-Class Citizen",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 13. Fungsi sebagai First-Class Citizen
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"13. Fungsi sebagai First-Class Citizen\") }",
+    "quiz": {
+      "question": "Konsep utama 13. Fungsi sebagai First-Class Citizen?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 14,
+    "slug": "go-14",
+    "title": "14. Closures dan Scope",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 14. Closures dan Scope
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"14. Closures dan Scope\") }",
+    "quiz": {
+      "question": "Konsep utama 14. Closures dan Scope?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 15,
+    "slug": "go-15",
+    "title": "15. Recursion dan Factorial/Fibonacci",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 15. Recursion dan Factorial/Fibonacci
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"15. Recursion dan Factorial/Fibonacci\") }",
+    "quiz": {
+      "question": "Konsep utama 15. Recursion dan Factorial/Fibonacci?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 16,
+    "slug": "go-16",
+    "title": "16. Method pada Tipe",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 16. Method pada Tipe
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"16. Method pada Tipe\") }",
+    "quiz": {
+      "question": "Konsep utama 16. Method pada Tipe?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 17,
+    "slug": "go-17",
+    "title": "17. Receivers, Embedded Types & Method Chaining",
+    "module": "Modul 3: Fungsi, Closures & Method",
+    "moduleId": 3,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 17. Receivers, Embedded Types & Method Chaining
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"17. Receivers, Embedded Types & Method Chaining\") }",
+    "quiz": {
+      "question": "Konsep utama 17. Receivers, Embedded Types & Method Chaining?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 18,
+    "slug": "go-18",
+    "title": "18. Struct Deklarasi dan Inisialisasi",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 18. Struct Deklarasi dan Inisialisasi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"18. Struct Deklarasi dan Inisialisasi\") }",
+    "quiz": {
+      "question": "Konsep utama 18. Struct Deklarasi dan Inisialisasi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 19,
+    "slug": "go-19",
+    "title": "19. Field Tags, Embedding, dan Komposisi",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 19. Field Tags, Embedding, dan Komposisi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"19. Field Tags, Embedding, dan Komposisi\") }",
+    "quiz": {
+      "question": "Konsep utama 19. Field Tags, Embedding, dan Komposisi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 20,
+    "slug": "go-20",
+    "title": "20. Interface Dasar",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 20. Interface Dasar
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"20. Interface Dasar\") }",
+    "quiz": {
+      "question": "Konsep utama 20. Interface Dasar?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 21,
+    "slug": "go-21",
+    "title": "21. Interface Lanjutan dan Polymorphism",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 21. Interface Lanjutan dan Polymorphism
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"21. Interface Lanjutan dan Polymorphism\") }",
+    "quiz": {
+      "question": "Konsep utama 21. Interface Lanjutan dan Polymorphism?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 22,
+    "slug": "go-22",
+    "title": "22. Type Switch dan Type Assertion Lanjutan",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 22. Type Switch dan Type Assertion Lanjutan
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"22. Type Switch dan Type Assertion Lanjutan\") }",
+    "quiz": {
+      "question": "Konsep utama 22. Type Switch dan Type Assertion Lanjutan?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 23,
+    "slug": "go-23",
+    "title": "23. Generics: Introduction (Go 1.18+)",
+    "module": "Modul 4: Struct, Interface & Pemrograman Berorientasi Objek Go",
+    "moduleId": 4,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 23. Generics: Introduction (Go 1.18+)
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"23. Generics: Introduction (Go 1.18+)\") }",
+    "quiz": {
+      "question": "Konsep utama 23. Generics: Introduction (Go 1.18+)?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 24,
+    "slug": "go-24",
+    "title": "24. Goroutines: Dasar",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 24. Goroutines: Dasar
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"24. Goroutines: Dasar\") }",
+    "quiz": {
+      "question": "Konsep utama 24. Goroutines: Dasar?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 25,
+    "slug": "go-25",
+    "title": "25. Channels: Buffered dan Unbuffered",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 25. Channels: Buffered dan Unbuffered
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"25. Channels: Buffered dan Unbuffered\") }",
+    "quiz": {
+      "question": "Konsep utama 25. Channels: Buffered dan Unbuffered?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 26,
+    "slug": "go-26",
+    "title": "26. Channel Direction dan Safety",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 26. Channel Direction dan Safety
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"26. Channel Direction dan Safety\") }",
+    "quiz": {
+      "question": "Konsep utama 26. Channel Direction dan Safety?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 27,
+    "slug": "go-27",
+    "title": "27. Select: Multiplexing Channel",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 27. Select: Multiplexing Channel
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"27. Select: Multiplexing Channel\") }",
+    "quiz": {
+      "question": "Konsep utama 27. Select: Multiplexing Channel?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 28,
+    "slug": "go-28",
+    "title": "28. WaitGroup dan Sync Primitives",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 28. WaitGroup dan Sync Primitives
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"28. WaitGroup dan Sync Primitives\") }",
+    "quiz": {
+      "question": "Konsep utama 28. WaitGroup dan Sync Primitives?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 29,
+    "slug": "go-29",
+    "title": "29. Race Condition dan Detect",
+    "module": "Modul 5: Goroutines, Channels & Concurrency",
+    "moduleId": 5,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 29. Race Condition dan Detect
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"29. Race Condition dan Detect\") }",
+    "quiz": {
+      "question": "Konsep utama 29. Race Condition dan Detect?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 30,
+    "slug": "go-30",
+    "title": "30. Error Handling Fundamentals",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 30. Error Handling Fundamentals
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"30. Error Handling Fundamentals\") }",
+    "quiz": {
+      "question": "Konsep utama 30. Error Handling Fundamentals?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 31,
+    "slug": "go-31",
+    "title": "31. Custom Error dan Errors As/Is",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 31. Custom Error dan Errors As/Is
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"31. Custom Error dan Errors As/Is\") }",
+    "quiz": {
+      "question": "Konsep utama 31. Custom Error dan Errors As/Is?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 32,
+    "slug": "go-32",
+    "title": "32. Context Dasar (context.Context)",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 32. Context Dasar (context.Context)
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"32. Context Dasar (context.Context)\") }",
+    "quiz": {
+      "question": "Konsep utama 32. Context Dasar (context.Context)?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 33,
+    "slug": "go-33",
+    "title": "33. Context untuk Cancellation Propagation",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 33. Context untuk Cancellation Propagation
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"33. Context untuk Cancellation Propagation\") }",
+    "quiz": {
+      "question": "Konsep utama 33. Context untuk Cancellation Propagation?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 34,
+    "slug": "go-34",
+    "title": "34. Context Values dan Middleware Pattern",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 34. Context Values dan Middleware Pattern
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"34. Context Values dan Middleware Pattern\") }",
+    "quiz": {
+      "question": "Konsep utama 34. Context Values dan Middleware Pattern?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 35,
+    "slug": "go-35",
+    "title": "35. Error Handling Strategy & Best Practices",
+    "module": "Modul 6: Context & Error Handling",
+    "moduleId": 6,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 35. Error Handling Strategy & Best Practices
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"35. Error Handling Strategy & Best Practices\") }",
+    "quiz": {
+      "question": "Konsep utama 35. Error Handling Strategy & Best Practices?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 36,
+    "slug": "go-36",
+    "title": "36. Generics: Constraints dan Comparable",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 36. Generics: Constraints dan Comparable
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"36. Generics: Constraints dan Comparable\") }",
+    "quiz": {
+      "question": "Konsep utama 36. Generics: Constraints dan Comparable?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 37,
+    "slug": "go-37",
+    "title": "37. Generic Data Structures",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 37. Generic Data Structures
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"37. Generic Data Structures\") }",
+    "quiz": {
+      "question": "Konsep utama 37. Generic Data Structures?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 38,
+    "slug": "go-38",
+    "title": "38. Slice Lanjutan",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 38. Slice Lanjutan
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"38. Slice Lanjutan\") }",
+    "quiz": {
+      "question": "Konsep utama 38. Slice Lanjutan?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 39,
+    "slug": "go-39",
+    "title": "39. Map Lanjutan dan Iterasi",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 39. Map Lanjutan dan Iterasi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"39. Map Lanjutan dan Iterasi\") }",
+    "quiz": {
+      "question": "Konsep utama 39. Map Lanjutan dan Iterasi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 40,
+    "slug": "go-40",
+    "title": "40. Pipeline Pattern dengan Channel",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 40. Pipeline Pattern dengan Channel
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"40. Pipeline Pattern dengan Channel\") }",
+    "quiz": {
+      "question": "Konsep utama 40. Pipeline Pattern dengan Channel?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 41,
+    "slug": "go-41",
+    "title": "41. Pooling dan Resource Management",
+    "module": "Modul 7: Generics, Koleksi & Pipeline",
+    "moduleId": 7,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 41. Pooling dan Resource Management
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"41. Pooling dan Resource Management\") }",
+    "quiz": {
+      "question": "Konsep utama 41. Pooling dan Resource Management?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 42,
+    "slug": "go-42",
+    "title": "42. Package Design dan Konvensi",
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "moduleId": 8,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 42. Package Design dan Konvensi
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"42. Package Design dan Konvensi\") }",
+    "quiz": {
+      "question": "Konsep utama 42. Package Design dan Konvensi?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 43,
+    "slug": "go-43",
+    "title": "43. Import Management dan Aliasing",
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "moduleId": 8,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 43. Import Management dan Aliasing
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"43. Import Management dan Aliasing\") }",
+    "quiz": {
+      "question": "Konsep utama 43. Import Management dan Aliasing?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 44,
+    "slug": "go-44",
+    "title": "44. Minimal Version Selection (MVS)",
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "moduleId": 8,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 44. Minimal Version Selection (MVS)
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"44. Minimal Version Selection (MVS)\") }",
+    "quiz": {
+      "question": "Konsep utama 44. Minimal Version Selection (MVS)?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 45,
+    "slug": "go-45",
+    "title": "45. Vendor Directory dan Offline Build",
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "moduleId": 8,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 45. Vendor Directory dan Offline Build
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"45. Vendor Directory dan Offline Build\") }",
+    "quiz": {
+      "question": "Konsep utama 45. Vendor Directory dan Offline Build?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 46,
+    "slug": "go-46",
+    "title": "46. Monorepo dan Workspace (Go 1.18+)",
+    "module": "Modul 8: Paket, Modul & Dependency Management",
+    "moduleId": 8,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 46. Monorepo dan Workspace (Go 1.18+)
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"46. Monorepo dan Workspace (Go 1.18+)\") }",
+    "quiz": {
+      "question": "Konsep utama 46. Monorepo dan Workspace (Go 1.18+)?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 47,
+    "slug": "go-47",
+    "title": "47. Unit Testing Dasar",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 47. Unit Testing Dasar
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"47. Unit Testing Dasar\") }",
+    "quiz": {
+      "question": "Konsep utama 47. Unit Testing Dasar?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 48,
+    "slug": "go-48",
+    "title": "48. Benchmarking dan Profiling",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 48. Benchmarking dan Profiling
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"48. Benchmarking dan Profiling\") }",
+    "quiz": {
+      "question": "Konsep utama 48. Benchmarking dan Profiling?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 49,
+    "slug": "go-49",
+    "title": "49. Mocking dan Dependency Injection",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 49. Mocking dan Dependency Injection
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"49. Mocking dan Dependency Injection\") }",
+    "quiz": {
+      "question": "Konsep utama 49. Mocking dan Dependency Injection?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 50,
+    "slug": "go-50",
+    "title": "50. Integration Testing dan httptest",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 50. Integration Testing dan httptest
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"50. Integration Testing dan httptest\") }",
+    "quiz": {
+      "question": "Konsep utama 50. Integration Testing dan httptest?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 51,
+    "slug": "go-51",
+    "title": "51. Race Detection dan Linting",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 51. Race Detection dan Linting
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"51. Race Detection dan Linting\") }",
+    "quiz": {
+      "question": "Konsep utama 51. Race Detection dan Linting?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 52,
+    "slug": "go-52",
+    "title": "52. Continuous Integration untuk Go",
+    "module": "Modul 9: Testing, Benchmarking & Quality",
+    "moduleId": 9,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 52. Continuous Integration untuk Go
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"52. Continuous Integration untuk Go\") }",
+    "quiz": {
+      "question": "Konsep utama 52. Continuous Integration untuk Go?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 53,
+    "slug": "go-53",
+    "title": "53. REST API dengan Standard Library",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 53. REST API dengan Standard Library
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"53. REST API dengan Standard Library\") }",
+    "quiz": {
+      "question": "Konsep utama 53. REST API dengan Standard Library?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 54,
+    "slug": "go-54",
+    "title": "54. HTTP Client dan Eksternal API",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 54. HTTP Client dan Eksternal API
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"54. HTTP Client dan Eksternal API\") }",
+    "quiz": {
+      "question": "Konsep utama 54. HTTP Client dan Eksternal API?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 55,
+    "slug": "go-55",
+    "title": "55. Database dengan Database/sql",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 55. Database dengan Database/sql
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"55. Database dengan Database/sql\") }",
+    "quiz": {
+      "question": "Konsep utama 55. Database dengan Database/sql?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 56,
+    "slug": "go-56",
+    "title": "56. Konfigurasi dan Environment Management",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 56. Konfigurasi dan Environment Management
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"56. Konfigurasi dan Environment Management\") }",
+    "quiz": {
+      "question": "Konsep utama 56. Konfigurasi dan Environment Management?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 57,
+    "slug": "go-57",
+    "title": "57. Logging dan Observability",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 57. Logging dan Observability
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"57. Logging dan Observability\") }",
+    "quiz": {
+      "question": "Konsep utama 57. Logging dan Observability?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  },
+  {
+    "id": 58,
+    "slug": "go-58",
+    "title": "58. Deployment dan Final Best Practices",
+    "module": "Modul 10: Proyek Akhir & Best Practices Industri",
+    "moduleId": 10,
+    "duration": "15 m",
+    "level": "Semua",
+    "content": "# 58. Deployment dan Final Best Practices
+
+Materi Go modern.",
+    "code": "package main
+import \"fmt\"
+func main() { fmt.Println(\"58. Deployment dan Final Best Practices\") }",
+    "quiz": {
+      "question": "Konsep utama 58. Deployment dan Final Best Practices?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Go idiomatik."
+    }
+  }
+];
 
 
 let currentLesson = -1;
