@@ -70,12 +70,8 @@ const lessons = [
     "moduleId": 1,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 1. Sejarah Go dan Filosofi Desain Bahasa
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"1. Sejarah Go dan Filosofi Desain Bahasa\") }",
+    "content": "# 1. Sejarah Go dan Filosofi Desain Bahasa\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"1. Sejarah Go dan Filosofi Desain Bahasa\") }",
     "quiz": {
       "question": "Konsep utama 1. Sejarah Go dan Filosofi Desain Bahasa?",
       "options": [
@@ -96,12 +92,8 @@ func main() { fmt.Println(\"1. Sejarah Go dan Filosofi Desain Bahasa\") }",
     "moduleId": 1,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 2. Variabel, Konstanta, dan Tipe Dasar
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"2. Variabel, Konstanta, dan Tipe Dasar\") }",
+    "content": "# 2. Variabel, Konstanta, dan Tipe Dasar\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"2. Variabel, Konstanta, dan Tipe Dasar\") }",
     "quiz": {
       "question": "Konsep utama 2. Variabel, Konstanta, dan Tipe Dasar?",
       "options": [
@@ -122,12 +114,8 @@ func main() { fmt.Println(\"2. Variabel, Konstanta, dan Tipe Dasar\") }",
     "moduleId": 1,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 3. Operator dan Ekspresi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"3. Operator dan Ekspresi\") }",
+    "content": "# 3. Operator dan Ekspresi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"3. Operator dan Ekspresi\") }",
     "quiz": {
       "question": "Konsep utama 3. Operator dan Ekspresi?",
       "options": [
@@ -148,12 +136,8 @@ func main() { fmt.Println(\"3. Operator dan Ekspresi\") }",
     "moduleId": 1,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 4. Input/Output Sederhana dan Formatting
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"4. Input/Output Sederhana dan Formatting\") }",
+    "content": "# 4. Input/Output Sederhana dan Formatting\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"4. Input/Output Sederhana dan Formatting\") }",
     "quiz": {
       "question": "Konsep utama 4. Input/Output Sederhana dan Formatting?",
       "options": [
@@ -174,12 +158,8 @@ func main() { fmt.Println(\"4. Input/Output Sederhana dan Formatting\") }",
     "moduleId": 1,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 5. Comments, Dokumentasi, dan Code Style
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"5. Comments, Dokumentasi, dan Code Style\") }",
+    "content": "# 5. Comments, Dokumentasi, dan Code Style\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"5. Comments, Dokumentasi, dan Code Style\") }",
     "quiz": {
       "question": "Konsep utama 5. Comments, Dokumentasi, dan Code Style?",
       "options": [
@@ -200,12 +180,8 @@ func main() { fmt.Println(\"5. Comments, Dokumentasi, dan Code Style\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 6. If, Else If, Else
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"6. If, Else If, Else\") }",
+    "content": "# 6. If, Else If, Else\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"6. If, Else If, Else\") }",
     "quiz": {
       "question": "Konsep utama 6. If, Else If, Else?",
       "options": [
@@ -226,12 +202,8 @@ func main() { fmt.Println(\"6. If, Else If, Else\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 7. Switch Statement
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"7. Switch Statement\") }",
+    "content": "# 7. Switch Statement\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"7. Switch Statement\") }",
     "quiz": {
       "question": "Konsep utama 7. Switch Statement?",
       "options": [
@@ -252,12 +224,8 @@ func main() { fmt.Println(\"7. Switch Statement\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 8. For Loop (Satu-satunya Loop)
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"8. For Loop (Satu-satunya Loop)\") }",
+    "content": "# 8. For Loop (Satu-satunya Loop)\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"8. For Loop (Satu-satunya Loop)\") }",
     "quiz": {
       "question": "Konsep utama 8. For Loop (Satu-satunya Loop)?",
       "options": [
@@ -278,12 +246,8 @@ func main() { fmt.Println(\"8. For Loop (Satu-satunya Loop)\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 9. Range dan Iterasi Koleksi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"9. Range dan Iterasi Koleksi\") }",
+    "content": "# 9. Range dan Iterasi Koleksi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"9. Range dan Iterasi Koleksi\") }",
     "quiz": {
       "question": "Konsep utama 9. Range dan Iterasi Koleksi?",
       "options": [
@@ -304,12 +268,8 @@ func main() { fmt.Println(\"9. Range dan Iterasi Koleksi\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 10. Defer, Panic, dan Recover
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"10. Defer, Panic, dan Recover\") }",
+    "content": "# 10. Defer, Panic, dan Recover\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"10. Defer, Panic, dan Recover\") }",
     "quiz": {
       "question": "Konsep utama 10. Defer, Panic, dan Recover?",
       "options": [
@@ -330,12 +290,8 @@ func main() { fmt.Println(\"10. Defer, Panic, dan Recover\") }",
     "moduleId": 2,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 11. Pattern Matching dengan Select
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"11. Pattern Matching dengan Select\") }",
+    "content": "# 11. Pattern Matching dengan Select\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"11. Pattern Matching dengan Select\") }",
     "quiz": {
       "question": "Konsep utama 11. Pattern Matching dengan Select?",
       "options": [
@@ -356,12 +312,8 @@ func main() { fmt.Println(\"11. Pattern Matching dengan Select\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 12. Deklarasi dan Pemanggilan Fungsi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"12. Deklarasi dan Pemanggilan Fungsi\") }",
+    "content": "# 12. Deklarasi dan Pemanggilan Fungsi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"12. Deklarasi dan Pemanggilan Fungsi\") }",
     "quiz": {
       "question": "Konsep utama 12. Deklarasi dan Pemanggilan Fungsi?",
       "options": [
@@ -382,12 +334,8 @@ func main() { fmt.Println(\"12. Deklarasi dan Pemanggilan Fungsi\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 13. Fungsi sebagai First-Class Citizen
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"13. Fungsi sebagai First-Class Citizen\") }",
+    "content": "# 13. Fungsi sebagai First-Class Citizen\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"13. Fungsi sebagai First-Class Citizen\") }",
     "quiz": {
       "question": "Konsep utama 13. Fungsi sebagai First-Class Citizen?",
       "options": [
@@ -408,12 +356,8 @@ func main() { fmt.Println(\"13. Fungsi sebagai First-Class Citizen\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 14. Closures dan Scope
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"14. Closures dan Scope\") }",
+    "content": "# 14. Closures dan Scope\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"14. Closures dan Scope\") }",
     "quiz": {
       "question": "Konsep utama 14. Closures dan Scope?",
       "options": [
@@ -434,12 +378,8 @@ func main() { fmt.Println(\"14. Closures dan Scope\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 15. Recursion dan Factorial/Fibonacci
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"15. Recursion dan Factorial/Fibonacci\") }",
+    "content": "# 15. Recursion dan Factorial/Fibonacci\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"15. Recursion dan Factorial/Fibonacci\") }",
     "quiz": {
       "question": "Konsep utama 15. Recursion dan Factorial/Fibonacci?",
       "options": [
@@ -460,12 +400,8 @@ func main() { fmt.Println(\"15. Recursion dan Factorial/Fibonacci\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 16. Method pada Tipe
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"16. Method pada Tipe\") }",
+    "content": "# 16. Method pada Tipe\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"16. Method pada Tipe\") }",
     "quiz": {
       "question": "Konsep utama 16. Method pada Tipe?",
       "options": [
@@ -486,12 +422,8 @@ func main() { fmt.Println(\"16. Method pada Tipe\") }",
     "moduleId": 3,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 17. Receivers, Embedded Types & Method Chaining
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"17. Receivers, Embedded Types & Method Chaining\") }",
+    "content": "# 17. Receivers, Embedded Types & Method Chaining\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"17. Receivers, Embedded Types & Method Chaining\") }",
     "quiz": {
       "question": "Konsep utama 17. Receivers, Embedded Types & Method Chaining?",
       "options": [
@@ -512,12 +444,8 @@ func main() { fmt.Println(\"17. Receivers, Embedded Types & Method Chaining\") }
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 18. Struct Deklarasi dan Inisialisasi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"18. Struct Deklarasi dan Inisialisasi\") }",
+    "content": "# 18. Struct Deklarasi dan Inisialisasi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"18. Struct Deklarasi dan Inisialisasi\") }",
     "quiz": {
       "question": "Konsep utama 18. Struct Deklarasi dan Inisialisasi?",
       "options": [
@@ -538,12 +466,8 @@ func main() { fmt.Println(\"18. Struct Deklarasi dan Inisialisasi\") }",
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 19. Field Tags, Embedding, dan Komposisi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"19. Field Tags, Embedding, dan Komposisi\") }",
+    "content": "# 19. Field Tags, Embedding, dan Komposisi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"19. Field Tags, Embedding, dan Komposisi\") }",
     "quiz": {
       "question": "Konsep utama 19. Field Tags, Embedding, dan Komposisi?",
       "options": [
@@ -564,12 +488,8 @@ func main() { fmt.Println(\"19. Field Tags, Embedding, dan Komposisi\") }",
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 20. Interface Dasar
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"20. Interface Dasar\") }",
+    "content": "# 20. Interface Dasar\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"20. Interface Dasar\") }",
     "quiz": {
       "question": "Konsep utama 20. Interface Dasar?",
       "options": [
@@ -590,12 +510,8 @@ func main() { fmt.Println(\"20. Interface Dasar\") }",
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 21. Interface Lanjutan dan Polymorphism
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"21. Interface Lanjutan dan Polymorphism\") }",
+    "content": "# 21. Interface Lanjutan dan Polymorphism\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"21. Interface Lanjutan dan Polymorphism\") }",
     "quiz": {
       "question": "Konsep utama 21. Interface Lanjutan dan Polymorphism?",
       "options": [
@@ -616,12 +532,8 @@ func main() { fmt.Println(\"21. Interface Lanjutan dan Polymorphism\") }",
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 22. Type Switch dan Type Assertion Lanjutan
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"22. Type Switch dan Type Assertion Lanjutan\") }",
+    "content": "# 22. Type Switch dan Type Assertion Lanjutan\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"22. Type Switch dan Type Assertion Lanjutan\") }",
     "quiz": {
       "question": "Konsep utama 22. Type Switch dan Type Assertion Lanjutan?",
       "options": [
@@ -642,12 +554,8 @@ func main() { fmt.Println(\"22. Type Switch dan Type Assertion Lanjutan\") }",
     "moduleId": 4,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 23. Generics: Introduction (Go 1.18+)
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"23. Generics: Introduction (Go 1.18+)\") }",
+    "content": "# 23. Generics: Introduction (Go 1.18+)\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"23. Generics: Introduction (Go 1.18+)\") }",
     "quiz": {
       "question": "Konsep utama 23. Generics: Introduction (Go 1.18+)?",
       "options": [
@@ -668,12 +576,8 @@ func main() { fmt.Println(\"23. Generics: Introduction (Go 1.18+)\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 24. Goroutines: Dasar
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"24. Goroutines: Dasar\") }",
+    "content": "# 24. Goroutines: Dasar\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"24. Goroutines: Dasar\") }",
     "quiz": {
       "question": "Konsep utama 24. Goroutines: Dasar?",
       "options": [
@@ -694,12 +598,8 @@ func main() { fmt.Println(\"24. Goroutines: Dasar\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 25. Channels: Buffered dan Unbuffered
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"25. Channels: Buffered dan Unbuffered\") }",
+    "content": "# 25. Channels: Buffered dan Unbuffered\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"25. Channels: Buffered dan Unbuffered\") }",
     "quiz": {
       "question": "Konsep utama 25. Channels: Buffered dan Unbuffered?",
       "options": [
@@ -720,12 +620,8 @@ func main() { fmt.Println(\"25. Channels: Buffered dan Unbuffered\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 26. Channel Direction dan Safety
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"26. Channel Direction dan Safety\") }",
+    "content": "# 26. Channel Direction dan Safety\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"26. Channel Direction dan Safety\") }",
     "quiz": {
       "question": "Konsep utama 26. Channel Direction dan Safety?",
       "options": [
@@ -746,12 +642,8 @@ func main() { fmt.Println(\"26. Channel Direction dan Safety\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 27. Select: Multiplexing Channel
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"27. Select: Multiplexing Channel\") }",
+    "content": "# 27. Select: Multiplexing Channel\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"27. Select: Multiplexing Channel\") }",
     "quiz": {
       "question": "Konsep utama 27. Select: Multiplexing Channel?",
       "options": [
@@ -772,12 +664,8 @@ func main() { fmt.Println(\"27. Select: Multiplexing Channel\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 28. WaitGroup dan Sync Primitives
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"28. WaitGroup dan Sync Primitives\") }",
+    "content": "# 28. WaitGroup dan Sync Primitives\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"28. WaitGroup dan Sync Primitives\") }",
     "quiz": {
       "question": "Konsep utama 28. WaitGroup dan Sync Primitives?",
       "options": [
@@ -798,12 +686,8 @@ func main() { fmt.Println(\"28. WaitGroup dan Sync Primitives\") }",
     "moduleId": 5,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 29. Race Condition dan Detect
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"29. Race Condition dan Detect\") }",
+    "content": "# 29. Race Condition dan Detect\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"29. Race Condition dan Detect\") }",
     "quiz": {
       "question": "Konsep utama 29. Race Condition dan Detect?",
       "options": [
@@ -824,12 +708,8 @@ func main() { fmt.Println(\"29. Race Condition dan Detect\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 30. Error Handling Fundamentals
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"30. Error Handling Fundamentals\") }",
+    "content": "# 30. Error Handling Fundamentals\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"30. Error Handling Fundamentals\") }",
     "quiz": {
       "question": "Konsep utama 30. Error Handling Fundamentals?",
       "options": [
@@ -850,12 +730,8 @@ func main() { fmt.Println(\"30. Error Handling Fundamentals\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 31. Custom Error dan Errors As/Is
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"31. Custom Error dan Errors As/Is\") }",
+    "content": "# 31. Custom Error dan Errors As/Is\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"31. Custom Error dan Errors As/Is\") }",
     "quiz": {
       "question": "Konsep utama 31. Custom Error dan Errors As/Is?",
       "options": [
@@ -876,12 +752,8 @@ func main() { fmt.Println(\"31. Custom Error dan Errors As/Is\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 32. Context Dasar (context.Context)
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"32. Context Dasar (context.Context)\") }",
+    "content": "# 32. Context Dasar (context.Context)\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"32. Context Dasar (context.Context)\") }",
     "quiz": {
       "question": "Konsep utama 32. Context Dasar (context.Context)?",
       "options": [
@@ -902,12 +774,8 @@ func main() { fmt.Println(\"32. Context Dasar (context.Context)\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 33. Context untuk Cancellation Propagation
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"33. Context untuk Cancellation Propagation\") }",
+    "content": "# 33. Context untuk Cancellation Propagation\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"33. Context untuk Cancellation Propagation\") }",
     "quiz": {
       "question": "Konsep utama 33. Context untuk Cancellation Propagation?",
       "options": [
@@ -928,12 +796,8 @@ func main() { fmt.Println(\"33. Context untuk Cancellation Propagation\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 34. Context Values dan Middleware Pattern
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"34. Context Values dan Middleware Pattern\") }",
+    "content": "# 34. Context Values dan Middleware Pattern\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"34. Context Values dan Middleware Pattern\") }",
     "quiz": {
       "question": "Konsep utama 34. Context Values dan Middleware Pattern?",
       "options": [
@@ -954,12 +818,8 @@ func main() { fmt.Println(\"34. Context Values dan Middleware Pattern\") }",
     "moduleId": 6,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 35. Error Handling Strategy & Best Practices
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"35. Error Handling Strategy & Best Practices\") }",
+    "content": "# 35. Error Handling Strategy & Best Practices\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"35. Error Handling Strategy & Best Practices\") }",
     "quiz": {
       "question": "Konsep utama 35. Error Handling Strategy & Best Practices?",
       "options": [
@@ -980,12 +840,8 @@ func main() { fmt.Println(\"35. Error Handling Strategy & Best Practices\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 36. Generics: Constraints dan Comparable
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"36. Generics: Constraints dan Comparable\") }",
+    "content": "# 36. Generics: Constraints dan Comparable\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"36. Generics: Constraints dan Comparable\") }",
     "quiz": {
       "question": "Konsep utama 36. Generics: Constraints dan Comparable?",
       "options": [
@@ -1006,12 +862,8 @@ func main() { fmt.Println(\"36. Generics: Constraints dan Comparable\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 37. Generic Data Structures
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"37. Generic Data Structures\") }",
+    "content": "# 37. Generic Data Structures\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"37. Generic Data Structures\") }",
     "quiz": {
       "question": "Konsep utama 37. Generic Data Structures?",
       "options": [
@@ -1032,12 +884,8 @@ func main() { fmt.Println(\"37. Generic Data Structures\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 38. Slice Lanjutan
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"38. Slice Lanjutan\") }",
+    "content": "# 38. Slice Lanjutan\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"38. Slice Lanjutan\") }",
     "quiz": {
       "question": "Konsep utama 38. Slice Lanjutan?",
       "options": [
@@ -1058,12 +906,8 @@ func main() { fmt.Println(\"38. Slice Lanjutan\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 39. Map Lanjutan dan Iterasi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"39. Map Lanjutan dan Iterasi\") }",
+    "content": "# 39. Map Lanjutan dan Iterasi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"39. Map Lanjutan dan Iterasi\") }",
     "quiz": {
       "question": "Konsep utama 39. Map Lanjutan dan Iterasi?",
       "options": [
@@ -1084,12 +928,8 @@ func main() { fmt.Println(\"39. Map Lanjutan dan Iterasi\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 40. Pipeline Pattern dengan Channel
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"40. Pipeline Pattern dengan Channel\") }",
+    "content": "# 40. Pipeline Pattern dengan Channel\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"40. Pipeline Pattern dengan Channel\") }",
     "quiz": {
       "question": "Konsep utama 40. Pipeline Pattern dengan Channel?",
       "options": [
@@ -1110,12 +950,8 @@ func main() { fmt.Println(\"40. Pipeline Pattern dengan Channel\") }",
     "moduleId": 7,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 41. Pooling dan Resource Management
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"41. Pooling dan Resource Management\") }",
+    "content": "# 41. Pooling dan Resource Management\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"41. Pooling dan Resource Management\") }",
     "quiz": {
       "question": "Konsep utama 41. Pooling dan Resource Management?",
       "options": [
@@ -1136,12 +972,8 @@ func main() { fmt.Println(\"41. Pooling dan Resource Management\") }",
     "moduleId": 8,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 42. Package Design dan Konvensi
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"42. Package Design dan Konvensi\") }",
+    "content": "# 42. Package Design dan Konvensi\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"42. Package Design dan Konvensi\") }",
     "quiz": {
       "question": "Konsep utama 42. Package Design dan Konvensi?",
       "options": [
@@ -1162,12 +994,8 @@ func main() { fmt.Println(\"42. Package Design dan Konvensi\") }",
     "moduleId": 8,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 43. Import Management dan Aliasing
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"43. Import Management dan Aliasing\") }",
+    "content": "# 43. Import Management dan Aliasing\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"43. Import Management dan Aliasing\") }",
     "quiz": {
       "question": "Konsep utama 43. Import Management dan Aliasing?",
       "options": [
@@ -1188,12 +1016,8 @@ func main() { fmt.Println(\"43. Import Management dan Aliasing\") }",
     "moduleId": 8,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 44. Minimal Version Selection (MVS)
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"44. Minimal Version Selection (MVS)\") }",
+    "content": "# 44. Minimal Version Selection (MVS)\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"44. Minimal Version Selection (MVS)\") }",
     "quiz": {
       "question": "Konsep utama 44. Minimal Version Selection (MVS)?",
       "options": [
@@ -1214,12 +1038,8 @@ func main() { fmt.Println(\"44. Minimal Version Selection (MVS)\") }",
     "moduleId": 8,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 45. Vendor Directory dan Offline Build
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"45. Vendor Directory dan Offline Build\") }",
+    "content": "# 45. Vendor Directory dan Offline Build\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"45. Vendor Directory dan Offline Build\") }",
     "quiz": {
       "question": "Konsep utama 45. Vendor Directory dan Offline Build?",
       "options": [
@@ -1240,12 +1060,8 @@ func main() { fmt.Println(\"45. Vendor Directory dan Offline Build\") }",
     "moduleId": 8,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 46. Monorepo dan Workspace (Go 1.18+)
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"46. Monorepo dan Workspace (Go 1.18+)\") }",
+    "content": "# 46. Monorepo dan Workspace (Go 1.18+)\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"46. Monorepo dan Workspace (Go 1.18+)\") }",
     "quiz": {
       "question": "Konsep utama 46. Monorepo dan Workspace (Go 1.18+)?",
       "options": [
@@ -1266,12 +1082,8 @@ func main() { fmt.Println(\"46. Monorepo dan Workspace (Go 1.18+)\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 47. Unit Testing Dasar
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"47. Unit Testing Dasar\") }",
+    "content": "# 47. Unit Testing Dasar\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"47. Unit Testing Dasar\") }",
     "quiz": {
       "question": "Konsep utama 47. Unit Testing Dasar?",
       "options": [
@@ -1292,12 +1104,8 @@ func main() { fmt.Println(\"47. Unit Testing Dasar\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 48. Benchmarking dan Profiling
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"48. Benchmarking dan Profiling\") }",
+    "content": "# 48. Benchmarking dan Profiling\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"48. Benchmarking dan Profiling\") }",
     "quiz": {
       "question": "Konsep utama 48. Benchmarking dan Profiling?",
       "options": [
@@ -1318,12 +1126,8 @@ func main() { fmt.Println(\"48. Benchmarking dan Profiling\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 49. Mocking dan Dependency Injection
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"49. Mocking dan Dependency Injection\") }",
+    "content": "# 49. Mocking dan Dependency Injection\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"49. Mocking dan Dependency Injection\") }",
     "quiz": {
       "question": "Konsep utama 49. Mocking dan Dependency Injection?",
       "options": [
@@ -1344,12 +1148,8 @@ func main() { fmt.Println(\"49. Mocking dan Dependency Injection\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 50. Integration Testing dan httptest
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"50. Integration Testing dan httptest\") }",
+    "content": "# 50. Integration Testing dan httptest\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"50. Integration Testing dan httptest\") }",
     "quiz": {
       "question": "Konsep utama 50. Integration Testing dan httptest?",
       "options": [
@@ -1370,12 +1170,8 @@ func main() { fmt.Println(\"50. Integration Testing dan httptest\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 51. Race Detection dan Linting
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"51. Race Detection dan Linting\") }",
+    "content": "# 51. Race Detection dan Linting\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"51. Race Detection dan Linting\") }",
     "quiz": {
       "question": "Konsep utama 51. Race Detection dan Linting?",
       "options": [
@@ -1396,12 +1192,8 @@ func main() { fmt.Println(\"51. Race Detection dan Linting\") }",
     "moduleId": 9,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 52. Continuous Integration untuk Go
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"52. Continuous Integration untuk Go\") }",
+    "content": "# 52. Continuous Integration untuk Go\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"52. Continuous Integration untuk Go\") }",
     "quiz": {
       "question": "Konsep utama 52. Continuous Integration untuk Go?",
       "options": [
@@ -1422,12 +1214,8 @@ func main() { fmt.Println(\"52. Continuous Integration untuk Go\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 53. REST API dengan Standard Library
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"53. REST API dengan Standard Library\") }",
+    "content": "# 53. REST API dengan Standard Library\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"53. REST API dengan Standard Library\") }",
     "quiz": {
       "question": "Konsep utama 53. REST API dengan Standard Library?",
       "options": [
@@ -1448,12 +1236,8 @@ func main() { fmt.Println(\"53. REST API dengan Standard Library\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 54. HTTP Client dan Eksternal API
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"54. HTTP Client dan Eksternal API\") }",
+    "content": "# 54. HTTP Client dan Eksternal API\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"54. HTTP Client dan Eksternal API\") }",
     "quiz": {
       "question": "Konsep utama 54. HTTP Client dan Eksternal API?",
       "options": [
@@ -1474,12 +1258,8 @@ func main() { fmt.Println(\"54. HTTP Client dan Eksternal API\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 55. Database dengan Database/sql
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"55. Database dengan Database/sql\") }",
+    "content": "# 55. Database dengan Database/sql\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"55. Database dengan Database/sql\") }",
     "quiz": {
       "question": "Konsep utama 55. Database dengan Database/sql?",
       "options": [
@@ -1500,12 +1280,8 @@ func main() { fmt.Println(\"55. Database dengan Database/sql\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 56. Konfigurasi dan Environment Management
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"56. Konfigurasi dan Environment Management\") }",
+    "content": "# 56. Konfigurasi dan Environment Management\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"56. Konfigurasi dan Environment Management\") }",
     "quiz": {
       "question": "Konsep utama 56. Konfigurasi dan Environment Management?",
       "options": [
@@ -1526,12 +1302,8 @@ func main() { fmt.Println(\"56. Konfigurasi dan Environment Management\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 57. Logging dan Observability
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"57. Logging dan Observability\") }",
+    "content": "# 57. Logging dan Observability\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"57. Logging dan Observability\") }",
     "quiz": {
       "question": "Konsep utama 57. Logging dan Observability?",
       "options": [
@@ -1552,12 +1324,8 @@ func main() { fmt.Println(\"57. Logging dan Observability\") }",
     "moduleId": 10,
     "duration": "15 m",
     "level": "Semua",
-    "content": "# 58. Deployment dan Final Best Practices
-
-Materi Go modern.",
-    "code": "package main
-import \"fmt\"
-func main() { fmt.Println(\"58. Deployment dan Final Best Practices\") }",
+    "content": "# 58. Deployment dan Final Best Practices\n\nMateri Go modern.",
+    "code": "package main\nimport \"fmt\"\nfunc main() { fmt.Println(\"58. Deployment dan Final Best Practices\") }",
     "quiz": {
       "question": "Konsep utama 58. Deployment dan Final Best Practices?",
       "options": [
