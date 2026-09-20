@@ -1,3 +1,4 @@
+const LESSON_FILES = ['lessons/M01-L01.md', 'lessons/M01-L02.md', 'lessons/M02-L01.md', 'lessons/M02-L02.md', 'lessons/M03-L01.md', 'lessons/M03-L02.md', 'lessons/M03-L03.md', 'lessons/M04-L01.md', 'lessons/M04-L02.md', 'lessons/M05-L01.md', 'lessons/M05-L02.md', 'lessons/M06-L01.md', 'lessons/M06-L02.md', 'lessons/M07-L01.md', 'lessons/M08-L01.md', 'lessons/M08-L02.md', 'lessons/M08-L03.md', 'lessons/M09-L01.md', 'lessons/M10-L01.md', 'lessons/M10-L02.md', 'lessons/M11-L01.md', 'lessons/M12-L01.md', 'lessons/M13-L01.md', 'lessons/M14-L01.md', 'lessons/M15-L01.md', 'lessons/M15-L02.md', 'lessons/M15-L03.md', 'lessons/M15-L04.md', 'lessons/M16-L01.md', 'lessons/M16-L02.md'];
 // Go Learning Path — Premium App v2 (53 pelajaran, 5 modul)
 const MODULES = [
   {
@@ -1417,22 +1418,37 @@ async function loadLesson(index){
   const contentEl=document.getElementById('lesson-content');
   if(contentEl) contentEl.innerHTML=`<div style="text-align:center;padding:40px;color:var(--text-muted)"><i class="fa-solid fa-spinner fa-spin"></i> Memuat materi…</div>`;
 
-  let html = lesson.description || '';
-  try{
-    const res=await fetch(lesson.mdFile);
-    if(res.ok){
-      const md=await res.text();
-      if(typeof marked!=='undefined'){
-        marked.setOptions({gfm:true,breaks:true});
-        html=marked.parse(md);
-      } else html=`<pre>${escapeHtml(md)}</pre>`;
-    } else {
-      html+=`<div style="margin-top:12px;padding:12px;background:rgba(6,182,212,.08);border:1px solid #06b6d4;border-radius:8px;color:#22d3ee">Materi <code>${lesson.mdFile}</code> belum tersedia. Editor di bawah tetap bisa dipakai.</div>`;
-    }
-  }catch(e){
-    html+=`<div style="color:var(--text-muted);font-size:.8rem;margin-top:8px">Gagal memuat markdown: ${escapeHtml(e.message)}</div>`;
+  let html = '';
+  let md = '';
+  const mdCandidate = (typeof LESSON_FILES !== 'undefined' && LESSON_FILES[index]) ? LESSON_FILES[index] : (lesson.mdFile || ('lessons/' + (lesson.slug || '') + '.md'));
+  try {
+    const res = await fetch(mdCandidate);
+    if (res.ok) md = await res.text();
+  } catch (e) {}
+
+  if (!md && lesson.mdFile) {
+    try {
+      const res = await fetch(lesson.mdFile);
+      if (res.ok) md = await res.text();
+    } catch (e) {}
   }
-  if(contentEl) contentEl.innerHTML='<div class="prose max-w-none">'+html+'</div>';
+
+  const rawContent = lesson.content || lesson.content_md || lesson.description || '';
+  if (!md && rawContent) {
+    md = rawContent;
+  }
+
+  if (md) {
+    if (typeof marked !== 'undefined') {
+      marked.setOptions({ gfm: true, breaks: true });
+      html = marked.parse(md);
+    } else {
+      html = '<pre>' + escapeHtml(md) + '</pre>';
+    }
+  } else {
+    html = '<div style="margin-top:12px;padding:12px;background:rgba(6,182,212,.08);border:1px solid #06b6d4;border-radius:8px;color:#22d3ee">Materi sedang disiapkan. Editor tetap aktif.</div>';
+  }
+  if (contentEl) contentEl.innerHTML = '<div class="prose max-w-none">' + html + '</div>';
 
   // code
   let code=lesson.defaultCode||'';
